@@ -18,7 +18,27 @@ namespace buddaWeb.Controllers
             return View();
         }
 
+        public IActionResult Content()
+        {
+            return View();
+        }
+        
+        public IActionResult Travel()
+        {
+            return View();
+        }
+
+        public IActionResult Viewblog()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult Login()
         {
             return View();
         }

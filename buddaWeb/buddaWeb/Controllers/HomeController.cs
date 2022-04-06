@@ -16,6 +16,7 @@ namespace buddaWeb.Controllers
         public IActionResult Index()
         {
             return View();
+            // UMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
         }
 
         public IActionResult Content()

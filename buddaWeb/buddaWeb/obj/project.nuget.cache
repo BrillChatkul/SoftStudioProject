@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "Z6zoK+KSwic1jProzPlnVIRCybY42uOJFjL2ozNy/dCVzS9ONm8CINDa5gZeEiDhnUPP6cKWund/P3vpM2tINw==",
+<<<<<<< Updated upstream
+  "dgSpecHash": "qKWFm9aduFx0y5nf+qwZuWyp+NNmT0/Dc/VllTHuypVI5yVmlAt/mBnnnXLw6MuKrAYbm+LDZkgQMPPKVfgQ7g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Apizz789\\Documents\\GitHub\\SoftStudioProject\\buddaWeb\\buddaWeb\\buddaWeb.csproj",
+  "projectFilePath": "C:\\Users\\akara\\Documents\\SoftStudioProject\\buddaWeb\\buddaWeb\\buddaWeb.csproj",
+=======
+  "dgSpecHash": "ZKaI4OGF6Qi5uazlPrPEkqP9m1dmgBTuLUBm4RZimGLxwh/Yoi0FbVLdA0aO6pcOXxLxBzr0Ym2i2bFIRnHJtA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\YaTsu\\Documents\\GitHub\\SoftStudioProject\\buddaWeb\\buddaWeb\\buddaWeb.csproj",
+>>>>>>> Stashed changes
   "expectedPackageFiles": [],
   "logs": []
 }

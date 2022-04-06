@@ -8,11 +8,16 @@
     "net6.0": []
   },
   "packageFolders": {
+<<<<<<< Updated upstream
     "C:\\Users\\akara\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\YaTsu\\.nuget\\packages\\": {}
+>>>>>>> Stashed changes
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< Updated upstream
       "projectUniqueName": "C:\\Users\\akara\\Documents\\SoftStudioProject\\buddaWeb\\buddaWeb\\buddaWeb.csproj",
       "projectName": "buddaWeb",
       "projectPath": "C:\\Users\\akara\\Documents\\SoftStudioProject\\buddaWeb\\buddaWeb\\buddaWeb.csproj",
@@ -21,6 +26,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\akara\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\YaTsu\\Documents\\GitHub\\SoftStudioProject\\buddaWeb\\buddaWeb\\buddaWeb.csproj",
+      "projectName": "buddaWeb",
+      "projectPath": "C:\\Users\\YaTsu\\Documents\\GitHub\\SoftStudioProject\\buddaWeb\\buddaWeb\\buddaWeb.csproj",
+      "packagesPath": "C:\\Users\\YaTsu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\YaTsu\\Documents\\GitHub\\SoftStudioProject\\buddaWeb\\buddaWeb\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\YaTsu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> Stashed changes
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -50,6 +50,7 @@ C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug
 C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\buddaWeb.pdb
 C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\buddaWeb.genruntimeconfig.cache
 C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\ref\buddaWeb.dll
+<<<<<<< Updated upstream
 C:\Users\akara\Documents\SoftStudioProject\buddaWeb\buddaWeb\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\akara\Documents\SoftStudioProject\buddaWeb\buddaWeb\bin\Debug\net6.0\appsettings.json
 C:\Users\akara\Documents\SoftStudioProject\buddaWeb\buddaWeb\bin\Debug\net6.0\buddaWeb.staticwebassets.runtime.json
@@ -76,3 +77,31 @@ C:\Users\akara\Documents\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\re
 C:\Users\akara\Documents\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\buddaWeb.pdb
 C:\Users\akara\Documents\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\buddaWeb.genruntimeconfig.cache
 C:\Users\akara\Documents\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\ref\buddaWeb.dll
+=======
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\bin\Debug\net6.0\appsettings.json
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\bin\Debug\net6.0\buddaWeb.staticwebassets.runtime.json
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\bin\Debug\net6.0\buddaWeb.exe
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\bin\Debug\net6.0\buddaWeb.deps.json
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\bin\Debug\net6.0\buddaWeb.runtimeconfig.json
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\bin\Debug\net6.0\buddaWeb.dll
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\bin\Debug\net6.0\buddaWeb.pdb
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\buddaWeb.csproj.AssemblyReference.cache
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\buddaWeb.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\buddaWeb.AssemblyInfoInputs.cache
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\buddaWeb.AssemblyInfo.cs
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\buddaWeb.csproj.CoreCompileInputs.cache
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\buddaWeb.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\buddaWeb.RazorAssemblyInfo.cache
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\buddaWeb.RazorAssemblyInfo.cs
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\scopedcss\bundle\buddaWeb.styles.css
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\scopedcss\projectbundle\buddaWeb.bundle.scp.css
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\buddaWeb.dll
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\refint\buddaWeb.dll
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\buddaWeb.pdb
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\buddaWeb.genruntimeconfig.cache
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb\buddaWeb\obj\Debug\net6.0\ref\buddaWeb.dll
+>>>>>>> Stashed changes

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Project\\SoftStudioProject\\buddaWeb\\buddaWeb\\buddaWeb.csproj": {}
+    "C:\\Users\\Apizz789\\Documents\\GitHub\\SoftStudioProject\\buddaWeb\\buddaWeb\\buddaWeb.csproj": {}
   },
   "projects": {
-    "E:\\Project\\SoftStudioProject\\buddaWeb\\buddaWeb\\buddaWeb.csproj": {
+    "C:\\Users\\Apizz789\\Documents\\GitHub\\SoftStudioProject\\buddaWeb\\buddaWeb\\buddaWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Project\\SoftStudioProject\\buddaWeb\\buddaWeb\\buddaWeb.csproj",
+        "projectUniqueName": "C:\\Users\\Apizz789\\Documents\\GitHub\\SoftStudioProject\\buddaWeb\\buddaWeb\\buddaWeb.csproj",
         "projectName": "buddaWeb",
-        "projectPath": "E:\\Project\\SoftStudioProject\\buddaWeb\\buddaWeb\\buddaWeb.csproj",
-        "packagesPath": "C:\\Users\\billc\\.nuget\\packages\\",
-        "outputPath": "E:\\Project\\SoftStudioProject\\buddaWeb\\buddaWeb\\obj\\",
+        "projectPath": "C:\\Users\\Apizz789\\Documents\\GitHub\\SoftStudioProject\\buddaWeb\\buddaWeb\\buddaWeb.csproj",
+        "packagesPath": "C:\\Users\\Apizz789\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Apizz789\\Documents\\GitHub\\SoftStudioProject\\buddaWeb\\buddaWeb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\billc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Apizz789\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

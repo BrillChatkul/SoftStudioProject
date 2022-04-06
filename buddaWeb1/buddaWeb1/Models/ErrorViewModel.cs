@@ -1,8 +1,10 @@
-namespace buddaWeb.Models
+using System;
+
+namespace buddaWeb1.Models
 {
     public class ErrorViewModel
     {
-        public string? RequestId { get; set; }
+        public string RequestId { get; set; }
 
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }

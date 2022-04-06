@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8XaNHPIU8p91EpSBTAml1dlWgJ1nUYNaqyvaTN/e2uxA5NpOr9LEwxWVtyjEXNkTdWXSGeQ8YtJ5GTTWWafkvQ==",
+  "dgSpecHash": "ucB3Tm/Igx25ML6nfuD+36YAQkCt8VtkR9iKkUkDnGgelbMGfNOhWtlj3FW/usOTfJvEKT86vYVGnmfuJ1fF7g==",
   "success": true,
-  "projectFilePath": "E:\\Project\\SoftStudioProject\\buddaWeb1\\buddaWeb1\\buddaWeb1.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\choti\\OneDrive\\Documents\\SoftStudioProject\\buddaWeb1\\buddaWeb1\\buddaWeb1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\choti\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.15\\microsoft.netcore.app.host.win-x64.5.0.15.nupkg.sha512"
+  ],
   "logs": []
 }

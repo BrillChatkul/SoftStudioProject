@@ -37,3 +37,7 @@ E:\Project\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\buddaWeb1.pdb
 E:\Project\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\buddaWeb1.genruntimeconfig.cache
 E:\Project\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\ref\buddaWeb1.dll
 E:\Project\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\buddaWeb1.csproj.CopyComplete
+E:\Project\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\Razor\Views\Home\Content.cshtml.g.cs
+E:\Project\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\Razor\Views\Home\Login.cshtml.g.cs
+E:\Project\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\Razor\Views\Home\Travel.cshtml.g.cs
+E:\Project\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\Razor\Views\Home\Viewblog.cshtml.g.cs

@@ -18,27 +18,27 @@ namespace webBudda.Controllers
             return View();
             // UMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
         }
-        
-        //public IActionResult Content()
-        //{
-        //    blogRepo blogRepo = new blogRepo();
-        //    return View(blogRepo.GetBlogList());
-        //}
-        
-        public IActionResult Content(string typep)
+
+        public IActionResult Content()
         {
             blogRepo blogRepo = new blogRepo();
-            List<blog> blogList = blogRepo.GetBlogList();
-            List<blog> blogFilter = new List<blog>();
-            foreach (blog blog in blogList)
-            {
-                if (blog.typep == typep)
-                {
-                    blogFilter.Add(blog);
-                }
-            }
-            return View(blogFilter.ToList());
+            return View(blogRepo.GetBlogList());
         }
+
+        //public IActionResult Content(string typep)
+        //{
+        //    blogRepo blogRepo = new blogRepo();
+        //    List<blog> blogList = blogRepo.GetBlogList();
+        //    List<blog> blogFilter = new List<blog>();
+        //    foreach (blog blog in blogList)
+        //    {
+        //        if (blog.typep == typep)
+        //        {
+        //            blogFilter.Add(blog);
+        //        }
+        //    }
+        //    return View(blogFilter.ToList());
+        //}
 
         public IActionResult Travel()
         {
@@ -58,6 +58,12 @@ namespace webBudda.Controllers
                     blogger = blog;
                 }
             }
+            List<Comment> comments = new List<Comment>();
+            if(blogger.CommentList != null)
+            {
+                comments = blogger.CommentList.ToList();
+            }
+            ViewBag.blogComment = comments.ToList();
             ViewBag.blog = blogger;
             return View();
         }

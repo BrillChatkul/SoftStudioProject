@@ -32,7 +32,7 @@ namespace webBudda.Controllers
             List<blog> blogFilter = new List<blog>();
             foreach (blog blog in blogList)
             {
-                if (blog.Type == typep)
+                if (blog.typep == typep)
                 {
                     blogFilter.Add(blog);
                 }
@@ -44,9 +44,21 @@ namespace webBudda.Controllers
         {
             return View();
         }
-
-        public IActionResult Viewblog()
+        [HttpGet]
+        public IActionResult Viewblog(int id)
         {
+            blog blogger = new blog();
+            blogRepo blogRepo = new blogRepo();
+            List<blog> blogList = blogRepo.GetBlogList();
+            
+            foreach (blog blog in blogList)
+            {
+                if (blog.Id == id)
+                {
+                    blogger = blog;
+                }
+            }
+            ViewBag.blog = blogger;
             return View();
         }
 

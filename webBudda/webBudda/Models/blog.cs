@@ -3,8 +3,8 @@
     public class blog
     {
         public int Id { get; set; }
-        public string Title { get; set; }
-        public string Type { get; set; }
-        public string Authen { get; set; }
+        public string title { get; set; }
+        public string typep { get; set; }
+        public string authen { get; set; }
     }
 }

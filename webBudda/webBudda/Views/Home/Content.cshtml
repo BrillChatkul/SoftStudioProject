@@ -27,13 +27,13 @@
     @foreach (var item in Model)
     {
         <div class="blogger">
-            <a asp-controller="Home"  asp-action="Content" asp-route-typep="ท่องเที่ยว">
-            <h4 style="text-align:left;">@item.Title</h4>
+            <a asp-controller="Home"  asp-action="Viewblog" asp-route-id="@item.Id">
+            <h4 style="text-align:left;">@item.title</h4>
             <div style="
                     display:flex;
                     justify-content:space-between;">
-                <p><span>Type : </span>@item.Type</p>
-                <p><span>author : </span>@item.Authen</p>
+                <p><span>Type : </span>@item.typep</p>
+                <p><span>author : </span>@item.authen</p>
             </div>
             </a>
         </div>

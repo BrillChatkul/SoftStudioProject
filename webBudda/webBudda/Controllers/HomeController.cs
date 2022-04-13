@@ -18,7 +18,7 @@ namespace webBudda.Controllers
             return View();
             // UMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
         }
-
+        
         //public IActionResult Content()
         //{
         //    blogRepo blogRepo = new blogRepo();

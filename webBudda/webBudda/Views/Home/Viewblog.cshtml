@@ -3,7 +3,55 @@
 *@
 @{
 }
-<div class="text-center">
-    <h1 class="display-4">View blog</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@using webBudda.Models
+@{
+    var item = ViewBag.blog;
+    List<Comment> comments = ViewBag.blogComment;
+}
+<div class="container">
+    <div class="row">
+        <div class="col-2" style="background-color:gray">
+            <img src="https://i.pinimg.com/originals/0c/3b/3a/0c3b3adb1a7530892e55ef36d3be6cb8.png" style="width:100%" />
+            <h4 class="text-center">by @item.authen</h4> 
+            <h6 class="text-center">@item.Created</h6>
+        </div>
+        <div class="col">
+            <div class="col-10" style="position:relative text-align:center">
+                <h1>@item.title</h1>
+                <h6>กระทู้หมายเลข @item.Id | กระทู้@item.typep</h6>
+                <hr />
+                <img style="width:60% " src="https://scontent.fbkk12-4.fna.fbcdn.net/v/t39.30808-6/270204153_224275023207074_7934483309102588143_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=8bfeb9&_nc_eui2=AeFrehaWdQsx88cQcaF7KPZkUFcEC5-w_JBQVwQLn7D8kBXGdFLLT3yT_Gx4rzu0dXUodks74U8DIIHeG0W--nBS&_nc_ohc=hy9UuPuW3AIAX_w0Y-K&_nc_ht=scontent.fbkk12-4.fna&oh=00_AT9nzanhldyPEfdx6FTo-pwZjoMOlPcQoL7himOO8ZKjVw&oe=6255ABA2" />
+                <p>@item.content</p>
+                <hr />
+                <button>like</button><button>dislike</button>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <h2>ความคิดเห็นต่อกระทู้</h2>
+    @foreach (Comment comment in @comments)
+    {
+        <hr />
+        <div class="row">
+            <div class="col-2">
+                <img src="https://i.pinimg.com/originals/0c/3b/3a/0c3b3adb1a7530892e55ef36d3be6cb8.png" style="width:100%" />
+                <h4 class="text-center">by @comment.Name</h4>
+                <h6 class="text-center">@comment.Created</h6>
+            </div>
+            <div class="col">
+            @comment.Content
+        </div>
+    </div>
+    }
+    
+    <hr />
+    <div class="row">
+        <center>
+            <div class="col">
+                <h4>Add Comment</h4>
+                <input style="width: 500px;height: 200px">
+                <button>Comment</button>
+            </div>
+        </center>
+    </div>
 </div>

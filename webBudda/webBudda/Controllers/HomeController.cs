@@ -21,16 +21,50 @@ namespace webBudda.Controllers
 
         public IActionResult Content()
         {
-            return View();
+            blogRepo blogRepo = new blogRepo();
+            return View(blogRepo.GetBlogList());
         }
+
+        //public IActionResult Content(string typep)
+        //{
+        //    blogRepo blogRepo = new blogRepo();
+        //    List<blog> blogList = blogRepo.GetBlogList();
+        //    List<blog> blogFilter = new List<blog>();
+        //    foreach (blog blog in blogList)
+        //    {
+        //        if (blog.typep == typep)
+        //        {
+        //            blogFilter.Add(blog);
+        //        }
+        //    }
+        //    return View(blogFilter.ToList());
+        //}
 
         public IActionResult Travel()
         {
             return View();
         }
-
-        public IActionResult Viewblog()
+        [HttpGet]
+        public IActionResult Viewblog(int id)
         {
+            blog blogger = new blog();
+            blogRepo blogRepo = new blogRepo();
+            List<blog> blogList = blogRepo.GetBlogList();
+            
+            foreach (blog blog in blogList)
+            {
+                if (blog.Id == id)
+                {
+                    blogger = blog;
+                }
+            }
+            List<Comment> comments = new List<Comment>();
+            if(blogger.CommentList != null)
+            {
+                comments = blogger.CommentList.ToList();
+            }
+            ViewBag.blogComment = comments.ToList();
+            ViewBag.blog = blogger;
             return View();
         }
 

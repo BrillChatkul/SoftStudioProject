@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Project\\SoftStudioProject\\webBudda\\webBudda\\webBudda.csproj": {}
+    "C:\\Users\\akara\\Documents\\GitHub\\SoftStudioProject\\webBudda\\webBudda\\webBudda.csproj": {}
   },
   "projects": {
-    "E:\\Project\\SoftStudioProject\\webBudda\\webBudda\\webBudda.csproj": {
+    "C:\\Users\\akara\\Documents\\GitHub\\SoftStudioProject\\webBudda\\webBudda\\webBudda.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Project\\SoftStudioProject\\webBudda\\webBudda\\webBudda.csproj",
+        "projectUniqueName": "C:\\Users\\akara\\Documents\\GitHub\\SoftStudioProject\\webBudda\\webBudda\\webBudda.csproj",
         "projectName": "webBudda",
-        "projectPath": "E:\\Project\\SoftStudioProject\\webBudda\\webBudda\\webBudda.csproj",
-        "packagesPath": "C:\\Users\\billc\\.nuget\\packages\\",
-        "outputPath": "E:\\Project\\SoftStudioProject\\webBudda\\webBudda\\obj\\",
+        "projectPath": "C:\\Users\\akara\\Documents\\GitHub\\SoftStudioProject\\webBudda\\webBudda\\webBudda.csproj",
+        "packagesPath": "C:\\Users\\akara\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\akara\\Documents\\GitHub\\SoftStudioProject\\webBudda\\webBudda\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\billc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\akara\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

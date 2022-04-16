@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\akara\\.nuget\\packages\\": {}
+    "C:\\Users\\billc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\akara\\Documents\\GitHub\\SoftStudioProject\\webBudda\\webBudda\\webBudda.csproj",
+      "projectUniqueName": "E:\\Project\\SoftStudioProject\\webBudda\\webBudda\\webBudda.csproj",
       "projectName": "webBudda",
-      "projectPath": "C:\\Users\\akara\\Documents\\GitHub\\SoftStudioProject\\webBudda\\webBudda\\webBudda.csproj",
-      "packagesPath": "C:\\Users\\akara\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\akara\\Documents\\GitHub\\SoftStudioProject\\webBudda\\webBudda\\obj\\",
+      "projectPath": "E:\\Project\\SoftStudioProject\\webBudda\\webBudda\\webBudda.csproj",
+      "packagesPath": "C:\\Users\\billc\\.nuget\\packages\\",
+      "outputPath": "E:\\Project\\SoftStudioProject\\webBudda\\webBudda\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\akara\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\billc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

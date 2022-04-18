@@ -25,6 +25,12 @@ namespace webBudda.Controllers
             return View(blogRepo.GetBlogList());
         }
 
+        public IActionResult ContentAdmin()
+        {
+            blogRepo blogRepo = new blogRepo();
+            return View(blogRepo.GetBlogList());
+        }
+
         //public IActionResult Content(string typep)
         //{
         //    blogRepo blogRepo = new blogRepo();
@@ -50,7 +56,7 @@ namespace webBudda.Controllers
             blog blogger = new blog();
             blogRepo blogRepo = new blogRepo();
             List<blog> blogList = blogRepo.GetBlogList();
-            
+
             foreach (blog blog in blogList)
             {
                 if (blog.Id == id)
@@ -59,7 +65,7 @@ namespace webBudda.Controllers
                 }
             }
             List<Comment> comments = new List<Comment>();
-            if(blogger.CommentList != null)
+            if (blogger.CommentList != null)
             {
                 comments = blogger.CommentList.ToList();
             }

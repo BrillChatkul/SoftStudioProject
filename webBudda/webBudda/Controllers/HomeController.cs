@@ -15,8 +15,8 @@ namespace webBudda.Controllers
 
         public IActionResult Index()
         {
+            //String path = Server.MapPath("~/image/");
             return View();
-            // UMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
         }
 
         public IActionResult Content()

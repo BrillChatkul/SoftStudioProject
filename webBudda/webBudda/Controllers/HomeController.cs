@@ -25,6 +25,8 @@ namespace webBudda.Controllers
             return View(blogRepo.GetBlogList());
         }
 
+        public ActionResult ModalPopUp() { return View(); }
+
         //public IActionResult Content(string typep)
         //{
         //    blogRepo blogRepo = new blogRepo();

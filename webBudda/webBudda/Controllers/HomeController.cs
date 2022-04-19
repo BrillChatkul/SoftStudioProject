@@ -73,6 +73,28 @@ namespace webBudda.Controllers
             ViewBag.blog = blogger;
             return View();
         }
+        public IActionResult ViewblogAdmin(int id)
+        {
+            blog blogger = new blog();
+            blogRepo blogRepo = new blogRepo();
+            List<blog> blogList = blogRepo.GetBlogList();
+
+            foreach (blog blog in blogList)
+            {
+                if (blog.Id == id)
+                {
+                    blogger = blog;
+                }
+            }
+            List<Comment> comments = new List<Comment>();
+            if (blogger.CommentList != null)
+            {
+                comments = blogger.CommentList.ToList();
+            }
+            ViewBag.blogComment = comments.ToList();
+            ViewBag.blog = blogger;
+            return View();
+        }
 
         public IActionResult Privacy()
         {

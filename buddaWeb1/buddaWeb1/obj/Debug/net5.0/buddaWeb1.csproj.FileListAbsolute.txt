@@ -107,7 +107,6 @@ C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\
 C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\buddaWeb1.TagHelpers.input.cache
 C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\buddaWeb1.TagHelpers.output.cache
 C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\buddaWeb1.RazorCoreGenerate.cache
-C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\Razor\Views\Home\Content.cshtml.g.cs
 C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\Razor\Views\Home\Login.cshtml.g.cs
 C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
@@ -127,3 +126,10 @@ C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\
 C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\buddaWeb1.genruntimeconfig.cache
 C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\ref\buddaWeb1.dll
 C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\buddaWeb1.csproj.CopyComplete
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb1\buddaWeb1\bin\Debug\net5.0\libman.json
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\Razor\Views\Home\Content1.cshtml.g.cs
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\Razor\Views\Home\Content2.cshtml.g.cs
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\Razor\Views\Home\Content2_2.cshtml.g.cs
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\Razor\Views\Home\Content2_3.cshtml.g.cs
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\Razor\Views\Home\Content2_4.cshtml.g.cs
+C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\buddaWeb1\buddaWeb1\obj\Debug\net5.0\Razor\Views\Content\Content3.cshtml.g.cs

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ApfvxBsiuqR4kEqiUPhA39H0h6HzR6VtVbFbWMppxCxOWNeqrWWOTZ12Qe4armk1uPwVMc7FYUCr7e8Zb/V7PQ==",
+  "dgSpecHash": "0lobkPgwHb7oGA1mGMgMtSy3ab2mskIiXY0ORxtDqGadRkQvsg9FFUWqYY6PNSNcsSSn9yScGeuo6vunoKLxAA==",
   "success": true,
   "projectFilePath": "C:\\Users\\YaTsu\\Documents\\GitHub\\SoftStudioProject\\buddaWeb1\\buddaWeb1\\buddaWeb1.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\YaTsu\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

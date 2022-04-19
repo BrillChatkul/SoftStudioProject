@@ -24,11 +24,6 @@ namespace buddaWeb1.Controllers
             // UMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
         }
 
-        public IActionResult Content()
-        {
-            return View();
-        }
-
         public IActionResult Travel()
         {
             return View();
@@ -49,6 +44,35 @@ namespace buddaWeb1.Controllers
             return View();
         }
 
+        public IActionResult Content1()
+        {
+            return View();
+        }
+
+        public IActionResult Content2()
+        {
+            return View();
+        }
+
+        public IActionResult Content2_2()
+        {
+            return View();
+        }
+
+        public IActionResult Content2_3()
+        {
+            return View();
+        }
+
+        public IActionResult Content2_4()
+        {
+            return View();
+        }
+
+        public IActionResult Content3()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

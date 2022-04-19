@@ -8,53 +8,77 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = webBudda
 build_property.RootNamespace = webBudda
-build_property.ProjectDir = E:\Project\SoftStudioProject\webBudda\webBudda\
+build_property.ProjectDir = C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\webBudda\webBudda\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\Project\SoftStudioProject\webBudda\webBudda
+build_property.MSBuildProjectDirectory = C:\Users\YaTsu\Documents\GitHub\SoftStudioProject\webBudda\webBudda
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/Project/SoftStudioProject/webBudda/webBudda/Views/Home/Content.cshtml]
+[C:/Users/YaTsu/Documents/GitHub/SoftStudioProject/webBudda/webBudda/Views/Home/Content.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250ZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Project/SoftStudioProject/webBudda/webBudda/Views/Home/Index.cshtml]
+[C:/Users/YaTsu/Documents/GitHub/SoftStudioProject/webBudda/webBudda/Views/Home/Content1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250ZW50MS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/YaTsu/Documents/GitHub/SoftStudioProject/webBudda/webBudda/Views/Home/Content2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250ZW50Mi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/YaTsu/Documents/GitHub/SoftStudioProject/webBudda/webBudda/Views/Home/Content2_2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250ZW50Ml8yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/YaTsu/Documents/GitHub/SoftStudioProject/webBudda/webBudda/Views/Home/Content2_3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250ZW50Ml8zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/YaTsu/Documents/GitHub/SoftStudioProject/webBudda/webBudda/Views/Home/Content2_4.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250ZW50Ml80LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/YaTsu/Documents/GitHub/SoftStudioProject/webBudda/webBudda/Views/Home/Content3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250ZW50My5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/YaTsu/Documents/GitHub/SoftStudioProject/webBudda/webBudda/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Project/SoftStudioProject/webBudda/webBudda/Views/Home/Login.cshtml]
+[C:/Users/YaTsu/Documents/GitHub/SoftStudioProject/webBudda/webBudda/Views/Home/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Project/SoftStudioProject/webBudda/webBudda/Views/Home/Privacy.cshtml]
+[C:/Users/YaTsu/Documents/GitHub/SoftStudioProject/webBudda/webBudda/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Project/SoftStudioProject/webBudda/webBudda/Views/Home/Travel.cshtml]
+[C:/Users/YaTsu/Documents/GitHub/SoftStudioProject/webBudda/webBudda/Views/Home/Travel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUcmF2ZWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Project/SoftStudioProject/webBudda/webBudda/Views/Home/Viewblog.cshtml]
+[C:/Users/YaTsu/Documents/GitHub/SoftStudioProject/webBudda/webBudda/Views/Home/Viewblog.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWaWV3YmxvZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Project/SoftStudioProject/webBudda/webBudda/Views/Shared/Error.cshtml]
+[C:/Users/YaTsu/Documents/GitHub/SoftStudioProject/webBudda/webBudda/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Project/SoftStudioProject/webBudda/webBudda/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/YaTsu/Documents/GitHub/SoftStudioProject/webBudda/webBudda/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Project/SoftStudioProject/webBudda/webBudda/Views/_ViewImports.cshtml]
+[C:/Users/YaTsu/Documents/GitHub/SoftStudioProject/webBudda/webBudda/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Project/SoftStudioProject/webBudda/webBudda/Views/_ViewStart.cshtml]
+[C:/Users/YaTsu/Documents/GitHub/SoftStudioProject/webBudda/webBudda/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Project/SoftStudioProject/webBudda/webBudda/Views/Shared/_Layout.cshtml]
+[C:/Users/YaTsu/Documents/GitHub/SoftStudioProject/webBudda/webBudda/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-4536zcumj0

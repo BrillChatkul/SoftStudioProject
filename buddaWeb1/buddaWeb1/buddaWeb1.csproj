@@ -4,4 +4,19 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="wwwroot\css\img\**" />
+    <Content Remove="wwwroot\css\img\**" />
+    <EmbeddedResource Remove="wwwroot\css\img\**" />
+    <None Remove="wwwroot\css\img\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\header.jpg" />
+  </ItemGroup>
+
 </Project>

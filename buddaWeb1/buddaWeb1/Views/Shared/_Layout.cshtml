@@ -6,6 +6,22 @@
     <title>@ViewData["Title"] - buddaWeb1</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
+
+    <style>
+        .dropdown-toggle::after {
+            transition: transform 0.15s linear;
+        }
+
+        .show.dropdown .dropdown-toggle::after {
+            transform: inherit;
+        }
+
+        .dropdown-menu {
+            margin-top: 0;
+        }
+    </style>
+
 </head>
 <body>
     <header>
@@ -24,11 +40,13 @@
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Content
+                                พระพุทธศาสนา
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item font-weight-bold" asp-controller="Home" asp-action="">พระพุทธเจ้า</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="Content1">&nbsp;&nbsp;พระพุทธประวัติ</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="Content2">&nbsp;&nbsp;ปางพระพุทธรูป</a>
+                                <a class="dropdown-item" asp-controller="Content" asp-action="Content3">&nbsp;&nbsp;ภาพพระพุทธประวัติ</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Something else there</a>
                             </div>

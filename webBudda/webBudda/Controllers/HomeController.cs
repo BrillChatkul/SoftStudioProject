@@ -19,12 +19,6 @@ namespace webBudda.Controllers
             // UMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
         }
 
-        public IActionResult Content()
-        {
-            blogRepo blogRepo = new blogRepo();
-            return View(blogRepo.GetBlogList());
-        }
-
         public IActionResult ContentAdmin()
         {
             blogRepo blogRepo = new blogRepo();

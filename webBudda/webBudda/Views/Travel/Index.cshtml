@@ -1,9 +1,10 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+    @model List<webBudda.Models.blog>
 *@
 @{
 }
-@model List<webBudda.Models.blog>
+@model IEnumerable<webBudda.Models.blog>
 <style>
     p{
         margin-bottom:0px;
@@ -44,7 +45,7 @@
                         <div style="
                             display:flex;
                             justify-content:space-between;">
-                        <p><span>ประเภท : </span>@item.typep</p>
+                        <p><span>ประเภท : </span>@item.typep @item.GetType().Name</p>
                         <p><span>ผู้ตั้งกระทู้ : </span>@item.authen</p>
                 </div>
                     </a>

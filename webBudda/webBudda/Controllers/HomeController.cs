@@ -45,7 +45,7 @@ namespace webBudda.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult Viewblog(int id)
+        public IActionResult Viewblog(string id)
         {
             blog blogger = new blog();
             blogRepo blogRepo = new blogRepo();
@@ -67,7 +67,7 @@ namespace webBudda.Controllers
             ViewBag.blog = blogger;
             return View();
         }
-        public IActionResult ViewblogAdmin(int id)
+        public IActionResult ViewblogAdmin(string id)
         {
             blog blogger = new blog();
             blogRepo blogRepo = new blogRepo();

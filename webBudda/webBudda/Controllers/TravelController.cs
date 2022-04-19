@@ -13,7 +13,7 @@ namespace webBudda.Controllers
         IFirebaseConfig config = new FirebaseConfig
         {
             AuthSecret = "qt3bdVVIXN4rcf0NACZkQLivDFnyKkZerngugoLM",
-            BasePath = "https://budbudworld-default-rtdb.firebaseio.com/"
+            BasePath = "https://budbudworld-default-rtdb.firebaseio.com"
         };
         IFirebaseClient client;
         public IActionResult Index()
@@ -30,6 +30,42 @@ namespace webBudda.Controllers
                 }
             }
             return View(list);
+        }
+        [HttpGet]
+        public IActionResult Viewblog(string id)
+        {
+            client = new FireSharp.FirebaseClient(config);
+            FirebaseResponse response = client.Get("blogData/"+id);
+            blog data = JsonConvert.DeserializeObject<blog>(response.Body);
+            
+            response = client.Get("commentBlog");
+            dynamic CommentList = JsonConvert.DeserializeObject<dynamic>(response.Body);
+            var listCommentAll = new List<Comment>();
+            var listComment = new List<Comment>();
+            foreach (var item in CommentList)
+            {
+                listCommentAll.Add(JsonConvert.DeserializeObject<Comment>(((JProperty)item).Value.ToString()));
+            }
+            foreach (var item in listCommentAll)
+            {
+            if(item.blogID == id)
+            {
+            listComment.Add(item);
+            }
+            }
+            data.CommentList = listComment;
+            ViewBag.blogComment = data.CommentList.ToList();
+            ViewBag.blog = data;
+            return View();
+        }
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(blog blog)
+        {
+            return View();
         }
     }
 }

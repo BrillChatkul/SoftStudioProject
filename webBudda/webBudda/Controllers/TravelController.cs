@@ -62,10 +62,30 @@ namespace webBudda.Controllers
         {
             return View();
         }
+
+        //create blog
         [HttpPost]
         public ActionResult Create(blog blog)
         {
-            return View();
+            try
+            {
+                addBlogToFirebase(blog);
+                ModelState.AddModelError(string.Empty, "Added successfully");
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+            }
+            return RedirectToAction("Index", "Travel");
+        }
+        private void addBlogToFirebase(blog blog)
+        {
+            blog.Created = DateTime.Now.ToString();
+            client = new FireSharp.FirebaseClient(config);
+            var data = blog;
+            PushResponse response = client.Push("blogData/", data);
+            data.Id = response.Result.name;
+            SetResponse setResponse = client.Set("blogData/"+data.Id, data);
         }
     }
 }

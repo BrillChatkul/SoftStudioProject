@@ -8,7 +8,7 @@ using webBudda.Models;
 
 namespace webBudda.Controllers
 {
-    public class TravelController : Controller
+    public class blogController : Controller
     {
         IFirebaseConfig config = new FirebaseConfig
         {
@@ -16,7 +16,8 @@ namespace webBudda.Controllers
             BasePath = "https://budbudworld-default-rtdb.firebaseio.com"
         };
         IFirebaseClient client;
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult Index(String typep)
         {
             client = new FireSharp.FirebaseClient(config);
             FirebaseResponse response = client.Get("blogData");
@@ -29,7 +30,15 @@ namespace webBudda.Controllers
                     list.Add(JsonConvert.DeserializeObject<blog>(((JProperty)item).Value.ToString()));
                 }
             }
-            return View(list);
+            var showlist = new List<blog>();
+            foreach (var item in list)
+            {
+                if(item.typep == typep)
+                {
+                    showlist.Add(item);
+                }
+            }
+            return View(showlist);
         }
         [HttpGet]
         public IActionResult Viewblog(string id)
@@ -58,11 +67,6 @@ namespace webBudda.Controllers
             ViewBag.blog = data;
             return View();
         }
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         //create blog
         [HttpPost]
         public ActionResult Create(blog blog)

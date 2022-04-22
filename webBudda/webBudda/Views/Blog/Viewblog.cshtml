@@ -7,6 +7,7 @@
 @{
     var item = ViewBag.blog;
     List<Comment> comments = ViewBag.blogComment;
+    var user = ViewBag.user;
 }
 <div class="container">
     <div class="kratoo-title">
@@ -59,7 +60,7 @@
     <div class="row" style="background-color:#EEECEC;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);border-radius: 10px;">
         <div class="col-2">
             <img src="https://pbs.twimg.com/profile_images/1318385887214936065/MVXmYY99_400x400.jpg" style="max-width:100%;margin-top:15px;margin-bottom:15px;border-radius:50%" />
-            <h4 class="text-center">by @item.authen</h4>
+            <h4 class="text-center">by @user</h4>
             <h5 class="text-center levelbg">นักธรรมระดับ 10</h5>
         </div>
         <div class="col" style="background:#C4C4C4;border-radius: 0px 10px 10px 0px;">

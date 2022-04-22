@@ -1,4 +1,5 @@
-﻿using FireSharp.Config;
+﻿using Firebase.Auth;
+using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using Microsoft.AspNetCore.Mvc;
@@ -10,12 +11,21 @@ namespace webBudda.Controllers
 {
     public class blogController : Controller
     {
-        IFirebaseConfig config = new FirebaseConfig
+
+        IFirebaseConfig config = new FireSharp.Config.FirebaseConfig
         {
             AuthSecret = "qt3bdVVIXN4rcf0NACZkQLivDFnyKkZerngugoLM",
             BasePath = "https://budbudworld-default-rtdb.firebaseio.com"
         };
+        FirebaseAuthProvider auth;
         IFirebaseClient client;
+
+        private readonly ILogger<blogController> _logger;
+        public blogController(ILogger<blogController> logger)
+        {
+            _logger = logger;
+            auth = new FirebaseAuthProvider(new Firebase.Auth.FirebaseConfig("AIzaSyAYbfDjXRx9S0dnwub_BH5bk75rJMPDAbU"));
+        }
         [HttpGet]
         public IActionResult Index(String typep)
         {
@@ -41,8 +51,9 @@ namespace webBudda.Controllers
             return View(showlist);
         }
         [HttpGet]
-        public IActionResult Viewblog(string id)
+        public async Task<IActionResult> Viewblog(string id)
         {
+
             client = new FireSharp.FirebaseClient(config);
             FirebaseResponse response = client.Get("blogData/"+id);
             blog data = JsonConvert.DeserializeObject<blog>(response.Body);
@@ -65,8 +76,36 @@ namespace webBudda.Controllers
             data.CommentList = listComment;
             ViewBag.blogComment = data.CommentList.ToList();
             ViewBag.blog = data;
+
+            var token = HttpContext.Session.GetString("_UserToken");
+            if (token != null)
+            {
+                User user = await auth.GetUserAsync(token);
+                ViewBag.user = user.DisplayName;
+            }
+            else
+            {
+                ViewBag.user = "Unknown";
+            }
+
             return View();
         }
+
+        //public IActionResult Content(string typep)
+        //{
+        //    blogRepo blogRepo = new blogRepo();
+        //    List<blog> blogList = blogRepo.GetBlogList();
+        //    List<blog> blogFilter = new List<blog>();
+        //    foreach (blog blog in blogList)
+        //    {
+        //        if (blog.typep == typep)
+        //        {
+        //            blogFilter.Add(blog);
+        //        }
+        //    }
+        //    return View(blogFilter.ToList());
+        //}
+
         //create blog
         [HttpPost]
         public ActionResult Create(blog blog)

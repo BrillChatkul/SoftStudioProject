@@ -190,81 +190,97 @@ namespace webBudda.Controllers
 
         public ActionResult addLikeToFirebase(string id, string email)
         {
-            client = new FireSharp.FirebaseClient(config);
-            Likeblog likeblog = new Likeblog { Idblog = id, Email = email };
-
-            Boolean likeUser = false;
-            FirebaseResponse GetResponse = client.Get("LikeList");
-            dynamic LikeList = JsonConvert.DeserializeObject<dynamic>(GetResponse.Body);
-            var listLikeall = new List<Likeblog>();
-            var listLike = new List<Likeblog>();
-            if (LikeList != null)
-            {
-                foreach (var item in LikeList)
-                {
-                    listLikeall.Add(JsonConvert.DeserializeObject<Likeblog>(((JProperty)item).Value.ToString()));
-                }
-                foreach (var item in listLikeall)
-                {
-                    if (item.Idblog == id)
-                        if (item.Email == email)
-                        {
-                            likeUser = true;
-                            likeblog.Id = item.Id;
-                        }
-                }
-            }
-            if (likeUser == true)
-            {
-                GetResponse = client.Delete("LikeList/" + likeblog.Id);
+            var token = HttpContext.Session.GetString("_UserToken");
+            if (token == null) {
+                return RedirectToAction("SignIn", "Home");
             }
             else
             {
-                PushResponse response = client.Push("LikeList/", likeblog);
-                likeblog.Id = response.Result.name;
-                SetResponse setResponse = client.Set("LikeList/" + likeblog.Id, likeblog);
+                client = new FireSharp.FirebaseClient(config);
+                Likeblog likeblog = new Likeblog { Idblog = id, Email = email };
+
+                Boolean likeUser = false;
+                FirebaseResponse GetResponse = client.Get("LikeList");
+                dynamic LikeList = JsonConvert.DeserializeObject<dynamic>(GetResponse.Body);
+                var listLikeall = new List<Likeblog>();
+                var listLike = new List<Likeblog>();
+                if (LikeList != null)
+                {
+                    foreach (var item in LikeList)
+                    {
+                        listLikeall.Add(JsonConvert.DeserializeObject<Likeblog>(((JProperty)item).Value.ToString()));
+                    }
+                    foreach (var item in listLikeall)
+                    {
+                        if (item.Idblog == id)
+                            if (item.Email == email)
+                            {
+                                likeUser = true;
+                                likeblog.Id = item.Id;
+                            }
+                    }
+                }
+                if (likeUser == true)
+                {
+                    GetResponse = client.Delete("LikeList/" + likeblog.Id);
+                }
+                else
+                {
+                    PushResponse response = client.Push("LikeList/", likeblog);
+                    likeblog.Id = response.Result.name;
+                    SetResponse setResponse = client.Set("LikeList/" + likeblog.Id, likeblog);
+                }
+                return RedirectToAction("Viewblog", "Blog", new { id = id });
             }
-            return RedirectToAction("Viewblog", "Blog", new { id = id });
+            
 
         }
 
         public ActionResult addLikeComment(string id, string email,string blogid)
         {
-            client = new FireSharp.FirebaseClient(config);
-            LikeComment likeblog = new LikeComment { IdComment = id, Email = email };
-
-            Boolean likeUser = false;
-            FirebaseResponse GetResponse = client.Get("LikeCommentList");
-            dynamic LikeList = JsonConvert.DeserializeObject<dynamic>(GetResponse.Body);
-            var listLikeall = new List<LikeComment>();
-            var listLike = new List<LikeComment>();
-            if (LikeList != null)
+            var token = HttpContext.Session.GetString("_UserToken");
+            if (token == null)
             {
-                foreach (var item in LikeList)
-                {
-                    listLikeall.Add(JsonConvert.DeserializeObject<LikeComment>(((JProperty)item).Value.ToString()));
-                }
-                foreach (var item in listLikeall)
-                {
-                    if (item.IdComment == id)
-                        if (item.Email == email)
-                        {
-                            likeUser = true;
-                            likeblog.Id = item.Id;
-                        }
-                }
-            }
-            if (likeUser == true)
-            {
-                GetResponse = client.Delete("LikeCommentList/" + likeblog.Id);
+                return RedirectToAction("SignIn", "Home");
             }
             else
             {
-                PushResponse response = client.Push("LikeCommentList/", likeblog);
-                likeblog.Id = response.Result.name;
-                SetResponse setResponse = client.Set("LikeCommentList/" + likeblog.Id, likeblog);
+                client = new FireSharp.FirebaseClient(config);
+                LikeComment likeblog = new LikeComment { IdComment = id, Email = email };
+
+                Boolean likeUser = false;
+                FirebaseResponse GetResponse = client.Get("LikeCommentList");
+                dynamic LikeList = JsonConvert.DeserializeObject<dynamic>(GetResponse.Body);
+                var listLikeall = new List<LikeComment>();
+                var listLike = new List<LikeComment>();
+                if (LikeList != null)
+                {
+                    foreach (var item in LikeList)
+                    {
+                        listLikeall.Add(JsonConvert.DeserializeObject<LikeComment>(((JProperty)item).Value.ToString()));
+                    }
+                    foreach (var item in listLikeall)
+                    {
+                        if (item.IdComment == id)
+                            if (item.Email == email)
+                            {
+                                likeUser = true;
+                                likeblog.Id = item.Id;
+                            }
+                    }
+                }
+                if (likeUser == true)
+                {
+                    GetResponse = client.Delete("LikeCommentList/" + likeblog.Id);
+                }
+                else
+                {
+                    PushResponse response = client.Push("LikeCommentList/", likeblog);
+                    likeblog.Id = response.Result.name;
+                    SetResponse setResponse = client.Set("LikeCommentList/" + likeblog.Id, likeblog);
+                }
+                return RedirectToAction("Viewblog", "Blog", new { id = blogid });
             }
-            return RedirectToAction("Viewblog", "Blog", new { id = blogid });
         }
 
         public async Task<ActionResult> DeleteComment(string id, string email, string blogid)

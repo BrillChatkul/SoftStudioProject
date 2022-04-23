@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model webBudda.Models.blog
+
+<h3><b>Forms: Strongly Typed</b></h3>
+
+@{
+    var listItems = new List<SelectListItem>
+    {
+    new SelectListItem { Text = "โลกธรรมะ", Value = "โลกธรรมะ"},
+    new SelectListItem { Text = "ธรรมะท่องเที่ยว", Value = "ธรรมะท่องเที่ยว"}
+    };
+        
+}
+
+@using (Html.BeginForm("Create", "Admin", FormMethod.Post))
+{ 
+    <table>
+        <tr>
+            <td>หัวข้อเรื่อง: </td>
+            <td>@Html.TextBoxFor(m => m.title)</td>
+        </tr>
+        <tr>
+            <td>ผู้แต่ง: </td>
+            <td>@Html.TextBoxFor(m => m.authen)</td>
+        </tr>
+        <tr>
+            <td>รายละเอียด: </td>
+            <td>@Html.TextBoxFor(m => m.content)</td>
+        </tr>
+        <tr>
+            <td>ประเภท: </td>
+            <td>@Html.DropDownListFor(m => m.typep,listItems,"-- เลือกประเภท --")</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Submit Form" /></td>
+        </tr>
+    </table>
+}

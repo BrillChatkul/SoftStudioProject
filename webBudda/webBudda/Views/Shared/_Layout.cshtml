@@ -104,7 +104,7 @@
     </style>
 </head>
 <body>
-    <header>
+    <header style="z-index:50">
         <div class="topnav"><marquee>🧘ยินดีต้อนรับเข้าสู่ โลกแห่งแสงธรรม คุณธรรรมแห่งความดี Bud Bud World...</marquee></div>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 mynav">
             <div class="container-fluid">
@@ -119,13 +119,16 @@
                             <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">Bud Bud World</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Travel">เนื้อหา</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Blog" asp-action="Index" asp-route-typep="ธรรมะท่องเที่ยว">ท่องเที่ยว</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Content">ท่องเที่ยว</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Blog" asp-action="Index" asp-route-typep="โลกธรรมะ">เรื่องเล่า</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="ContentAdmin">ท่องเที่ยว(admin)</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Admin" asp-action="Create">CreateBlog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Admin" asp-action="ContentAdmin">ท่องเที่ยว(admin)</a>
                         </li>
                         <li class="nav-item">
                             <button class="loginbutton"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="login">เข้าสู่ระบบ</a></button>

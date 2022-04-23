@@ -1,9 +1,111 @@
-﻿@{
+﻿@model Firebase.Auth.User
+@{
     ViewData["Title"] = "Home Page";
 }
-
+<style>
+        body {
+            background-image:url('https://sv1.picz.in.th/images/2022/04/16/8uEpnS.jpg');
+            background-repeat: repeat-y;
+            background-size: 100%;
+        }
+        .kratoo-title {
+            align-items: center;
+            text-align: center;
+        }
+        .topnav {
+            position:absolute;
+            min-width:100%;
+            height:30px;
+            background:#F2B860;
+        }
+        .mynav {
+            background:#B79C74;
+            top:30px;
+        }
+        .loginbutton {
+            background:#C4C4C4;
+            border-radius:20px;
+            border:none;
+            position:absolute;
+            width:auto;
+            transition: 0.3s;
+        }
+        .loginbutton:hover {
+            background:#909090;
+        }
+        .loginbutton:active {
+            background:#FFFFFF;
+        }
+        .votebutton {
+            background:#BF9500;
+            border-radius:10px;
+            border:none;
+            width:auto;
+            height:30px;
+            transition: 0.3s;
+            margin-bottom:10px;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+        }
+        .votebutton:hover {
+            background:#9D6200;
+        }
+        .votebutton:active {
+            background:green;
+        }
+        .adminbutton {
+            background:#F87D76;
+            border-radius:10px;
+            border:none;
+            width:auto;
+            height:30px;
+            transition: 0.3s;
+            margin-bottom:10px;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+        }
+        .adminbutton:hover {
+            background:#FA9F98;
+        }
+        .adminbutton:active {
+            background:green;
+        }
+        .contain {
+            width: 100%;
+            padding-right: var(--bs-gutter-x,.75rem);
+            padding-left: var(--bs-gutter-x,.75rem);
+            margin-right: auto;
+            margin-left: auto;
+            margin-top:50px
+        }
+        header {
+            position:sticky;
+            top:0;
+        }
+        .footcontent {
+            justify-content:space-around;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            white-space: nowrap;
+            background-color:#F2B860;
+        }
+        .footbtn {
+            text-decoration: none;
+            color:black;
+        }
+        .levelbg {
+            background-color:#BF9500;
+            width:100%;
+        }
+    </style>
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Login Success ! @Model.DisplayName @Model.Email</h1>
+    <hr></hr>
+    <h2 class="display-4">Welcome Sittata is Waiting For You ++</h2>
+    <img src="Pic/Sittata.png" alt="Sittata Love You All" width="1000" height="600">
     <p>YEAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH</p>
+
+    
+   
+                      
+
 </div>

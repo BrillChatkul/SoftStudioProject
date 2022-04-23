@@ -67,60 +67,89 @@ namespace webBudda.Controllers
             }
 
             client = new FireSharp.FirebaseClient(config);
-            FirebaseResponse response = client.Get("blogData/"+id);
+            FirebaseResponse response = client.Get("blogData/" + id);
             blog data = JsonConvert.DeserializeObject<blog>(response.Body);
-            data.UserLike = false;
-            data.Like = 0;
-
-            response = client.Get("LikeList"); //GET LIKE
-            dynamic LikeList = JsonConvert.DeserializeObject<dynamic>(response.Body);
-            var listLikeall = new List<Likeblog>();
-            var listLike = new List<Likeblog>();
-            if (LikeList != null)
+            ViewBag.blogComment = new List<Comment>();
+            ViewBag.blog = new blog();
+            if (data != null)
             {
-                foreach (var item in LikeList)
+                data.UserLike = false;
+                data.Like = 0;
+
+                response = client.Get("LikeList"); //GET LIKE
+                dynamic LikeList = JsonConvert.DeserializeObject<dynamic>(response.Body);
+                var listLikeall = new List<Likeblog>();
+                var listLike = new List<Likeblog>();
+                if (LikeList != null)
                 {
-                    listLikeall.Add(JsonConvert.DeserializeObject<Likeblog>(((JProperty)item).Value.ToString()));
-                }
-                foreach (var item in listLikeall)
-                {
-                    if (item.Idblog == id)
+                    foreach (var item in LikeList)
                     {
-                        listLike.Add(item);
-                        if (item.Email == ViewBag.Email)
+                        listLikeall.Add(JsonConvert.DeserializeObject<Likeblog>(((JProperty)item).Value.ToString()));
+                    }
+                    foreach (var item in listLikeall)
+                    {
+                        if (item.Idblog == id)
                         {
-                            data.UserLike = true;
+                            listLike.Add(item);
+                            if (item.Email == ViewBag.Email)
+                            {
+                                data.UserLike = true;
+                            }
+                        }
+                    }
+                    data.Like = listLike.Count;
+                }
+
+                response = client.Get("LikeCommentList");//Get like
+                dynamic LikeCommentList = JsonConvert.DeserializeObject<dynamic>(response.Body);
+                var listlikeCommentAll = new List<LikeComment>();
+
+                if (LikeCommentList != null)
+                {
+                    foreach (var item in LikeCommentList)
+                    {
+                        listlikeCommentAll.Add(JsonConvert.DeserializeObject<LikeComment>(((JProperty)item).Value.ToString()));
+                    }
+                }
+
+                response = client.Get("commentBlog");//Get comment
+                dynamic CommentList = JsonConvert.DeserializeObject<dynamic>(response.Body);
+                var listCommentAll = new List<Comment>();
+                var listComment = new List<Comment>();
+                if (CommentList != null)
+                {
+                    foreach (var item in CommentList)
+                    {
+                        listCommentAll.Add(JsonConvert.DeserializeObject<Comment>(((JProperty)item).Value.ToString()));
+                    }
+                    foreach (var item in listCommentAll)
+                    {
+                        if (item.blogID == id)
+                        {
+                            item.UserLike = false;
+                            var listlikeComment = new List<LikeComment>();
+                            foreach (var like in listlikeCommentAll)
+                            {
+                                if (item.Id == like.IdComment)
+                                {
+                                    listlikeComment.Add(like);
+                                    if (like.Email == ViewBag.Email)
+                                    {
+                                        item.UserLike = true;
+                                    }
+                                }
+
+                            }
+                            item.Like = listlikeComment.Count;
+                            listComment.Add(item);
+
                         }
                     }
                 }
-                data.Like = listLike.Count;
+                data.CommentList = listComment;
+                ViewBag.blogComment = data.CommentList.ToList();
+                ViewBag.blog = data;
             }
-            
-
-            response = client.Get("commentBlog");
-            dynamic CommentList = JsonConvert.DeserializeObject<dynamic>(response.Body);
-            var listCommentAll = new List<Comment>();
-            var listComment = new List<Comment>();
-            if (CommentList != null)
-            {
-                foreach (var item in CommentList)
-                {
-                    listCommentAll.Add(JsonConvert.DeserializeObject<Comment>(((JProperty)item).Value.ToString()));
-                }
-                foreach (var item in listCommentAll)
-                {
-                    if (item.blogID == id)
-                    {
-                        listComment.Add(item);
-                    }
-                }
-            }
-            data.CommentList = listComment;
-            ViewBag.blogComment = data.CommentList.ToList();
-            ViewBag.blog = data;
-
-            
-
             return View();
         }
 
@@ -159,10 +188,10 @@ namespace webBudda.Controllers
             SetResponse setResponse = client.Set("commentBlog/" + data.Id, data);
         }
 
-        public ActionResult addLikeToFirebase(string id,string email)
+        public ActionResult addLikeToFirebase(string id, string email)
         {
             client = new FireSharp.FirebaseClient(config);
-            Likeblog likeblog = new Likeblog{ Idblog = id, Email = email };
+            Likeblog likeblog = new Likeblog { Idblog = id, Email = email };
 
             Boolean likeUser = false;
             FirebaseResponse GetResponse = client.Get("LikeList");
@@ -178,14 +207,14 @@ namespace webBudda.Controllers
                 foreach (var item in listLikeall)
                 {
                     if (item.Idblog == id)
-                        if(item.Email == email)
+                        if (item.Email == email)
                         {
                             likeUser = true;
                             likeblog.Id = item.Id;
                         }
                 }
-             }
-            if(likeUser == true)
+            }
+            if (likeUser == true)
             {
                 GetResponse = client.Delete("LikeList/" + likeblog.Id);
             }
@@ -199,6 +228,69 @@ namespace webBudda.Controllers
 
         }
 
+        public ActionResult addLikeComment(string id, string email,string blogid)
+        {
+            client = new FireSharp.FirebaseClient(config);
+            LikeComment likeblog = new LikeComment { IdComment = id, Email = email };
+
+            Boolean likeUser = false;
+            FirebaseResponse GetResponse = client.Get("LikeCommentList");
+            dynamic LikeList = JsonConvert.DeserializeObject<dynamic>(GetResponse.Body);
+            var listLikeall = new List<LikeComment>();
+            var listLike = new List<LikeComment>();
+            if (LikeList != null)
+            {
+                foreach (var item in LikeList)
+                {
+                    listLikeall.Add(JsonConvert.DeserializeObject<LikeComment>(((JProperty)item).Value.ToString()));
+                }
+                foreach (var item in listLikeall)
+                {
+                    if (item.IdComment == id)
+                        if (item.Email == email)
+                        {
+                            likeUser = true;
+                            likeblog.Id = item.Id;
+                        }
+                }
+            }
+            if (likeUser == true)
+            {
+                GetResponse = client.Delete("LikeCommentList/" + likeblog.Id);
+            }
+            else
+            {
+                PushResponse response = client.Push("LikeCommentList/", likeblog);
+                likeblog.Id = response.Result.name;
+                SetResponse setResponse = client.Set("LikeCommentList/" + likeblog.Id, likeblog);
+            }
+            return RedirectToAction("Viewblog", "Blog", new { id = blogid });
+        }
+
+        public async Task<ActionResult> DeleteComment(string id, string email, string blogid)
+        {
+            var token = HttpContext.Session.GetString("_UserToken");
+            if (token != null)
+            {
+                try
+                {   
+                    client = new FireSharp.FirebaseClient(config);
+                    User user = await auth.GetUserAsync(token);
+                    if (user.Email == email) {
+                        FirebaseResponse response = client.Delete("commentBlog/" + id);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError(string.Empty, ex.Message);
+                }
+                return RedirectToAction("Viewblog", "Blog", new { id = blogid });
+            }
+            else
+            {
+                return RedirectToAction("Viewblog", "Blog", new { id = blogid });
+            }
+        }
 
 
         //public IActionResult Content(string typep)

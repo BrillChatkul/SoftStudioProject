@@ -60,17 +60,23 @@
             <div class="col" style="background:#C4C4C4;border-radius: 0px 10px 10px 0px;">
                 <div class="col-10" style="margin-left:auto;margin-right:auto;margin-top:15px">
                 <p>@comment.Content</p>
-                <a asp-controller="Blog" asp-action="addLikeToFirebase" asp-route-id="@item.Id" asp-route-email="@userE">
-                    @if (@item.UserLike == false)
+                <a asp-controller="Blog" asp-action="addLikeComment" asp-route-id="@comment.Id" asp-route-blogid="@item.Id" asp-route-email="@userE">
+                    @if (@comment.UserLike == false)
                     {
-                        <button class="votebutton"><img src="https://cdn-icons-png.flaticon.com/512/2146/2146434.png" width="20" height="20" /> อนุโมทนา</button>
+                        <button class="votebutton"><img src="https://cdn-icons-png.flaticon.com/512/2146/2146434.png" width="20" height="20"/> อนุโมทนา</button>
                     }
                     else
                     {
-                        <button class="votebutton"><img src="https://cdn-icons-png.flaticon.com/512/2146/2146434.png" width="20" height="20" /> ยกเลิกอนุโมทนา</button>
+                        <button class="votebutton"><img src="https://cdn-icons-png.flaticon.com/512/2146/2146434.png" width="20" height="20"/> ยกเลิกอนุโมทนา</button>
                     }
                 </a> 
-                <p>@item.Like อนุโมทนาแล้ว</p>
+                    @if(@userE == @comment.Email)
+                    {
+                        <a asp-controller="Blog" asp-action="DeleteComment" asp-route-id="@comment.Id" asp-route-email="@userE" asp-route-blogid="@item.Id">
+                            <button class="votebutton"><img src="https://cdn-icons-png.flaticon.com/512/2146/2146434.png" width="20" height="20"/> ลบ Comment </button>
+                            </a>
+                    }
+                <p>@comment.Like อนุโมทนาแล้ว</p>
 
                     
                 </div>
@@ -94,3 +100,6 @@
         </div>
     </div>}
 </div>
+@section Scripts {
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+}

@@ -46,21 +46,7 @@ namespace webBudda.Controllers
             data.topfeed = false;
             SetResponse setResponse = client.Set("blogData/" + data.Id, data);
         }
-        public IActionResult ContentAdmin()
-        {
-            client = new FireSharp.FirebaseClient(config);
-            FirebaseResponse response = client.Get("blogData");
-            dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
-            var list = new List<blog>();
-            if (data != null)
-            {
-                foreach (var item in data)
-                {
-                    list.Add(JsonConvert.DeserializeObject<blog>(((JProperty)item).Value.ToString()));
-                }
-            }
-            return View(list);
-        }
+        
         public ActionResult setTopFeed(string id,Boolean oldstatus)
         {
             if(oldstatus == true) { oldstatus = false; }
@@ -75,6 +61,22 @@ namespace webBudda.Controllers
             client = new FireSharp.FirebaseClient(config);
             FirebaseResponse response = client.Delete("blogData/" + id);
             return RedirectToAction("ContentAdmin");
+        }
+
+        public IActionResult ContentAdmin()
+        {
+            client = new FireSharp.FirebaseClient(config);
+            FirebaseResponse response = client.Get("blogData");
+            dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
+            var list = new List<blog>();
+            if (data != null)
+            {
+                foreach (var item in data)
+                {
+                    list.Add(JsonConvert.DeserializeObject<blog>(((JProperty)item).Value.ToString()));
+                }
+            }
+            return View(list);
         }
     }
 }

@@ -34,7 +34,7 @@ namespace webBudda.Controllers
             {
                 ModelState.AddModelError(string.Empty, ex.Message);
             }
-            return RedirectToAction("Admin", "ContentAdmin");
+            return RedirectToAction("ContentAdmin","Admin");
         }
         private void addBlogToFirebase(blog blog)
         {
@@ -70,8 +70,11 @@ namespace webBudda.Controllers
             return RedirectToAction("ContentAdmin");
         }
 
-
-
-
+        public ActionResult Deleteblog(string id)
+        {
+            client = new FireSharp.FirebaseClient(config);
+            FirebaseResponse response = client.Delete("blogData/" + id);
+            return RedirectToAction("ContentAdmin");
+        }
     }
 }

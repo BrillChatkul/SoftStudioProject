@@ -33,21 +33,6 @@
         
     }
 </style>
-<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-<script type="text/javascript">
-    function onClickTopFeed(Data) {
-        $.ajax({
-        type: "POST",
-        url: '/Admin/ContentAdmin',
-        data: { Data:Data }
-        }
-    });
-    }
-
-    
-}
-
-</script>
 <div>
     <div class="blogTable">
         <h2 style="text-align:center;background-color:#FFC700;margin-bottom:0px;padding:5px;">ห้องสนทนาธรรม / เนื้อหา</h2>
@@ -70,13 +55,15 @@
                                     <p style="font-size:150%">&#9734 TOP FEED</p>
                                 }
                                 </button></a>   
-                            <button style="border:none;background:transparent;font-size:150%" onclick="onClickTopFeed(@item.title)"><i class='fas fa-edit'></i></button>
+                            <button style="border:none;background:transparent;font-size:150%"><i class='fas fa-edit'></i></button>
+                            <button style="background:transparent;font-size:150%" onclick="GetBlog('@item.Id','@item.title')">Delete</button>
                         </div>
                         <p style="text-align:end">ผู้ตั้งกระทู้ : @item.authen</p>  
                     </div>
                 </div>
                 
             }
+            <p id="demo"></p>
       <div style="height:92px"></div>
       </div>
       
@@ -84,3 +71,18 @@
     
     
 </div>
+@section Scripts {
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script type="text/javascript">
+    function GetBlog(id,title)
+    {
+        let confirmAction = confirm("ต้องการลบ blog "+title+" ?");
+        if (confirmAction) {
+          var url = '@Url.Action("Deleteblog", "Admin")/' + id;
+          window.location.href = url;
+        }
+        
+    }
+</script>
+}
+

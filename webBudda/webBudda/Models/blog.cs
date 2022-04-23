@@ -11,7 +11,14 @@
         public Boolean topfeed { get; set; }
 
         public List<Comment> CommentList { get; set; }
+        public int Like { get; set; }
+        public Boolean UserLike { get; set; }
+    }
 
-
+    public class Likeblog
+    {
+        public string Id { get; set; }
+        public string Idblog { get; set; }
+        public string Email { get; set; }
     }
 }

@@ -1,11 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "QnDBOGOg5xtSLVnk4SkDcSz+dBqw8M+6q5ltxrdSa173AJmE24EJvgchmz3BYGoq8zElwFshhHGR9v3nbwDOXg==",
+  "dgSpecHash": "pjSr+c6LTXKkTK+CPNuSu0LsYwd0YFZpJhg/YjfMAtpgXKwP4fwXNFXGVt8gNrK4I6C0uKAv9JeRQQPfivA/rA==",
   "success": true,
   "projectFilePath": "E:\\Project\\SoftStudioProject\\webBudda\\webBudda\\webBudda.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\billc\\.nuget\\packages\\firebase.auth\\1.0.0\\firebase.auth.1.0.0.nupkg.sha512",
+    "C:\\Users\\billc\\.nuget\\packages\\firebaseadmin\\2.3.0\\firebaseadmin.2.3.0.nupkg.sha512",
     "C:\\Users\\billc\\.nuget\\packages\\firesharp\\2.0.4\\firesharp.2.0.4.nupkg.sha512",
+    "C:\\Users\\billc\\.nuget\\packages\\google.api.gax\\3.2.0\\google.api.gax.3.2.0.nupkg.sha512",
+    "C:\\Users\\billc\\.nuget\\packages\\google.api.gax.rest\\3.2.0\\google.api.gax.rest.3.2.0.nupkg.sha512",
+    "C:\\Users\\billc\\.nuget\\packages\\google.apis\\1.49.0\\google.apis.1.49.0.nupkg.sha512",
+    "C:\\Users\\billc\\.nuget\\packages\\google.apis.auth\\1.49.0\\google.apis.auth.1.49.0.nupkg.sha512",
+    "C:\\Users\\billc\\.nuget\\packages\\google.apis.core\\1.49.0\\google.apis.core.1.49.0.nupkg.sha512",
     "C:\\Users\\billc\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\billc\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\billc\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",

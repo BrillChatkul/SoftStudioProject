@@ -38,6 +38,10 @@ namespace webBudda.Controllers
             {
                 //User user = await auth.GetUserAsync(token);
                 User user = await auth.GetUserAsync(token);
+                if (user.Email == "admin@budworld.com")
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
                 return View(user);
             }
             else
@@ -131,6 +135,11 @@ namespace webBudda.Controllers
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> EditUser()
         {
             return View();
         }

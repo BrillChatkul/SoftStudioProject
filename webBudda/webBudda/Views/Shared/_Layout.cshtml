@@ -125,12 +125,6 @@
                             <a class="nav-link text-light" asp-area="" asp-controller="Blog" asp-action="Index" asp-route-typep="โลกธรรมะ">เรื่องเล่า</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Admin" asp-action="Create">CreateBlog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Admin" asp-action="ContentAdmin">ท่องเที่ยว(admin)</a>
-                        </li>
-                        <li class="nav-item">
                             @if(ViewData["Email"] != null && ViewData["Email"] != "Unknown")
                             {
                                 <button class="loginbutton"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="LogOut">ออกจากระบบ</a></button>

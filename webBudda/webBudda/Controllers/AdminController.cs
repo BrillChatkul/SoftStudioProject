@@ -25,6 +25,12 @@ namespace webBudda.Controllers
             _logger = logger;
             auth = new FirebaseAuthProvider(new Firebase.Auth.FirebaseConfig("AIzaSyAYbfDjXRx9S0dnwub_BH5bk75rJMPDAbU"));
         }
+
+        public async Task<ActionResult> Index()
+        {
+            return View();
+        }
+
         public async Task<ActionResult> Create()
         {
             var token = HttpContext.Session.GetString("_UserToken");
@@ -133,6 +139,10 @@ namespace webBudda.Controllers
             client = new FireSharp.FirebaseClient(config);
             SetResponse response = client.Set("blogData/" + blog.Id, blog);
             return RedirectToAction("ContentAdmin");
+        }
+        public async Task<ActionResult> ManageUser()
+        {
+            return View();
         }
     }
 }

@@ -78,5 +78,20 @@ namespace webBudda.Controllers
             }
             return View(list);
         }
+
+        public ActionResult EditBlog(string id)
+        {
+            client = new FireSharp.FirebaseClient(config);
+            FirebaseResponse response = client.Get("blogData/" + id);
+            blog data = JsonConvert.DeserializeObject<blog>(response.Body);
+            return View(data);
+        }
+        [HttpPost]
+        public ActionResult EditBlog(blog blog)
+        {
+            client = new FireSharp.FirebaseClient(config);
+            SetResponse response = client.Set("blogData/" + blog.Id, blog);
+            return RedirectToAction("ContentAdmin");
+        }
     }
 }

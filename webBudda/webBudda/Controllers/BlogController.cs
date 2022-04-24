@@ -27,8 +27,20 @@ namespace webBudda.Controllers
             auth = new FirebaseAuthProvider(new Firebase.Auth.FirebaseConfig("AIzaSyAYbfDjXRx9S0dnwub_BH5bk75rJMPDAbU"));
         }
         [HttpGet]
-        public IActionResult Index(String typep)
+        public async Task<IActionResult> Index(String typep)
         {
+            var token = HttpContext.Session.GetString("_UserToken");
+            if (token != null)
+            {
+                User user = await auth.GetUserAsync(token);
+                ViewBag.user = user.DisplayName;
+                ViewBag.Email = user.Email;
+            }
+            else
+            {
+                ViewBag.user = "";
+                ViewBag.Email = "Unknown";
+            }
             client = new FireSharp.FirebaseClient(config);
             FirebaseResponse response = client.Get("blogData");
             dynamic data =JsonConvert.DeserializeObject<dynamic>(response.Body);

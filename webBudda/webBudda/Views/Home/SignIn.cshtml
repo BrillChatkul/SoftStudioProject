@@ -28,12 +28,13 @@ body{
 a{color:inherit;text-decoration:none}
 
 .login-wrap{
+
 	width:100%;
 	margin:auto;
 	max-width:525px;
 	min-height:700px;
 	position:relative;
-	background:url(https://raw.githubusercontent.com/BrillChatkul/SoftStudioProject/PluemBranch2/PIC/arun.png) no-repeat center  ;
+	background:url(https://raw.githubusercontent.com/BrillChatkul/SoftStudioProject/PluemBranch2/PIC/Arun%20Temple.png) no-repeat center  ;
 	position: relative;
 	background-size: auto, cover;
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
@@ -170,8 +171,23 @@ a{color:inherit;text-decoration:none}
 .foot-lnk{
 	text-align:center;
 }
+.modalbtt{
+
+	text-transform:uppercase;
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background:rgba(255,255,255,.1);
+	width:100%;
+	display:block;
+	color:#000;
+	border-color:#1161ee;
+}
 </style>
-<div class="login-wrap">
+<br></br>
+<br></br>
+<br></br>
+<div class="login-wrap content">
 	<div class="login-html">
 		<input id="tab-1" type="radio" name="tab" class="sign-in text-center" checked><label for="tab-1" class="tab">Sign In</label>
 		<input id="tab-2" type="radio" name="tab" class="sign-up text-center"><label for="tab-2" class="tab">Sign Up</label>
@@ -180,7 +196,7 @@ a{color:inherit;text-decoration:none}
 			<form asp-action="SignIn">
 			<div class="sign-in-htm">
 				<div class="group">
-					<label asp-for="Email" class="control-label mt-2">Username</label><br></br>
+					<label asp-for="Email" class="control-label mt-2">Email</label><br></br>
 					<input asp-for="Email" type="text" class="input">
 					<span asp-validation-for="Email" class="text-danger"></span>
 				</div>
@@ -189,20 +205,20 @@ a{color:inherit;text-decoration:none}
 					<label asp-for="Password" class="control-label">Password</label><br></br>
 					<input asp-for="Password" id="pass" type="password" class="input" data-type="password">
 					 <span asp-validation-for="Password" class="text-danger"></span>
-				</div>
+				</div><br></br>
 
-				<div class="group">
+				<div class="group text-center">
 					<input id="check" type="checkbox" class="check" checked>
 					<label for="check"><span class="icon"></span> Keep me Signed in</label>
 				</div>
 
 				<div class="group">
-					<input type="submit" value="Create" class="button" value="Sign In">
+					<input type="submit" class="button" value="Sign In">
 				</div>
 
 				<div class="hr"></div>
 				<div class="foot-lnk">
-					<a href="#forgot">Forgot Password?</a>
+					<u><a href="#forgot" data-bs-toggle="modal" data-bs-target="#exampleModal">Forgot Password?</a></u>
 				</div>
 			</div>
 			</form>
@@ -239,30 +255,40 @@ a{color:inherit;text-decoration:none}
 	</div>
 </div>
 
+ @*Modal Forgot*@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Forgot Password ?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+		  <b></br><u><h1>Contact Admin</h1></u></b>
+		  <h1>adminBudBud@bbw.com</h1> 
+		  <h3>or</h3>
+		  <div > 
+			  <div class="group">
+					<h1><label asp-for="Email" class="control-label mt-2">Email</label></h1><br></br>
+					<input asp-for="Email" type="email" class="modalbtt input border border-primary " onfocus="this.value=''" value="Enter You Email.." id="myInput">
+					<span asp-validation-for="Email" class="text-danger"></span>
+				</div>
+		  </div>
+		 
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="SignIn">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-
-			<div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" onclick="document.getElementById('myInput').value = ''" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send Email</button>
+      </div>
     </div>
+  </div>
 </div>
+
+
+
+
+
 
 
 @section Scripts {

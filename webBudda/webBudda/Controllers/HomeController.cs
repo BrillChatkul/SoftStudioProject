@@ -1,6 +1,8 @@
 ﻿using Firebase.Auth;
 using FirebaseAdmin;
 using FirebaseAdmin.Auth;
+using FireSharp.Interfaces;
+using FireSharp.Response;
 using Google.Apis.Auth.OAuth2;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -12,9 +14,14 @@ namespace webBudda.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        IFirebaseConfig config = new FireSharp.Config.FirebaseConfig
+        {
+            AuthSecret = "qt3bdVVIXN4rcf0NACZkQLivDFnyKkZerngugoLM",
+            BasePath = "https://budbudworld-default-rtdb.firebaseio.com"
+        };
+        IFirebaseClient client;
         FirebaseAuthProvider auth;
         IConfiguration _config { get; set; }
-
         public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
         {
             _logger = logger;
@@ -47,6 +54,11 @@ namespace webBudda.Controllers
         {
             //create the user
             await auth.CreateUserWithEmailAndPasswordAsync(userModel.Email, userModel.Password, userModel.Name);
+            client = new FireSharp.FirebaseClient(config);
+            PushResponse response = client.Push("EmailList/", userModel.Email);
+            UserFirebase EmailRegister = new UserFirebase { Email = userModel.Email };
+            EmailRegister.Id = response.Result.name;
+            SetResponse setResponse = client.Set("EmailList/" + EmailRegister.Id, EmailRegister);
             //log in the new user
             var fbAuthLink = await auth
                             .SignInWithEmailAndPasswordAsync(userModel.Email, userModel.Password);
@@ -118,22 +130,11 @@ namespace webBudda.Controllers
             return RedirectToAction("SignIn");
         }
 
-
-
-
-
-
-
         public IActionResult Privacy()
         {
             return View();
         }
-
-        public IActionResult Login()
-        {
-            return View();
-        }
-
+        
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

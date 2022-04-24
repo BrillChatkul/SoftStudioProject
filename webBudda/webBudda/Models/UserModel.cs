@@ -17,4 +17,9 @@ namespace webBudda.Models
         [Required]
         public string Password { get; set; }
     }
+    public class UserFirebase
+    {
+        public string Id { get; set; }
+        public string Email { get; set;}
+    }
 }

@@ -54,8 +54,9 @@
                                 }else{
                                     <p style="font-size:150%">&#9734 TOP FEED</p>
                                 }
-                                </button></a>   
-                            <button style="border:none;background:transparent;font-size:150%"><i class='fas fa-edit'></i></button>
+                                </button></a>
+                            <a asp-controller="Admin"  asp-action="EditBlog" asp-route-id="@item.Id"> 
+                            <button style="border:none;background:transparent;font-size:150%"><i class='fas fa-edit'></i></button></a>
                             <button style="background:transparent;font-size:150%" onclick="GetBlog('@item.Id','@item.title')">Delete</button>
                         </div>
                         <p style="text-align:end">ผู้ตั้งกระทู้ : @item.authen</p>  

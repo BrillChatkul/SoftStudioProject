@@ -131,7 +131,13 @@
                             <a class="nav-link text-light" asp-area="" asp-controller="Admin" asp-action="ContentAdmin">ท่องเที่ยว(admin)</a>
                         </li>
                         <li class="nav-item">
-                            <button class="loginbutton"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="login">เข้าสู่ระบบ</a></button>
+                            @if(ViewData["Email"] != null && ViewData["Email"] != "Unknown")
+                            {
+                                <button class="loginbutton"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="LogOut">ออกจากระบบ</a></button>
+                            }else{
+                                <button class="loginbutton"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SignIn">เข้าสู่ระบบ</a></button>
+                            }
+                            
                         </li>
                     </ul>
                 </div>

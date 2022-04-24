@@ -10,6 +10,7 @@
         public string Created { get; set; }
         public int Like { get; set; }
         public Boolean UserLike { get; set; }
+        public Boolean onfeed { get; set; }
     }
         public class LikeComment
     {

@@ -136,7 +136,7 @@ namespace webBudda.Controllers
                     }
                     foreach (var item in listCommentAll)
                     {
-                        if (item.blogID == id)
+                        if (item.blogID == id && item.onfeed == true)
                         {
                             item.UserLike = false;
                             var listlikeComment = new List<LikeComment>();
@@ -193,6 +193,7 @@ namespace webBudda.Controllers
         private void addCommentToFirebase(Comment comment)
         {
             comment.Created = DateTime.Now.ToString();
+            comment.onfeed = true;
             client = new FireSharp.FirebaseClient(config);
             var data = comment;
             PushResponse response = client.Push("commentBlog/", data);

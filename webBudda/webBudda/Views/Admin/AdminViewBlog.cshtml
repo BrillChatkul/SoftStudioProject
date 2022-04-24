@@ -25,7 +25,7 @@
         <div class="col" style="background:#C4C4C4;border-radius: 0px 10px 10px 0px;">
             <div class="col-10" style="margin-left:auto;margin-right:auto;margin-top:15px">
                 <p>@item.content</p>
-                <a asp-controller="Blog" asp-action="addLikeToFirebase" asp-route-id="@item.Id" asp-route-email="@userE">
+                <a asp-controller="Admin" asp-action="addLikeToFirebase" asp-route-id="@item.Id" asp-route-email="@userE">
                     @if (@item.UserLike == false)
                     {
                         <button class="votebutton"><img src="https://cdn-icons-png.flaticon.com/512/2146/2146434.png" width="20" height="20" /> อนุโมทนา</button>
@@ -37,7 +37,8 @@
                 </a> 
                 <p>@item.Like อนุโมทนาแล้ว</p>
             </div>
-           
+            
+            
         </div>
     </div>
     <hr />
@@ -52,16 +53,14 @@
                 <h5 class="text-center levelbg">@if(@comment.Email!="admin@budworld.com"){<span>นักธรรมระดับ 1</span>}else{<span>นักธรรมระดับ 10</span>}</h5>
                 <h6 class="text-center">@comment.Created</h6>
             </div>
-            <div class="col" style="background:#C4C4C4;border-radius: 0px 10px 10px 0px;">
-                @if(@userE == @comment.Email)
-                    {
-                        <a asp-controller="Blog" asp-action="DeleteComment" asp-route-id="@comment.Id" asp-route-email="@userE" asp-route-blogid="@item.Id">
-                            <button style="margin-top:10px;float:right;border:none;background-color:#C4C4C4"><img src="https://www.clipartmax.com/png/full/10-109443_back-x-clip-art-close-button-icon-png.png" width="20" height="20" /></button>
-                        </a>
-                    }
+            <div class="col" style="background:#C4C4C4;border-radius: 0px 10px 10px 0px;position:relative;">
+                @*admin button*@
+                <a asp-controller="Admin" asp-action="DeleteComment" asp-route-id="@comment.Id" asp-route-email="@userE" asp-route-blogid="@item.Id">
+                <button style="margin-top:10px;float:right;border:none;background-color:#C4C4C4"><img src="https://www.clipartmax.com/png/full/10-109443_back-x-clip-art-close-button-icon-png.png" width="20" height="20" /></button>
+                </a>
                 <div class="col-10" style="margin-left:auto;margin-right:auto;margin-top:15px">
-                <p>@comment.Content</p>
-                <a asp-controller="Blog" asp-action="addLikeComment" asp-route-id="@comment.Id" asp-route-blogid="@item.Id" asp-route-email="@userE">
+                    <p>@comment.Content</p>
+                    <a asp-controller="Admin" asp-action="addLikeComment" asp-route-id="@comment.Id" asp-route-blogid="@item.Id" asp-route-email="@userE">
                     @if (@comment.UserLike == false)
                     {
                         <button class="votebutton"><img src="https://cdn-icons-png.flaticon.com/512/2146/2146434.png" width="20" height="20"/> อนุโมทนา</button>
@@ -70,23 +69,31 @@
                     {
                         <button class="votebutton"><img src="https://cdn-icons-png.flaticon.com/512/2146/2146434.png" width="20" height="20"/> ยกเลิกอนุโมทนา</button>
                     }
-                </a> 
-                    
-                <p>@comment.Like อนุโมทนาแล้ว</p>
-
-                    
+                    </a>
+                    <p>@comment.Like อนุโมทนาแล้ว</p>
                 </div>
+                @*admin button*@
+                <a asp-controller="Admin" asp-action="SetonFeedComment" asp-route-id="@comment.Id" asp-route-blogid="@item.Id">
+                @if (comment.onfeed == true)
+                {
+                    <button class="adminbutton" style="margin-right:10px;margin-left:auto;bottom:5px;position:absolute;"><img src="https://www.freeiconspng.com/uploads/eyeball-icon-png-eye-icon-1.png" width="20" height="20" /> ซ่อนความคิดเห็น</button>
+                }
+                else
+                {
+                    <button class="adminbutton" style="margin-right:10px;margin-left:auto;bottom:5px;position:absolute;"><img src="https://www.freeiconspng.com/uploads/eyeball-icon-png-eye-icon-1.png" width="20" height="20" /> แสดงความคิดเห็น</button>
+                }
+                </a>
             </div>
         </div>
     }
-    
+
     <hr />
-    @using (Html.BeginForm("sentComment", "Blog",new{Name=@user,Email=@userE,blogID=@item.Id},FormMethod.Post)){
+    @using (Html.BeginForm("sentComment", "Admin",new{Name=@user,Email=@userE,blogID=@item.Id},FormMethod.Post)){
     <div class="row" style="background-color:#EEECEC;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);border-radius: 10px;">
         <div class="col-2">
             <img src="https://pbs.twimg.com/profile_images/1318385887214936065/MVXmYY99_400x400.jpg" style="max-width:100%;margin-top:15px;margin-bottom:15px;border-radius:50%" />
             <h4 class="text-center">@user</h4>
-            <h5 class="text-center levelbg">@if(@userE =="Unknown"){<span>นักธรรมระดับ 0</span>}else{<span>นักธรรมระดับ 1</span>}</h5>
+            <h5 class="text-center levelbg">นักธรรมระดับ 10</h5>
         </div>
         <div class="col" style="background:#C4C4C4;border-radius: 0px 10px 10px 0px;">
             <div class="col-10" style="margin-left:auto;margin-right:auto;margin-top:15px">

@@ -2,14 +2,11 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-@{
-    ViewData["Title"] = "Home Page";
-}
 
 <meta name="viewport"
           content="width=device-width, initial-scale=1">
      
-    <link rel="stylesheet" href=
+<link rel="stylesheet" href=
 "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
@@ -146,7 +143,7 @@ img {
                 <h2 style="font-size:40px">Software Studio</h2>
             </div>
             <div class="text-center">
-            <h1 class="display-4">Login Success ! @Model.DisplayName @Model.Email</h1>
+            <h1 class="display-4">Login Success ! </h1>
                 <hr></hr>
                 <h2 class="display-4">Welcome Sittata is Waiting For You ++</h2>
                 <a asp-area="" asp-controller="Home" asp-action="EditUser"><button>Edit</button></a>
@@ -157,6 +154,25 @@ img {
             <img src="/images/image6.png" alt="..." class="" width="250" height="250">
         </div>
     </div>
+
+    <div class="d-inline-flex " style="margin-top:3rem;margin-bottom:4rem;">
+        <label>ยินดีต้อนรับ ... ท่านสมาชิก @Model.DisplayName @Model.Email</label>
+        <div class="container" style="position:relative; margin-inline:50px">
+           @* <img src="/images/image 3.png" alt="..." class="lotus">*@
+            <div class="lotus-text-box">แก้ไขโปรไฟล์</div>
+        </div>
+        <div class="container" style="position:relative; margin-inline:50px">
+            @*<img src="/images/image 3.png" alt="..." class="lotus">*@
+            <div class="lotus-text-box">ลบบัญชี</div>
+        </div>     
+        <div class="container" style="position:relative; margin-inline:50px">
+            @*<img src="/images/image 3.png" alt="..." class="lotus" width="90" height="90" style="position:absolute; top:-60px; right:100px">*@
+            <div class="lotus-text-box">ออกสู่ระบบ</div>
+        </div>    
+    </div>
+
+
+
 
     <div class="d-inline-flex " style="margin-top:3rem;margin-bottom:4rem;">
         <div class="container" style="position:relative; margin-inline:50px">

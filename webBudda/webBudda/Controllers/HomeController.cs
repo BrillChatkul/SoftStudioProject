@@ -96,6 +96,13 @@ namespace webBudda.Controllers
                 return View();
             }
         }
+
+        public IActionResult General()
+        {
+            return View();
+        }
+
+
         public IActionResult SignIn()
         {
             return View();

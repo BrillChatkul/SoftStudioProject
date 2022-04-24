@@ -1,4 +1,5 @@
-﻿using FireSharp.Config;
+﻿using Firebase.Auth;
+using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using Microsoft.AspNetCore.Mvc;
@@ -11,15 +12,33 @@ namespace webBudda.Controllers
 {
     public class AdminController : Controller
     {
-        IFirebaseConfig config = new FirebaseConfig
+        IFirebaseConfig config = new FireSharp.Config.FirebaseConfig
         {
             AuthSecret = "qt3bdVVIXN4rcf0NACZkQLivDFnyKkZerngugoLM",
             BasePath = "https://budbudworld-default-rtdb.firebaseio.com"
         };
         IFirebaseClient client;
-        public ActionResult Create()
+        FirebaseAuthProvider auth;
+        private readonly ILogger<AdminController> _logger;
+        public AdminController(ILogger<AdminController> logger)
         {
-            return View();
+            _logger = logger;
+            auth = new FirebaseAuthProvider(new Firebase.Auth.FirebaseConfig("AIzaSyAYbfDjXRx9S0dnwub_BH5bk75rJMPDAbU"));
+        }
+        public async Task<ActionResult> Create()
+        {
+            var token = HttpContext.Session.GetString("_UserToken");
+            if (token != null)
+            {
+                User user = await auth.GetUserAsync(token);
+                ViewBag.Email = user.Email;
+                if(user.Email == "admin@budworld.com")
+                {
+                    return View();
+                }
+            }
+                        
+            return RedirectToAction("Index","Home");
         }
         //create blog
         [HttpPost]
@@ -63,28 +82,50 @@ namespace webBudda.Controllers
             return RedirectToAction("ContentAdmin");
         }
 
-        public IActionResult ContentAdmin()
+        public async Task<IActionResult> ContentAdmin()
         {
-            client = new FireSharp.FirebaseClient(config);
-            FirebaseResponse response = client.Get("blogData");
-            dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
-            var list = new List<blog>();
-            if (data != null)
+            var token = HttpContext.Session.GetString("_UserToken");
+            if (token != null)
             {
-                foreach (var item in data)
+                User user = await auth.GetUserAsync(token);
+                ViewBag.Email = user.Email;
+                if (user.Email == "admin@budworld.com")
                 {
-                    list.Add(JsonConvert.DeserializeObject<blog>(((JProperty)item).Value.ToString()));
+                    client = new FireSharp.FirebaseClient(config);
+                    FirebaseResponse response = client.Get("blogData");
+                    dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
+                    var list = new List<blog>();
+                    if (data != null)
+                    {
+                        foreach (var item in data)
+                        {
+                            list.Add(JsonConvert.DeserializeObject<blog>(((JProperty)item).Value.ToString()));
+                        }
+                    }
+                    return View(list);
                 }
             }
-            return View(list);
+
+            return RedirectToAction("Index", "Home");
+            
         }
 
-        public ActionResult EditBlog(string id)
+        public async Task<ActionResult> EditBlog(string id)
         {
-            client = new FireSharp.FirebaseClient(config);
-            FirebaseResponse response = client.Get("blogData/" + id);
-            blog data = JsonConvert.DeserializeObject<blog>(response.Body);
-            return View(data);
+            var token = HttpContext.Session.GetString("_UserToken");
+            if (token != null)
+            {
+                User user = await auth.GetUserAsync(token);
+                ViewBag.Email = user.Email;
+                if (user.Email == "admin@budworld.com")
+                {
+                    client = new FireSharp.FirebaseClient(config);
+                    FirebaseResponse response = client.Get("blogData/" + id);
+                    blog data = JsonConvert.DeserializeObject<blog>(response.Body);
+                    return View(data);
+                }
+            }
+            return RedirectToAction("Index", "Home");
         }
         [HttpPost]
         public ActionResult EditBlog(blog blog)

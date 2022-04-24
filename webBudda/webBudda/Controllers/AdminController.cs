@@ -1,7 +1,10 @@
 ﻿using Firebase.Auth;
+using FirebaseAdmin;
+using FirebaseAdmin.Auth;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using Google.Apis.Auth.OAuth2;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -20,10 +23,12 @@ namespace webBudda.Controllers
         IFirebaseClient client;
         FirebaseAuthProvider auth;
         private readonly ILogger<AdminController> _logger;
-        public AdminController(ILogger<AdminController> logger)
+        IConfiguration _config { get; set; }
+        public AdminController(ILogger<AdminController> logger, IConfiguration configuration)
         {
             _logger = logger;
             auth = new FirebaseAuthProvider(new Firebase.Auth.FirebaseConfig("AIzaSyAYbfDjXRx9S0dnwub_BH5bk75rJMPDAbU"));
+            _config = configuration;
         }
 
         public async Task<ActionResult> Index()
@@ -68,7 +73,7 @@ namespace webBudda.Controllers
             var data = blog;
             PushResponse response = client.Push("blogData/", data);
             data.Id = response.Result.name;
-            data.topfeed = false;
+            data.topfeed = true;
             SetResponse setResponse = client.Set("blogData/" + data.Id, data);
         }
         
@@ -83,8 +88,12 @@ namespace webBudda.Controllers
 
         public ActionResult Deleteblog(string id)
         {
-            client = new FireSharp.FirebaseClient(config);
-            FirebaseResponse response = client.Delete("blogData/" + id);
+            if(id != "" && id != null)
+            {
+                client = new FireSharp.FirebaseClient(config);
+                FirebaseResponse response = client.Delete("blogData/" + id);
+            }
+            
             return RedirectToAction("ContentAdmin");
         }
 
@@ -136,14 +145,13 @@ namespace webBudda.Controllers
         [HttpPost]
         public ActionResult EditBlog(blog blog)
         {
+            blog.Created = DateTime.Now.ToString();
             client = new FireSharp.FirebaseClient(config);
+            blog.topfeed = true;
             SetResponse response = client.Set("blogData/" + blog.Id, blog);
             return RedirectToAction("ContentAdmin");
         }
-        public async Task<ActionResult> ManageUser()
-        {
-            return View();
-        }
+        
         public async Task<IActionResult> AdminViewBlog(string id)
         {
             var token = HttpContext.Session.GetString("_UserToken");
@@ -387,7 +395,10 @@ namespace webBudda.Controllers
                     User user = await auth.GetUserAsync(token);
                     if (user.Email == "admin@budworld.com")
                     {
-                        FirebaseResponse response = client.Delete("commentBlog/" + id);
+                        if(id != null && id != "") {
+                            FirebaseResponse response = client.Delete("commentBlog/" + id);
+                        }
+                        
                     }
                 }
                 catch (Exception ex)
@@ -408,6 +419,163 @@ namespace webBudda.Controllers
             client = new FireSharp.FirebaseClient(config);
             SetResponse response = client.Set("commentBlog/" + id + "/onfeed", feed);
             return RedirectToAction("AdminViewblog", "Admin", new { id = blogid });
+        }
+
+        public async Task<IActionResult> ManageUser()
+        {
+            var token = HttpContext.Session.GetString("_UserToken");
+            if (token != null)
+            {
+                User user = await auth.GetUserAsync(token);
+                ViewBag.Email = user.Email;
+                if (user.Email == "admin@budworld.com")
+                {
+                    client = new FireSharp.FirebaseClient(config);
+                    FirebaseResponse response = client.Get("EmailList");
+                    dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Body);
+                    var list = new List<UserFirebase>();
+                    if (data != null)
+                    {
+                        foreach (var item in data)
+                        {
+                            list.Add(JsonConvert.DeserializeObject<UserFirebase>(((JProperty)item).Value.ToString()));
+                        }
+                    }
+                    return View(list);
+                }
+            }
+
+            return RedirectToAction("Index", "Home");
+
+        }
+        public async Task<ActionResult> SetBan(string id,Boolean ban)
+        {
+            var token = HttpContext.Session.GetString("_UserToken");
+            if (token != null)
+            {
+                try
+                {
+                    client = new FireSharp.FirebaseClient(config);
+                    User user = await auth.GetUserAsync(token);
+                    if (user.Email == "admin@budworld.com")
+                    {
+                        if (ban == true) { ban = false; }
+                        else { ban = true; }
+                        client = new FireSharp.FirebaseClient(config);
+                        SetResponse response = client.Set("EmailList/" + id + "/Ban", ban);
+                        
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError(string.Empty, ex.Message);
+                }
+                return RedirectToAction("ManageUser", "Admin");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+        public async Task<ActionResult> DeleteUser(string id,string Email)
+        {
+            var token = HttpContext.Session.GetString("_UserToken");
+            if (token != null)
+            {
+                try
+                {
+                    client = new FireSharp.FirebaseClient(config);
+                    User user = await auth.GetUserAsync(token);
+                    if (user.Email == "admin@budworld.com")
+                    {
+                        FirebaseResponse response = client.Delete("EmailList/" + id);
+                        //Delete from authen
+                        try
+                        {
+                            //Get Firebase Configuration from appsettings.json and Bind to Firebase object
+                            FirebaseJ fbconfig = new FirebaseJ();
+                            _config.Bind("Firebase", fbconfig);
+
+                            var json = JsonConvert.SerializeObject(fbconfig);
+                            FirebaseApp.Create(new AppOptions()
+                            {
+                                Credential = GoogleCredential.FromJson(json),
+                            });
+                        }
+                        catch { }
+
+                        //Delete from comment
+                        response = client.Get("commentBlog");
+                        dynamic dataCM = JsonConvert.DeserializeObject<dynamic>(response.Body);
+                        var listCM = new List<Comment>();
+                        if (dataCM != null)
+                        {
+                            foreach (var item in dataCM)
+                            {
+                                listCM.Add(JsonConvert.DeserializeObject<Comment>(((JProperty)item).Value.ToString()));
+                            }
+                            foreach (var item in listCM)
+                            {
+                                if (item.Email == Email)
+                                {
+                                    response = client.Delete("commentBlog/" + item.Id);
+                                }
+                            }
+                        }
+
+                        //Delete from Likecomment
+                        response = client.Get("LikeCommentList");
+                        dynamic dataLC = JsonConvert.DeserializeObject<dynamic>(response.Body);
+                        var listLC = new List<LikeComment>();
+                        if (dataLC != null)
+                        {
+                            foreach (var item in dataLC)
+                            {
+                                listLC.Add(JsonConvert.DeserializeObject<LikeComment>(((JProperty)item).Value.ToString()));
+                            }
+                            foreach (var item in listLC)
+                            {
+                                if (item.Email == Email)
+                                {
+                                    response = client.Delete("LikeCommentList/" + item.Id);
+                                }
+                            }
+                        }
+
+                        //Delete from Likeblog
+                        response = client.Get("LikeList");
+                        dynamic dataLB = JsonConvert.DeserializeObject<dynamic>(response.Body);
+                        var listLB = new List<Likeblog>();
+                        if (dataLB != null)
+                        {
+                            foreach (var item in dataLB)
+                            {
+                                listLB.Add(JsonConvert.DeserializeObject<Likeblog>(((JProperty)item).Value.ToString()));
+                            }
+                            foreach (var item in listLB)
+                            {
+                                if (item.Email == Email)
+                                {
+                                    response = client.Delete("LikeList/" + item.Id);
+                                }
+                            }
+                        }
+
+                        UserRecord userRecord = await FirebaseAdmin.Auth.FirebaseAuth.DefaultInstance.GetUserByEmailAsync(Email);
+                        await FirebaseAdmin.Auth.FirebaseAuth.DefaultInstance.DeleteUserAsync(userRecord.Uid);
+
+
+
+
+                        return RedirectToAction("ManageUser", "Admin");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError(string.Empty, ex.Message);
+                }
+            }
+            return RedirectToAction("Index", "Home");
         }
     }
 }

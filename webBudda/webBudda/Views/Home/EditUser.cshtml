@@ -1,5 +1,4 @@
-﻿@model webBudda.Models.UserModel
-@{
+﻿@{
     ViewData["Title"] = "EditUser";
 }
 
@@ -10,31 +9,77 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Register">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control"  />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <label class="control-label">Email</label>
+                <label class="form-control" type="email" />@ViewBag.Email</label>
+                <span class="text-danger"></span>
+            </div>
+            <hr/>
+            <div class="form-group">
+                <label class="control-label">Name</label>
+                <input id="DisplayName" class="form-control" type="text" value="@ViewBag.User"/>
+                <span class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" type="email" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+                <button onclick="ChangeName()" class="btn btn-primary">ChangeName</button>
+            </div>
+            <hr/>
+            <div class="form-group">
+                <label class="control-label">Old password</label>
+                <input id="Oldpassword" class="form-control type="password" />
+                <span class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control type="password" />
-                <span asp-validation-for="Password" class="text-danger"></span>
+                <label class="control-label">New password</label>
+                <input id="Newpassword" class="form-control type="password" />
+                <span class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Edit" class="btn btn-primary" />
+                <button  onclick="ChangePassword()" class="btn btn-primary">ChangePassword</button>
             </div>
-        </form>
+            <hr/>
+            <div class="form-group">
+                <button onclick="DeleteAccount();" class="btn btn-primary">DeleteAccount</button>
+            </div>
+            @if(@ViewBag.fa == true){
+                <p>รหัสผิด</p>
+            }
     </div>
 </div>
 <div>
     <a asp-action="Index">Back to Home</a>
 </div>
+@section Scripts {
+<script type="text/javascript">
+    function ChangeName()
+    {
+        var x = document.getElementById("DisplayName").value;
+        if(x!="")
+        {
+            var url = '@Url.Action("EditUsername", "Home")/?Name=' + x;
+            window.location.href = url;
+        }
+    }
+    function ChangePassword()
+    {
+        var x = document.getElementById("Oldpassword").value;
+        var y = document.getElementById("Newpassword").value;
+        if(x != "" && y != "")
+        {
+            var url = '@Url.Action("EditPassword", "Home")/?Pold=' + x + '&Pnew=' + y;
+            window.location.href = url;
+        }
+    }
+    function DeleteAccount(){
+        let confirmAction = confirm("ต้องการลบ Acount ?");
+        if (confirmAction) {
+          var url = '@Url.Action("DeleteUser", "Home")/';
+          window.location.href = url;
+        }
+    }
+</script>
+}
+
 
 

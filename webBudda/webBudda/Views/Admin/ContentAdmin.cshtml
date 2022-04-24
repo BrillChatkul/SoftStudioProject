@@ -79,7 +79,7 @@
     {
         let confirmAction = confirm("ต้องการลบ blog "+title+" ?");
         if (confirmAction) {
-          var url = '@Url.Action("Deleteblog", "Admin")/' + id;
+          var url = '@Url.Action("Deleteblog", "Admin")/?id=' + id;
           window.location.href = url;
         }
         

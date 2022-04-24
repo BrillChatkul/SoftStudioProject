@@ -73,7 +73,7 @@
                     <p>@comment.Like อนุโมทนาแล้ว</p>
                 </div>
                 @*admin button*@
-                <a asp-controller="Admin" asp-action="SetonFeedComment" asp-route-id="@comment.Id" asp-route-blogid="@item.Id">
+                <a asp-controller="Admin" asp-action="SetonFeedComment" asp-route-id="@comment.Id" asp-route-blogid="@item.Id" asp-route-feed="@comment.onfeed">
                 @if (comment.onfeed == true)
                 {
                     <button class="adminbutton" style="margin-right:10px;margin-left:auto;bottom:5px;position:absolute;"><img src="https://www.freeiconspng.com/uploads/eyeball-icon-png-eye-icon-1.png" width="20" height="20" /> ซ่อนความคิดเห็น</button>

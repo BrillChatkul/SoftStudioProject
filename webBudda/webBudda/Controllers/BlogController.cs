@@ -26,6 +26,7 @@ namespace webBudda.Controllers
             _logger = logger;
             auth = new FirebaseAuthProvider(new Firebase.Auth.FirebaseConfig("AIzaSyAYbfDjXRx9S0dnwub_BH5bk75rJMPDAbU"));
         }
+
         [HttpGet]
         public async Task<IActionResult> Index(String typep)
         {
@@ -55,7 +56,7 @@ namespace webBudda.Controllers
             var showlist = new List<blog>();
             foreach (var item in list)
             {
-                if(item.typep == typep)
+                if(item.typep == typep && item.topfeed == true)
                 {
                     showlist.Add(item);
                 }
@@ -306,7 +307,10 @@ namespace webBudda.Controllers
                     client = new FireSharp.FirebaseClient(config);
                     User user = await auth.GetUserAsync(token);
                     if (user.Email == email) {
-                        FirebaseResponse response = client.Delete("commentBlog/" + id);
+                        if (id != null && id != "")
+                        {
+                            FirebaseResponse response = client.Delete("commentBlog/" + id);
+                        }
                     }
                 }
                 catch (Exception ex)

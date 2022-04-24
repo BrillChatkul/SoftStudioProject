@@ -1,22 +1,83 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-    ViewData["Title"] = "ManageUser";
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>AdminHome</title>
-
-    <h1 class=" text-center display-4">UserList</h1>
-    <div class="text-center container">
+﻿@model List<webBudda.Models.UserFirebase>
+<style>
+    p{
+        margin-bottom:0px;
+    }
+    .blogger{
+        display:flex;
+        flex-direction:column;
+        border-style:solid none none none;
+        border-width: thin;
+        justify-content:center;
+        padding:15px;
+        background-color:none;
+        position:relative;
+        width:100%;
+    }
+    .blogger:hover{
+        background-color:#EEECEC;
+    }
+    .blogTable{
+        border-style:solid;
+        border-width: thin;
+        border-radius: 30px;
+        overflow-y:hidden;
+        padding-bottom:10px;
+        height:680px;
+        background-color:white;
+        
+    }
+</style>
+<div>
+    <div class="blogTable">
+        <h2 style="text-align:center;background-color:#FFC700;margin-bottom:0px;padding:5px;">ห้องสนทนาธรรม / เนื้อหา</h2>
+        <div style="overflow-y:scroll;height:100%">
+            @foreach (var item in Model)
+            {
+                <div class="blogger">
+                    <h4 style="text-align:left;">@item.Email</h4>
+                    <div style="position:absolute;right:15px;">
+                        <div style="display:flex;align-items:center;justify-content:right">
+                              <button style="border:none;background:transparent;">
+                                @if(item.Ban==true){
+                                    <button style="background:transparent;font-size:150%" onclick="Ban('@item.Id','@item.Email','@item.Ban');">Unban</button>
+                                }else{
+                                    <button style="background:transparent;font-size:150%" onclick="Ban('@item.Id','@item.Email','@item.Ban');">Ban</button>
+                                }
+                                </button>
+                            <button style="background:transparent;font-size:150%" onclick="GetBlog('@item.Id','@item.Email');">Delete</button>
+                        </div>
+                    @**@
+                    </div>
+                </div>
+                
+            }
+            <p id="demo"></p>
+      <div style="height:92px"></div>
+      </div>
       
-    </div>
-</head>
-<body>
-</body>
-</html>s
+   </div>
+    
+    
+</div>
+@section Scripts {
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script type="text/javascript">
+    function GetBlog(id,Email)
+    {
+        let confirmAction = confirm("ต้องการลบ สมาชิก"+Email+" ?");
+        if (confirmAction) {
+          var url = '@Url.Action("DeleteUser", "Admin")/' + id + "/?email=" + Email;
+          window.location.href = url;
+        }
+    }
+
+    function Ban(id,Email,boolban){
+        let confirmAction = confirm("ต้องการแก้ไขการแบน สมาชิก"+Email+" ?");
+        if (confirmAction) {
+          var url = '@Url.Action("SetBan", "Admin")/' + id + '/?ban=' + boolban;
+          window.location.href = url;
+        }
+    }
+</script>
+}

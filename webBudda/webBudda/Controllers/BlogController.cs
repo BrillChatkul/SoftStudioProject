@@ -28,7 +28,7 @@ namespace webBudda.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index(String typep)
+        public async Task<IActionResult> Index()
         {
             var token = HttpContext.Session.GetString("_UserToken");
             if (token != null)
@@ -56,7 +56,7 @@ namespace webBudda.Controllers
             var showlist = new List<blog>();
             foreach (var item in list)
             {
-                if(item.typep == typep && item.topfeed == true)
+                if(item.topfeed == true)
                 {
                     showlist.Add(item);
                 }

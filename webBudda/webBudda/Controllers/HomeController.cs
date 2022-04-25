@@ -55,7 +55,7 @@ namespace webBudda.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Register(UserModel userModel)
+        public async Task<JsonResult> Register(UserModel userModel)
         {
             client = new FireSharp.FirebaseClient(config);
             FirebaseResponse response = client.Get("EmailList");
@@ -94,16 +94,21 @@ namespace webBudda.Controllers
                 if (token != null)
                 {
                     HttpContext.Session.SetString("_UserToken", token);
-
-                    return RedirectToAction("Index");
+                    var data1 = new { success = true };
+                    var json1 = JsonConvert.SerializeObject(data1);
+                    return Json(json1);
                 }
                 else
                 {
-                    return View();
+                    var data2 = new { success = false };
+                    var json2 = JsonConvert.SerializeObject(data2);
+                    return Json(json2);
                 }
             }
-            return View();
-            
+            var data3 = new { success = false };
+            var json3 = JsonConvert.SerializeObject(data3);
+            return Json(json3);
+
         }
         public IActionResult SignIn()
         {

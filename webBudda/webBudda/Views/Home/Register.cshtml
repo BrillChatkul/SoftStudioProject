@@ -1,42 +1,77 @@
-﻿@model webBudda.Models.UserModel
+﻿@model webBudda.Models.SignInModel
 
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "SignIn";
 }
 
 <h1>Register</h1>
-<br></br>
-<hr />
-<h4>UserModel</h4>
+
+<h4>SignInModel</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Register">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control"  />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <label class="control-label">Name</label>
+                <input id="DisplayName" class="form-control" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Email</label>
+                <input id="Email" class="form-control" />
+                <span class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" type="email" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+                <label class="control-label">Password</label>
+                <input id="Password" class="form-control" />
+                <span class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control type="password" />
-                <span asp-validation-for="Password" class="text-danger"></span>
+                <button onclick="SignIn()" class="btn btn-primary" >Register</button>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+            <p id="Check"></p>
     </div>
 </div>
+
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+<script type="text/javascript">
+    function SignIn() {
+        var user = {
+            Name : document.getElementById("DisplayName").value,
+            Email: document.getElementById("Email").value,
+            Password: document.getElementById("Password").value,
+        }
+            $.ajax({
+            type: "POST",
+            url: '@Url.Action("Register", "Home")',
+            data : user,
+            beforeSend: function () {
+                $("#Check").text("กำลังเข้าสู่ระบบ");
+                console.log(user);
+            },
+            success: function (data) {
+                data = JSON.parse(data);
+                console.log(data);
+                if (data.success == true) {
+                    $("#Check").text("Register สำเร็จ");
+                    var url = '@Url.Action("Index", "Home")';
+                    window.location.href = url;
+                }
+                else {
+                    $("#Check").text("Register ไม่สำเร็จ");
+                }
+            },
+            error: function (error) {
+                alert(error);
+                $("#Check").text("Register ไม่สำเร็จ");
+            }
+        })
+    }
+</script>
 }

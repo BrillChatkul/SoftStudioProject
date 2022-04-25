@@ -25,6 +25,9 @@
         font-weight: 400;
 
     }
+    hr{
+        color: white;
+    }
 
     text {
         font-family: 'IBM Plex Sans Thai';
@@ -64,6 +67,21 @@
         transform: translate(0, -50%);
     }
 
+    #question p{
+        font-size: 20px;
+        font-weight: bold;
+        font-family: 'IBM Plex Sans Thai';
+        font-style: normal;
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        left: 40%;
+        top: 46%;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+
+    }
+
     .spinner {
         position: fixed;
         left: 400px;
@@ -82,12 +100,9 @@
 
 
 
-
-
-
 <div class="text-center">
     <h1><strong>คติธรรมประจำวันนี้</strong></h1>
-</div>
+</div><hr></hr>
 
 <div class="container">
     <div class="col">
@@ -104,22 +119,13 @@
                 <div class="text-center">
                     <button type="button" class="btn btn-outline-primary  bttn">อนุโมธนา</button>
                       <button type="button" class="btn btn-outline-primary bttn">กลับหน้าหลัก</button>
-                      <button type="button" class="btn btn-outline-primary bttn">ส่งต่อให้คนอื่น</button>
-                       
+                      <button type="button" class="btn btn-outline-primary bttn">ส่งต่อให้คนอื่น</button>           
                 </div>
 
             </div>
         </div>
 
-        <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-
-        @* <button type="button" class="btn btn-outline-primary"><a asp-area="" asp-controller="BubbhaGame"
-            asp-action="SpinnerGame">Spinner Game</a></button>
-            <button type="button" class="btn btn-outline-secondary"><a asp-area="" asp-controller="BubbhaGame"
-            asp-action="CardGameMemory">CardGame Memory</a></button>
-            <button type="button" class="btn btn-outline-success"><a asp-area="" asp-controller="BubbhaGame"
-            asp-action="BlockGame">Block Game</a></button>*@
-
+        <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script> 
     </div>
 
 </div>
@@ -140,27 +146,27 @@
         color = d3.scale.category20b();//category20c()
     //randomNumbers = getRandomNumbers();
     var data = [
-        { "label": "Dell LAPTOP", "value": 1, "question": "เวร ย่อมระงับด้วยการไม่จองเวร" }, // padding
-        { "label": "IMAC PRO", "value": 2, "question": "คบคนเช่นไร ย่อมเป็นคนเช่นนั้น" }, //font-family
-        { "label": "SUZUKI", "value": 3, "question": "บุญย่อมปกป้องรักษา และคุ้มครองคนดี และผู้ประพฤติดีเสมอ" }, //color
-        { "label": "HONDA", "value": 4, "question": "วันที่ดีที่สุด คือวันที่ได้ทำความดี และสะสมบุญ" }, //font-weight
-        { "label": "FERRARI", "value": 5, "question": "เรื่องที่ผ่านไปแล้ว ก็เป็นเหมือนวันวาน อย่าเก็บเอามาเป็นหนามทิ่มแทงตัวเองอีกเลย" }, //font-size
-        { "label": "APARTMENT", "value": 6, "question": "การเลือกคบคนดี มีแต่นำความสุขมาให้" }, //background-color
-        { "label": "IPAD PRO", "value": 7, "question": "บุญวาสนาเป็นสิ่งที่สร้างเองได้ หากไม่มีก็ทำให้มี ที่มีอยู่แล้วก็ทำให้มียิ่งขึ้นได้" }, //nesting
-        { "label": "LAND", "value": 8, "question": "ผู้เห็นโลกเป็นของวุ่นวาย นั่นแหละคือผู้มีบุญ" }, //bottom
-        { "label": "MOTOROLLA", "value": 9, "question": "เรื่องใหญ่ที่สุดในวันนี้ พอถึงพรุ่งนี้ก็เป็นเรื่องเล็ก" }, //sans-serif
-        { "label": "BMW", "value": 10, "question": "ใช้จิตใจที่ชอบตำหนิผู้อื่น มาตำหนิตัวเอง ใช้จิตใจที่ชอบให้อภัยตัวเอง มาให้อภัยผู้อื่น" },
+        { "label": "หมายเลข 1", "value": 1, "question": "เวร ย่อมระงับด้วยการไม่จองเวร" }, // padding
+        { "label": "หมายเลข 2", "value": 2, "question": "คบคนเช่นไร ย่อมเป็นคนเช่นนั้น" }, //font-family
+        { "label": "หมายเลข 3", "value": 3, "question": "บุญย่อมปกป้องรักษา และคุ้มครองคนดี และผู้ประพฤติดีเสมอ" }, //color
+        { "label": "หมายเลข 4", "value": 4, "question": "วันที่ดีที่สุด คือวันที่ได้ทำความดี และสะสมบุญ" }, //font-weight
+        { "label": "หมายเลข 5", "value": 5, "question": "เรื่องที่ผ่านไปแล้ว ก็เป็นเหมือนวันวาน อย่าเก็บเอามาเป็นหนามทิ่มแทงตัวเองอีกเลย" }, //font-size
+        { "label": "หมายเลข 6", "value": 6, "question": "การเลือกคบคนดี มีแต่นำความสุขมาให้" }, //background-color
+        { "label": "หมายเลข 7", "value": 7, "question": "บุญวาสนาเป็นสิ่งที่สร้างเองได้ หากไม่มีก็ทำให้มี ที่มีอยู่แล้วก็ทำให้มียิ่งขึ้นได้" }, //nesting
+        { "label": "หมายเลข 8", "value": 8, "question": "ผู้เห็นโลกเป็นของวุ่นวาย นั่นแหละคือผู้มีบุญ" }, //bottom
+        { "label": "หมายเลข 9", "value": 9, "question": "เรื่องใหญ่ที่สุดในวันนี้ พอถึงพรุ่งนี้ก็เป็นเรื่องเล็ก" }, //sans-serif
+        { "label": "หมายเลข 10", "value": 10, "question": "ใช้จิตใจที่ชอบตำหนิผู้อื่น มาตำหนิตัวเอง ใช้จิตใจที่ชอบให้อภัยตัวเอง มาให้อภัยผู้อื่น" },
 
-        { "label": "Dell LAPTOP", "value": 11, "question": "ถ้าเราไม่ทิ้งบุญ บุญก็จะไม่ทิ้งเรา" }, // padding
-        { "label": "IMAC PRO", "value": 12, "question": "ปัญหาเป็นสิ่งที่เราต้องแก้ กรรมเป็นสิ่งที่เราต้องชดใช้ ทุกข์เป็นสิ่งที่เราต้องดับ" }, //font-family
-        { "label": "SUZUKI", "value": 13, "question": "ศีลมากมาย ไม่ต้องรักษาให้หมดทุกข้อ รักษาใจให้ดี และกาย วาจา ก็จะดีไปด้วย" }, //color
-        { "label": "HONDA", "value": 14, "question": "แสงสว่างบนท้องฟ้าเกิดจาก “ดวงอาทิตย์” แสงสว่างจากชีวิต เกิดจาก “การปล่อยวาง”" }, //font-weight
-        { "label": "FERRARI", "value": 15, "question": "ความจริงใจ” ไม่มีอยู่ในคำพูด และเป็นสิ่งที่ “พิสูจน์” ยากในปัจจุบัน" }, //font-size
-        { "label": "APARTMENT", "value": 16, "question": "หากถูกคนรอบข้างเข้าใจผิด ให้อธิบายครั้งเดียวพอ หากเขาไม่คิดจะเชื่อคุณ อธิบายไปกี่ครั้งเขาก็ไม่เชื่ออยู่ดี" }, //background-color
-        { "label": "IPAD PRO", "value": 17, "question": " สิ่งที่เป็นอกุศลที่สุดในชีวิต คือ การหลอกตัวเอง" }, //nesting
-        { "label": "LAND", "value": 18, "question": "ผู้เห็นโลกเป็นของวุ่นวาย นั่นแหละคือผู้มีบุญ" }, //bottom
-        { "label": "MOTOROLLA", "value": 19, "question": "“ความสุข” เกิดจากจิตใจที่สะอาดและบริสุทธิ์" }, //sans-serif
-        { "label": "BMW", "value": 20, "question": "ธรรมดาของชีวิต มีแล้วก็กลับไม่มีได้ โลกสลับกันไปมา เหมือนมืดแล้วสว่าง อย่าเสียใจหรือดีใจกับสิ่งใดให้มากนัก" }
+        { "label": "หมายเลข 11", "value": 11, "question": "ถ้าเราไม่ทิ้งบุญ บุญก็จะไม่ทิ้งเรา" }, // padding
+        { "label": "หมายเลข 12", "value": 12, "question": "ปัญหาเป็นสิ่งที่เราต้องแก้ กรรมเป็นสิ่งที่เราต้องชดใช้ ทุกข์เป็นสิ่งที่เราต้องดับ" }, //font-family
+        { "label": "หมายเลข 13", "value": 13, "question": "ศีลมากมาย ไม่ต้องรักษาให้หมดทุกข้อ รักษาใจให้ดี และกาย วาจา ก็จะดีไปด้วย" }, //color
+        { "label": "หมายเลข 14", "value": 14, "question": "แสงสว่างบนท้องฟ้าเกิดจาก “ดวงอาทิตย์” แสงสว่างจากชีวิต เกิดจาก “การปล่อยวาง”" }, //font-weight
+        { "label": "หมายเลข 15", "value": 15, "question": "ความจริงใจ” ไม่มีอยู่ในคำพูด และเป็นสิ่งที่ “พิสูจน์” ยากในปัจจุบัน" }, //font-size
+        { "label": "หมายเลข 16", "value": 16, "question": "หากถูกคนรอบข้างเข้าใจผิด ให้อธิบายครั้งเดียวพอ หากเขาไม่คิดจะเชื่อคุณ อธิบายไปกี่ครั้งเขาก็ไม่เชื่ออยู่ดี" }, //background-color
+        { "label": "หมายเลข 17", "value": 17, "question": " สิ่งที่เป็นอกุศลที่สุดในชีวิต คือ การหลอกตัวเอง" }, //nesting
+        { "label": "หมายเลข 18", "value": 18, "question": "ผู้เห็นโลกเป็นของวุ่นวาย นั่นแหละคือผู้มีบุญ" }, //bottom
+        { "label": "หมายเลข 19", "value": 19, "question": "“ความสุข” เกิดจากจิตใจที่สะอาดและบริสุทธิ์" }, //sans-serif
+        { "label": "หมายเลข 20", "value": 20, "question": "ธรรมดาของชีวิต มีแล้วก็กลับไม่มีได้ โลกสลับกันไปมา เหมือนมืดแล้วสว่าง อย่าเสียใจหรือดีใจกับสิ่งใดให้มากนัก" }
 
 
     ];

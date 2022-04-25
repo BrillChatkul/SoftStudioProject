@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
 }
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -7,16 +6,139 @@
 <link rel="stylesheet" href="~/js/index.js" />
 
 
-<div class="text-center">
-    <h1>Buddha Game</h1>
-</div>
+
+
+
+<style>
+    @@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'IBM Plex Sans Thai';
+    }
+
+    .tab-content .body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+
+    .tab-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .tab-content li {
+        list-style: none;
+        text-align: center;
+    }
+
+    .tab-content li a {
+        color: #333;
+        text-decoration: none;
+        font-size: 3em;
+        padding: 5px 20px;
+        display: inline-flex;
+        font-weight: 700;
+        transition: 0.5s;
+    }
+
+    .tab-content:hover li a {
+        color: #0002;
+    }
+
+    .tab-content li:hover a {
+        color: #000;
+        background: rgba(255, 255, 255, 1);
+    }
+
+    .tab-content li a:before {
+        content: '';
+        position: fixed;
+        top: 28%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+        color: rgba(0, 0, 0, .1);
+
+        border-radius: 10%;
+
+        z-index: -1;
+        opacity: 0;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 1500px;
+        transition: letter-spacing 0.9s, left 0.9s;
+    }
+
+    .tab-content li a:hover:before {
+        content: attr(data-text);
+        opacity: 1;
+        left: 50%;
+        letter-spacing: 10px;
+        width: 1000px;
+        height: 200px;
+    }
+
+    .tab-content li:nth-child(6n+1) a:before {
+        background: #81ecec;
+    }
+
+    .tab-content li:nth-child(6n+2) a:before {
+        background: #ff7675;
+    }
+
+    .tab-content li:nth-child(6n+3) a:before {
+        background: #55efc4;
+    }
+
+    .tab-content li:nth-child(6n+4) a:before {
+        background: #a29bfe;
+    }
+
+    .tab-content li:nth-child(6n+5) a:before {
+        background: #fd79a8;
+    }
+
+    .tab-content li:nth-child(6n+6) a:before {
+        background: #ffeaa7;
+    }
+    .contenttext{
+        margin-top: 200px;
+         margin-button: 200px;
+    }
+</style>
+
+
+
+
+
 
 <div class="container">
-    <div class = "col">
-        <div class="row">
-            <button type="button" class="btn btn-outline-primary"><a asp-area="" asp-controller="BubbhaGame" asp-action="SpinnerGame">Spinner Game</a></button>
-            <button type="button" class="btn btn-outline-secondary"><a asp-area="" asp-controller="BubbhaGame" asp-action="CardGameMemory">CardGame Memory</a></button>
-            <button type="button" class="btn btn-outline-success"><a asp-area="" asp-controller="BubbhaGame" asp-action="BlockGame">Block Game</a></button>
+    <div class="col">
+
+        <div class=" row text-center">
+            <h1>Buddha Game</h1><hr>
+        </hr>
         </div>
+   
+        <div class="row contenttext">
+            <ul class="tab-content">
+                <li><a href="#SpinnerGame" data-text="Spinner Game">Spinner Game</a></li>
+                <li><a href="#" data-text="CardGame Memory">CardGame Memory</a></li>
+                <li><a href="#" data-text="Block Game">Block Game</a></li>
+                <li><a href="#" data-text="บทสวดมนต์">บทสวดมนต์</a></li>
+                <li><a href="#" data-text="เครื่องรางของขลัง">เครื่องรางของขลัง</a></li>
+                <li><a href="#" data-text="ดูดวง">ดูดวง</a></li>
+            </ul>
+        </div>
+
     </div>
 </div>

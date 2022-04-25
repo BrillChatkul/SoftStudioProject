@@ -111,8 +111,7 @@ namespace webBudda.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SignIn(UserModel userModel)
+        public async Task<JsonResult> SignIn(UserModel userModel)
         {
             //Check if email are ban
             client = new FireSharp.FirebaseClient(config);
@@ -149,18 +148,24 @@ namespace webBudda.Controllers
                         if (token != null)
                         {
                             HttpContext.Session.SetString("_UserToken", token);
-                            return RedirectToAction("Index");
+                            var data1 = new { success = true};
+                            var json1 = JsonConvert.SerializeObject(data1);
+                            return Json(json1);
                         }
                         else
                         {
-                            return View();
+                            var data2 = new { success = false };
+                            var json2 = JsonConvert.SerializeObject(data2);
+                            return Json(json2);
                         }
                     }
                 }
                 catch (Exception ex) { }
             }
-            
-            return View();
+
+            var data3 = new { success = false };
+            var json3 = JsonConvert.SerializeObject(data3);
+            return Json(json3);
         }
 
 

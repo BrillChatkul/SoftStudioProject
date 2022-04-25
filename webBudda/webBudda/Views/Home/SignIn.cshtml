@@ -10,22 +10,21 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="SignIn">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+                <label class="control-label"></label>
+                <input id="Email" class="form-control" />
+                <span class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
+                <label class="control-label"></label>
+                <input id="Password" class="form-control" />
+                <span class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <button onclick="SignIn()" class="btn btn-primary" >SignIn</button>
             </div>
-        </form>
+            <p id="Check"></p>
     </div>
 </div>
 
@@ -34,5 +33,38 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+<script type="text/javascript">
+    function SignIn() {
+        var user = {
+            Email: document.getElementById("Email").value,
+            Password: document.getElementById("Password").value,
+        }
+            $.ajax({
+            type: "POST",
+            url: '@Url.Action("SignIn", "Home")',
+            data : user,
+            beforeSend: function () {
+                $("#Check").text("กำลังเข้าสู่ระบบ");
+                console.log(user);
+            },
+            success: function (data) {
+                data = JSON.parse(data);
+                console.log(data);
+                if (data.success == true) {
+                    $("#Check").text("Login สำเร็จ");
+                    var url = '@Url.Action("Index", "Home")';
+                    window.location.href = url;
+                }
+                else {
+                    $("#Check").text("Login ไม่สำเร็จ");
+                }
+            },
+            error: function (error) {
+                alert(error);
+                $("#Check").text("Login ไม่สำเร็จ");
+            }
+        })
+    }
+</script>
 }

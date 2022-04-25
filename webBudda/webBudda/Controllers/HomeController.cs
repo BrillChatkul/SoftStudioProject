@@ -55,11 +55,11 @@ namespace webBudda.Controllers
             return View();
         }
         
-
         public IActionResult Register()
         {
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Register(UserModel userModel)
         {

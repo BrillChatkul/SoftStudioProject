@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oWgh2fg9wOKoP15mAjusDeAE2KoEuUBlew3FvO6yLs4=",
+  "Hash": "2ntwjk5cz+irK5l/50p9rbjAlmSCxmJJT82YEFmK3OQ=",
   "Source": "webBudda",
   "BasePath": "_content/webBudda",
   "Mode": "Default",
@@ -899,6 +899,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Apizz789\\Documents\\GitHub\\SoftStudioProject\\webBudda\\webBudda\\wwwroot\\js\\Calendar.js",
+      "SourceId": "webBudda",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Apizz789\\Documents\\GitHub\\SoftStudioProject\\webBudda\\webBudda\\wwwroot\\",
+      "BasePath": "_content/webBudda",
+      "RelativePath": "js/Calendar.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Calendar.js"
     },
     {
       "Identity": "C:\\Users\\Apizz789\\Documents\\GitHub\\SoftStudioProject\\webBudda\\webBudda\\wwwroot\\js\\index.js",

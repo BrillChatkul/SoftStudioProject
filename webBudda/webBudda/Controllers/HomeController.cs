@@ -202,37 +202,8 @@ namespace webBudda.Controllers
             }
             return RedirectToAction("Index", "Home");
         }
-        [HttpGet]
-        public async Task<IActionResult> EditUser(Boolean fa)
-        {
-            var token = HttpContext.Session.GetString("_UserToken");
-            if (token != null)
-            {
-                try
-                {
-                    //Get Firebase Configuration from appsettings.json and Bind to Firebase object
-                    FirebaseJ fbconfig = new FirebaseJ();
-                    _config.Bind("Firebase", fbconfig);
 
-                    var json = JsonConvert.SerializeObject(fbconfig);
-                    FirebaseApp.Create(new AppOptions()
-                    {
-                        Credential = GoogleCredential.FromJson(json),
-                    });
-                }
-                catch { }
-                User user = await auth.GetUserAsync(token);
-                UserRecord userRecord = await FirebaseAdmin.Auth.FirebaseAuth.DefaultInstance.GetUserByEmailAsync(user.Email);
-                ViewBag.User = user.DisplayName;
-                ViewBag.Email = user.Email;
-                ViewBag.fa = fa;
-                return View();
-            }
-            return RedirectToAction("Index", "Home");
-        }
-
-
-        public async Task<IActionResult> EditUsername(string Name)
+        public async Task<JsonResult> EditUsername(string Name)
         {
             var token = HttpContext.Session.GetString("_UserToken");
             if (token != null)
@@ -278,14 +249,17 @@ namespace webBudda.Controllers
                         }
                     }
                 }
-
-                return RedirectToAction("EditUser", "Home");
-            }
-            return RedirectToAction("Index", "Home");
+                var data = new { status = true, statusToken = true };
+                var json1 = JsonConvert.SerializeObject(data);
+                return Json(json1);
+                }
+            var data1 = new { status = true, statusToken = false };
+            var json2 = JsonConvert.SerializeObject(data1);
+            return Json(json2);
         }
 
         
-        public async Task<IActionResult> EditPassword(string Pold, string Pnew)
+        public async Task<JsonResult> EditPassword(string Pold, string Pnew)
         {
             var token = HttpContext.Session.GetString("_UserToken");
             if (token != null)
@@ -342,17 +316,21 @@ namespace webBudda.Controllers
                             HttpContext.Session.SetString("_UserToken", tokenk);
                         }
                     }
-                    return RedirectToAction("EditUser", "Home");
+                    var data = new { status = true, statusToken = true };
+                    var json1 = JsonConvert.SerializeObject(data);
+                    return Json(json1);
                 }
                 else
                 {
-                    return RedirectToAction("EditUser", "Home", new { fa = true });
+                    var data1 = new { status = false, statusToken = true };
+                    var json2 = JsonConvert.SerializeObject(data1);
+                    return Json(json2);
                 }
                                
             }
-                
-            
-            return RedirectToAction("Index", "Home");
+            var data2 = new { status = false, statusToken = false };
+            var json3 = JsonConvert.SerializeObject(data2);
+            return Json(json3);
         }
 
         public async Task<ActionResult> DeleteUser()

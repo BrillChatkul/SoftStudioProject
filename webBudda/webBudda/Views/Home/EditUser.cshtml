@@ -24,6 +24,7 @@
             <div class="form-group">
                 <button onclick="ChangeName()" class="btn btn-primary">ChangeName</button>
             </div>
+            <p id="Check"></p>
             <hr/>
             <div class="form-group">
                 <label class="control-label">Old password</label>
@@ -38,13 +39,12 @@
             <div class="form-group">
                 <button  onclick="ChangePassword()" class="btn btn-primary">ChangePassword</button>
             </div>
+            <p id="CheckPassword"></p>
             <hr/>
             <div class="form-group">
                 <button onclick="DeleteAccount();" class="btn btn-primary">DeleteAccount</button>
             </div>
-            @if(@ViewBag.fa == true){
-                <p>รหัสผิด</p>
-            }
+            
     </div>
 </div>
 <div>
@@ -57,8 +57,27 @@
         var x = document.getElementById("DisplayName").value;
         if(x!="")
         {
-            var url = '@Url.Action("EditUsername", "Home")/?Name=' + x;
-            window.location.href = url;
+            $.ajax({
+                url: '@Url.Action("EditUsername", "Home")/?Name=' + x,
+                beforeSend: function(){
+                     $("#Check").text("กำลังเปลี่ยนชื่อ");
+                },
+                success: function (data) {
+                    data = JSON.parse(data);
+                    console.log(data);
+                    if(data.status == true && data.statusToken == true){
+                        $("#Check").text("เปลี่ยนชื่อเรียบร้อย");
+                    }
+                    else{
+                        var url = '@Url.Action("Index", "Home")';
+                        window.location.href = url;
+                    }
+                },
+                error: function(error){
+                    alert(error);
+                }
+            })
+
         }
     }
     function ChangePassword()
@@ -67,10 +86,34 @@
         var y = document.getElementById("Newpassword").value;
         if(x != "" && y != "")
         {
-            var url = '@Url.Action("EditPassword", "Home")/?Pold=' + x + '&Pnew=' + y;
-            window.location.href = url;
+            $.ajax({
+                url: '@Url.Action("EditPassword", "Home")/?Pold=' + x + '&Pnew=' + y,
+                beforeSend: function(){
+                     $("#CheckPassword").text("กำลังตรวจสอบ password");
+                     document.getElementById('Oldpassword').value = "";
+                     document.getElementById('Newpassword').value = "";
+                },
+                success: function (data) {
+                    data = JSON.parse(data);
+                    console.log(data);
+                    if(data.status == true && data.statusToken == true){
+                        $("#CheckPassword").text("เปลี่ยน Password เรียบร้อย");
+                    }
+                    else if(data.status == false && data.statusToken == true){
+                        $("#CheckPassword").text("เปลี่ยน Password ไม่สำเร็จ");
+                    }
+                    else{
+                        var url = '@Url.Action("Index", "Home")';
+                        window.location.href = url;
+                    }
+                },
+                error: function(error){
+                    alert(error);
+                }
+            })
         }
     }
+
     function DeleteAccount(){
         let confirmAction = confirm("ต้องการลบ Acount ?");
         if (confirmAction) {

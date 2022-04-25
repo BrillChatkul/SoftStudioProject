@@ -4,12 +4,14 @@
 @{
 }
 @using webBudda.Models
+
 @{
     var item = ViewBag.blog;
     List<Comment> comments = ViewBag.blogComment;
     var user = ViewBag.user;
     var userE = ViewBag.Email;
 }
+
 <div class="container">
     <div class="kratoo-title">
         <h1>@item.title</h1>

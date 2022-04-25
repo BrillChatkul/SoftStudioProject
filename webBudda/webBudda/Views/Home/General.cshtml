@@ -1,4 +1,4 @@
-﻿
+﻿@model webBudda.Models.SignInModel
 @{
     ViewData["Title"] = "General";
 }
@@ -8,73 +8,175 @@
 @*<link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />*@
 
 
-
-
-@section styles{
-    <link rel="Stylesheet" href="@Href("~/css/index.css")" />
-}
-
-
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Toggle top offcanvas</button>
-
-<div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-  <div class="offcanvas-header">
-    <h5 id="offcanvasTopLabel">Offcanvas top</h5>
-    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    ...
-  </div>
-</div>
-
-
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <style>
-body{
-	margin:0;
-	color:#6a6f8c;
-	background:#c8c8c8;
-	font:600 16px/18px 'Open Sans',sans-serif;
+	@@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+*{
+    margin: 0px;
+    padding: 0px;
 }
+
+body{
+    font-family: 'Exo', sans-serif;
+}
+
+
+.context {
+    width: 100%;
+    position: absolute;
+    top:25vh;
+    
+}
+
+.context h1{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+
+.area{
+    background: #d9a255;  
+    background: -webkit-linear-gradient(to left, #fbe28f, #d9b92b);  
+    width: 100%;
+    height:100vh;
+    
+   
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+
+
 *,:after,:before{box-sizing:border-box}
 .clearfix:after,.clearfix:before{content:'';display:table}
 .clearfix:after{clear:both;display:block}
 a{color:inherit;text-decoration:none}
 
 .login-wrap{
+
 	width:100%;
 	margin:auto;
 	max-width:525px;
-	min-height:670px;
+	min-height:700px;
 	position:relative;
-	background:url(https://raw.githubusercontent.com/BrillChatkul/SoftStudioProject/PluemBranch2/PIC/arun.png) no-repeat center  ;
+	background:url(https://raw.githubusercontent.com/BrillChatkul/SoftStudioProject/PluemBranch2/PIC/Arun%20Temple.png) no-repeat center  ;
 	position: relative;
 	background-size: auto, cover;
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+	border-radius:30px;
 }
 .login-html{
 	width:100%;
@@ -82,6 +184,7 @@ a{color:inherit;text-decoration:none}
 	position:absolute;
 	padding:90px 70px 50px 70px;
 	background:rgba(40,57,101,.9);
+	border-radius:30px;
 }
 .login-html .sign-in-htm,
 .login-html .sign-up-htm{
@@ -206,134 +309,203 @@ a{color:inherit;text-decoration:none}
 .foot-lnk{
 	text-align:center;
 }
+.modalbtt{
+
+	text-transform:uppercase;
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background:rgba(255,255,255,.1);
+	width:100%;
+	display:block;
+	color:#000;
+	border-color:#1161ee;
+}
 </style>
-<div class="login-wrap">
+
+  @* <div class="context">
+        <h1>pure css animated background</h1>
+    </div>*@
+
+
+<div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+					 <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+					 <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+					 <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+    </div >
+	
+<div class="context">
+	<div class="login-wrap content">
 	<div class="login-html">
-		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+		<input id="tab-1" type="radio" name="tab" class="sign-in text-center" checked><label for="tab-1" class="tab">Sign In</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up text-center"><label for="tab-2" class="tab">Sign Up</label>
 		<div class="login-form">
+			
+			<form asp-action="SignIn">
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 			<div class="sign-in-htm">
 				<div class="group">
-					<label for="user" class="label">Username</label>
-					<input id="user" type="text" class="input">
+					<label asp-for="Email" class="control-label mt-2">Email</label><br></br>
+					<input asp-for="Email" type="text" class="input">
+					<span asp-validation-for="Email" class="text-danger"></span>
 				</div>
+
 				<div class="group">
-					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div>
-				<div class="group">
+					<label asp-for="Password" class="control-label">Password</label><br></br>
+					<input asp-for="Password" id="pass" type="password" class="input" data-type="password">
+					 <span asp-validation-for="Password" class="text-danger"></span>
+				</div><br></br>
+
+				<div class="group text-center">
 					<input id="check" type="checkbox" class="check" checked>
 					<label for="check"><span class="icon"></span> Keep me Signed in</label>
 				</div>
+
 				<div class="group">
 					<input type="submit" class="button" value="Sign In">
 				</div>
+
 				<div class="hr"></div>
 				<div class="foot-lnk">
-					<a href="#forgot">Forgot Password?</a>
+					<u><a href="#forgot" data-bs-toggle="modal" data-bs-target="#exampleModal">Forgot Password?</a></u>
 				</div>
 			</div>
+			</form>
+			
+			<form asp-action="Register">
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 			<div class="sign-up-htm">
-				<div class="group">
-					<label for="user" class="label">Username</label>
-					<input id="user" type="text" class="input">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Repeat Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div>
+
+				@*<div class="group">
+					<label label asp-for="Name" class="control-label">Username</label>
+					<input asp-for="Name" class="form-control" type="text" class="input">
+				</div>*@
+
 				<div class="group">
 					<label for="pass" class="label">Email Address</label>
 					<input id="pass" type="text" class="input">
 				</div>
+
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password">
+				</div>
+
+				<div class="group">
+					<label for="pass" class="label">Repeat Password</label>
+					<input id="pass" type="password" class="input" data-type="password">
+				</div>
+
+
 				<div class="group">
 					<input type="submit" class="button" value="Sign Up">
 				</div>
+
 				<div class="hr"></div>
 				<div class="foot-lnk">
 					<label for="tab-1">Already Member?</a>
 				</div>
+
 			</div>
+			</form>
+
 		</div>
 	</div>
 </div>
 
+</div>
 
-@*<div class="container">
-            <div class="col-md-6 col-md-offset-3 col-xs-12">
-               @* <!-- Start login box wrapper -->*@
-                <div class="blmd-wrapp">
-                    <div class="blmd-color-conatiner ripple-effect-All"></div>
-                    <div class="blmd-header-wrapp ">
-                        <div class="blmd-switches">
-                             <button class="btn btn-circle btn-lg btn-blmd ripple-effect btn-success blmd-switch-button">
-                                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                                    <path fill="#fff" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
-                                 </svg>
-                              </button>
-                        </div> 
-                        
-                    </div> 
-                    <div class="blmd-continer">
-                        @*<!-- Login form container -->*@
-                        <form action="post" class="clearfix" id="login-form">
-                            <h1>Login Page</h1>
-                            <div class="col-md-12">
-                                
-                                <div class="input-group blmd-form">
-                                    <div class="blmd-line">
-                                        <input type="text" name="username" autocomplete="off" id="username" class="form-control">
-                                        <label class="blmd-label">Email or Username</label>
-                                    </div>
-                                </div>
-                                <div class="input-group blmd-form">
-                                    <div class="blmd-line">
-                                        <input type="password" name="password" autocomplete="off" id="password" class="form-control">
-                                        <label class="blmd-label">Password</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 text-center">
-                                <button type="button" class="btn btn-blmd ripple-effect btn-success btn-lg btn-block">Login</button>
-                            </div>
-                            <br/>
-                        </form>
-                       @* <!-- Login form container -->*@
-                        <form action="post" class="clearfix form-hidden" id="Register-form">
-                            <h1>Register Page</h1>
-                            <div class="col-md-12">
-                                
-                                <div class="input-group blmd-form">
-                                    <div class="blmd-line">
-                                        <input type="text" name="username" autocomplete="off" id="username" class="form-control">
-                                        <label class="blmd-label">Email or Username</label>
-                                    </div>
-                                </div>
-                                <div class="input-group blmd-form">
-                                    <div class="blmd-line">
-                                        <input type="password" name="password" autocomplete="off" id="password" class="form-control">
-                                        <label class="blmd-label">Password</label>
-                                    </div>
-                                </div>
-                                 <div class="input-group blmd-form">
-                                    <div class="blmd-line">
-                                        <input type="password" name="rePassword" autocomplete="off" id="password" class="form-control">
-                                        <label class="blmd-label">Repeat Password</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 text-center">
-                                <button type="button" class="btn btn-blmd ripple-effect btn-warning btn-lg btn-block">Register</button>
-                            </div>
-                            <br/>
-                        </form>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ @*Modal Forgot*@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Forgot Password ?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+		  <b></br><u><h1>Contact Admin</h1></u></b>
+		  <h1>adminBudBud@bbw.com</h1> 
+		  <h3>or</h3>
+		  <div > 
+			  <div class="group">
+					<h1><label asp-for="Email" class="control-label mt-2">Email</label></h1><br></br>
+					<input asp-for="Email" type="email" class="modalbtt input border border-primary " onfocus="this.value=''" value="Enter You Email.." id="myInput">
+					<span asp-validation-for="Email" class="text-danger"></span>
+				</div>
+		  </div>
+		 
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" onclick="document.getElementById('myInput').value = ''" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send Email</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
 

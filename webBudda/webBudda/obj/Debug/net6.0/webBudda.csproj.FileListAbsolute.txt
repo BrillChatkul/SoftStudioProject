@@ -534,3 +534,14 @@ C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\webBudda\webBudda\obj\Debug
 C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\webBudda\webBudda\obj\Debug\net6.0\webBudda.pdb
 C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\webBudda\webBudda\obj\Debug\net6.0\webBudda.genruntimeconfig.cache
 C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\webBudda\webBudda\obj\Debug\net6.0\ref\webBudda.dll
+C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\webBudda\webBudda\bin\Debug\net6.0\System.Web.Mvc.dll
+C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\webBudda\webBudda\bin\Debug\net6.0\System.Web.Razor.dll
+C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\webBudda\webBudda\bin\Debug\net6.0\System.Web.Optimization.dll
+C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\webBudda\webBudda\bin\Debug\net6.0\System.Web.Helpers.dll
+C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\webBudda\webBudda\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\webBudda\webBudda\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\webBudda\webBudda\bin\Debug\net6.0\System.Web.WebPages.dll
+C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\webBudda\webBudda\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
+C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\webBudda\webBudda\bin\Debug\net6.0\WebActivatorEx.dll
+C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\webBudda\webBudda\bin\Debug\net6.0\Antlr3.Runtime.dll
+C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\webBudda\webBudda\bin\Debug\net6.0\WebGrease.dll

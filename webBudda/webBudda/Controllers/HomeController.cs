@@ -49,6 +49,13 @@ namespace webBudda.Controllers
                 return RedirectToAction("SignIn");
             }
         }
+
+        public IActionResult LoginAndRegister()
+        {
+            return View();
+        }
+        
+
         public IActionResult Register()
         {
             return View();

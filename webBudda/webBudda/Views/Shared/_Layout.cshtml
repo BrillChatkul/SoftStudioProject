@@ -5,24 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - webBudda</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="~/Content/font-awesome.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/webBudda.styles.css" asp-append-version="true" />
-    @RenderSection("styles", false);
+    @RenderSection("styles", false)
     <style>
-        body {
-            background-image:url('https://sv1.picz.in.th/images/2022/04/16/8uEpnS.jpg');
+       /* @@import url('https://fonts.googleapis.com/css?family=Exo:400,700');*/
+        @@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&display=swap');
+        .body {
+            /*background-image:url('https://sv1.picz.in.th/images/2022/04/16/8uEpnS.jpg');*/
             background-repeat: repeat-y;
             background-size: 100%;
+             font-size:20px;
+            font-family: 'IBM Plex Sans Thai';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+        }
+           
         }
         .kratoo-title {
             align-items: center;
             text-align: center;
+            font-size:20px;
+            font-family: 'IBM Plex Sans Thai';
+            font-style: normal;
+            font-weight: 400;
+            
         }
         .topnav {
             position:absolute;
             min-width:100%;
-            height:30px;
+            height:50px;
             background:#F2B860;
+            font-size:20px;
+            font-family: 'IBM Plex Sans Thai';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap
+        }
+        .navbar{
+            font-size:20px;
+            font-family: 'IBM Plex Sans Thai';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap
+
         }
         .mynav {
             background:#B79C74;
@@ -30,7 +59,7 @@
         }
         .loginbutton {
             background:#C4C4C4;
-            border-radius:20px;
+            border-radius:30px;
             border:none;
             position:absolute;
             width:auto;
@@ -102,11 +131,28 @@
             background-color:#BF9500;
             width:100%;
         }
+        .nav-item{
+            font-size:20px;
+            font-family: 'IBM Plex Sans Thai';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+        }
     </style>
 </head>
+
+
+
+
+
+
+
+@*NAVBAR HERE*@
 <body>
     <header style="z-index:50">
-        <div class="topnav"><marquee>🧘ยินดีต้อนรับเข้าสู่ โลกแห่งแสงธรรม คุณธรรรมแห่งความดี Bud Bud World...</marquee></div>
+
+        <div class="topnav"><marquee class="mt-2" >🙏🏻ยินดีต้อนรับเข้าสู่ โลกแห่งแสงธรรม คุณธรรรมแห่งความดี Bud Bud World...🙏🏻</marquee></div>
+        
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 mynav">
             <div class="container-fluid">
                 
@@ -116,8 +162,9 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1" style="justify-content: space-around;">
-                        <li class="nav-item">
-                            <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">Bud Bud World</a>
+
+                        <li class="nav-item mt-2">
+                            <a class="navbar-brand text-light " asp-area="" asp-controller="Home" asp-action="Index"><i class="fa-regular fa-hands-holding-diamond"></i>Bud Bud World</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Blog" asp-action="Index" asp-route-typep="ธรรมะท่องเที่ยว">ท่องเที่ยว</a>
@@ -139,27 +186,43 @@
             </div>
         </nav>
     </header>
+
+
+
+
+
+
+
+
     <div class="contain">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
+
+
+
+
+
+
+
     <footer class="footcontent">
         <div>
             <ul style="display:flex;justify-content:space-around;list-style:none;">
-                <li>
-                    <a class="footbtn" asp-area="" asp-controller="Home" asp-action="Index">budbudworld</a>
+                <li class="nav-item  mt-3">
+                    <a class="footbtn " asp-area="" asp-controller="Home" asp-action="Index">budbudworld</a>
                 </li>
-                <li>
+                <li class="nav-item  mt-3">
                     <a class="footbtn" asp-area="" asp-controller="Home" asp-action="Content">Contact us</a>
                 </li>
-                <li class="nav-item">
-                    <a class="footbtn" asp-area="" asp-controller="Home" asp-action="Index">GitHub</a>
+                <li class="nav-item  mt-3">
+                    <a class="footbtn " asp-area="" asp-controller="Home" asp-action="Index">GitHub</a>
                 </li>  
             </ul>
         </div>
     </footer>
+    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

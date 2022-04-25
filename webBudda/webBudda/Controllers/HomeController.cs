@@ -15,9 +15,112 @@ namespace webBudda.Controllers
 
         public IActionResult Index()
         {
-            //String path = Server.MapPath("~/image/");
+            //ViewData["events"] = new[]
+            //{
+            //    new Event { Id = 1, Title = "Video for Marisa", StartDate = "2020-11-14"},
+            //    new Event { Id = 2, Title = "Preparation", StartDate = "2020-11-12"},
+            //};
+
             return View();
         }
+
+        //public JsonResult GetEvents()
+        //{
+        //    using (MyDatabaseEntities dc = new MyDatabaseEntities())
+        //    {
+        //        var events = dc.Events.ToList();
+        //        return new JsonResult { Data = events, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        //    }
+        //}
+
+        //title: v.Subject,
+        //                    description: v.Description,
+        //                    start: moment(v.Start),
+        //                    end: v.End != null ? moment(v.End) : null,
+        //                    color: v.ThemeColor,
+        //                    allDay : v.IsFullDay
+
+
+        private List<EventsModel> Events()
+        {
+            var eventsList = new List<EventsModel>
+            {
+                new EventsModel
+                {
+                    EventId = 1,
+                    Subject = "Ram",
+                    Description = "Mindfire Solutions",
+                    Start = "26/4/2022, 0:00:00",
+                    End = "NULL",
+                    ThemeColor = "blue",
+                    isFullDay = true
+                },
+                new EventsModel
+                {
+                    EventId = 2,
+                    Subject = "chand",
+                    Description = "Mindfire Solutions",
+                    Start = "27/4/2022, 0:00:00",
+                    End = "NULL",
+                    ThemeColor = "red",
+                    isFullDay = true
+                },
+                new EventsModel
+                {
+                    EventId = 3,
+                    Subject = "Abc",
+                    Description = "Abc Solutions",
+                    Start = "28/4/2022, 0:00:00",
+                    End = "NULL",
+                    ThemeColor = "green",
+                    isFullDay = true
+                }
+            };
+
+            return eventsList;
+        }
+
+
+        //public ActionResult GetEvents()
+        //{
+        //    var events = Events();
+        //    //return Json(events, JsonRequestBehavior.AllowGet);
+        //    return Json(new { data = events, JsonRequestBehavior.AllowGet });
+        //}
+
+        public ActionResult GetEvents()
+        {
+            return Json( new
+            {
+                EventId = 1,
+                Subject = "Abc",
+                Description = "Abc Solutions",
+                Start = "28/4/2022, 0:00:00",
+                End = "NULL",
+                ThemeColor = "green",
+                isFullDay = true
+            });
+        }
+
+        [HttpPost]
+        public ActionResult PostCalendarData()
+        {
+            return Json(new { title = "Free Pizza", allday = "false", borderColor = "#5173DA", color = "#99ABEA", textColor = "#000000", description = "<p>This is just a fake description for the Free Pizza.</p><p>Nothing to see!</p>", start = "2015-01-04T22:00:49", end = "2015-01-01", url = "http=//www.mikesmithdev.com/blog/worst-job-titles-in-internet-and-info-tech/" });
+        }
+
+        //[HttpGet]
+        //public ActionResult GetCalendarData()
+        //{
+        //    return Json(new { title = "Free Pizza", allday = "false", borderColor = "#5173DA", color = "#99ABEA", textColor = "#000000", description = "<p>This is just a fake description for the Free Pizza.</p><p>Nothing to see!</p>", start = "2015-01-04T22:00:49", end = "2015-01-01", url = "http=//www.mikesmithdev.com/blog/worst-job-titles-in-internet-and-info-tech/" }, JsonRequestBehavior.AllowGet);
+        //}
+        //public ActionResult GetCalendarData()
+        //{
+        //    return Json(new { title = "Free Pizza", allday = "false", borderColor = "#5173DA", color = "#99ABEA", textColor = "#000000", description = "<p>This is just a fake description for the Free Pizza.</p><p>Nothing to see!</p>", start = "2015-01-04T22:00:49", end = "2015-01-01", url = "http=//www.mikesmithdev.com/blog/worst-job-titles-in-internet-and-info-tech/" }, JsonRequestBehavior.AllowGet);
+        //}
+        //public ActionResult DATACRUD(string XmlParms)
+        //{
+        //    return Json(new { data = XmlParms });
+        //}
 
         public IActionResult Content()
         {

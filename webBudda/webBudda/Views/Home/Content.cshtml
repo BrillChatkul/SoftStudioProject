@@ -3,7 +3,101 @@
 *@
 @{
 }
-<div class="text-center">
-    <h1 class="display-4">Content</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+
+<h1>Calender</h1>
+
+<div id="calendar"></div>
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.min.js"></script>
+
+<script src="~/js/Calendar.js"></script>
+
+
+
+
+
+
+@section Scripts { 
+
+    <script>
+	    var slideIndex = 1;
+	    displaySlide(slideIndex);
+
+	    function moveSlides(n) {
+		    displaySlide(slideIndex += n);
+	    }
+
+	    function activeSlide(n) {
+		    displaySlide(slideIndex = n);
+	    }
+
+	    /* Main function */
+	    function displaySlide(n) {
+		    var i;
+		    var totalslides =
+			    document.getElementsByClassName("slide");
+		    var totaldots =
+			    document.getElementsByClassName("footerdot");
+		
+		    if (n > totalslides.length) {
+			    slideIndex = 1;
+		    }
+		
+		    if (n < 1) {
+			    slideIndex = totalslides.length;
+		    }
+		    for (i = 0; i < totalslides.length; i++) {
+			    totalslides[i].style.display = "none";
+		    }
+		    for (i = 0; i < totaldots.length; i++) {
+			    totaldots[i].className =
+			    totaldots[i].className.replace(" active", "");
+		    }
+		    totalslides[slideIndex - 1].style.display = "block";
+		    totaldots[slideIndex - 1].className += " active";
+	    }
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+ 
+    <script>
+        $(document).ready(function () {
+            var events = [];
+            $('#calendar').fullCalendar({
+                events: function(start, end, timezone, callback) { 
+                    $.ajax({ 
+                        url: source, 
+                        type: 'POST', 
+                        data: { }, 
+                        success: function (doc) { 
+                            events.push(doc); 
+                            callback(events);
+                        } 
+                    }); 
+                }
+
+            });
+        });
+
+
+    //[HttpPost]
+    //public ActionResult PostCalendarData()
+    //{
+    //    return Json(new { title = "Free Pizza", allday = "false", borderColor = "#5173DA", color = "#99ABEA", textColor = "#000000", description = "<p>This is just a fake description for the Free Pizza.</p><p>Nothing to see!</p>", start = "2015-01-04T22:00:49", end = "2015-01-01", url = "http=//www.mikesmithdev.com/blog/worst-job-titles-in-internet-and-info-tech/" });
+    //}
+
+    //[HttpGet]
+    //public ActionResult GetCalendarData()
+    //{
+    //    return Json(new { title = "Free Pizza", allday = "false", borderColor = "#5173DA", color = "#99ABEA", textColor = "#000000", description = "<p>This is just a fake description for the Free Pizza.</p><p>Nothing to see!</p>", start = "2015-01-04T22:00:49", end = "2015-01-01", url = "http=//www.mikesmithdev.com/blog/worst-job-titles-in-internet-and-info-tech/" }, JsonRequestBehavior.AllowGet);
+    //}
+    </script>
+  
+
+    
+
+}

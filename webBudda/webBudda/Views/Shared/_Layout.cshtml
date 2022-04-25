@@ -38,19 +38,40 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+
+
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            @*<a class="nav-link dropdown-toggle text-dark"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 พระพุทธศาสนา
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item font-weight-bold" asp-controller="Home" asp-action="">พระพุทธเจ้า</a>
+                                <a class="dropdown-item font-weight-bold" asp-controller="Home" asp-action="Index">พระพุทธเจ้า</a>
                                 <a class="dropdown-item" asp-controller="Home" asp-action="Content1">&nbsp;&nbsp;พระพุทธประวัติ</a>
                                 <a class="dropdown-item" asp-controller="Home" asp-action="Content2">&nbsp;&nbsp;ปางพระพุทธรูป</a>
                                 <a class="dropdown-item" asp-controller="Home" asp-action="Content3">&nbsp;&nbsp;ภาพพระพุทธประวัติ</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else there</a>
-                            </div>
+                                @*<a class="dropdown-item" href="#">Something else there</a>
+                            </div>*@
+
+
+                            <div class="nav-item dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            พระพุทธศาสนา
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button class="dropdown-item" type="button"><a class="dropdown-item font-weight-bold" asp-controller="Home" asp-action="Index">พระพุทธเจ้า</a></button>
+                            <button class="dropdown-item" type="button"><a class="dropdown-item" asp-controller="Home" asp-action="Content1">&nbsp;&nbsp;พระพุทธประวัติ</a></button>
+                            <button class="dropdown-item" type="button"><a class="dropdown-item" asp-controller="Home" asp-action="Content2">&nbsp;&nbsp;ปางพระพุทธรูป</a></button>
+                            <button class="dropdown-item" type="button"><a class="dropdown-item" asp-controller="Home" asp-action="Content3">&nbsp;&nbsp;ภาพพระพุทธประวัติ</a></button>
+                          </div>
+                          </div>
+
+
+
                         </li>
+
+
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Travel">Travel</a>
                         </li>

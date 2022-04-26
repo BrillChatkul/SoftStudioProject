@@ -1,111 +1,432 @@
 ﻿@model Firebase.Auth.User
-@{
-    ViewData["Title"] = "Home Page";
-}
+    
+
+<meta name="viewport"
+          content="width=device-width, initial-scale=1">
+     
+<link rel="stylesheet" href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
-        body {
-            background-image:url('https://sv1.picz.in.th/images/2022/04/16/8uEpnS.jpg');
-            background-repeat: repeat-y;
-            background-size: 100%;
+.circleBG{
+    background-color: #C4C4C4;
+    height:150px;
+    width:150px;
+    padding-top: 55px;
+    border-radius: 50%;
+    position:relative;
+    margin:1rem;
+}
+
+.lotus{
+    width:90px;
+    height: 90px;
+    position: absolute; 
+    top: -60px; 
+    right: 100px;
+}
+
+.lotus-text-box{
+     width:270px; 
+     padding:15px; 
+     background-color:#C4C4C4; 
+     border-radius:30px; 
+     font-size:20px
+}
+.lotus-text-box:hover{
+    background-color:black; 
+    color:white;
+}
+
+img {
+            width: 100%;
         }
-        .kratoo-title {
-            align-items: center;
+        .height {
+            height: 10px;
+        }
+          
+        /* Image-container design */
+        .image-container {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+        }
+          
+        .next {
+            right: 0;
+        }
+          
+        /* Next and previous icon design */
+        .previous,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            max-height:400px;
+            top: -200px;
+            left: 0px;
+            padding-left:0%;
+            margin-right:50%;
+         /*   top: -200px;
+            left: 0%;
+            padding-left: 50%;
+            margin-top: 0px;*/
+        }
+          
+        /* caption decorate */
+        .captionText {
+            color: #000000;
+            font-size: 14px;
+            position: absolute;
+            padding: 12px 12px;
+            bottom: 8px;
+            width: 100%;
             text-align: center;
         }
-        .topnav {
-            position:absolute;
-            min-width:100%;
-            height:30px;
-            background:#F2B860;
-        }
-        .mynav {
-            background:#B79C74;
-            top:30px;
-        }
-        .loginbutton {
-            background:#C4C4C4;
-            border-radius:20px;
-            border:none;
-            position:absolute;
-            width:auto;
-            transition: 0.3s;
-        }
-        .loginbutton:hover {
-            background:#909090;
-        }
-        .loginbutton:active {
-            background:#FFFFFF;
-        }
-        .votebutton {
-            background:#BF9500;
-            border-radius:10px;
-            border:none;
-            width:auto;
-            height:30px;
-            transition: 0.3s;
-            margin-bottom:10px;
-            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-        }
-        .votebutton:hover {
-            background:#9D6200;
-        }
-        .votebutton:active {
-            background:green;
-        }
-        .adminbutton {
-            background:#F87D76;
-            border-radius:10px;
-            border:none;
-            width:auto;
-            height:30px;
-            transition: 0.3s;
-            margin-bottom:10px;
-            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-        }
-        .adminbutton:hover {
-            background:#FA9F98;
-        }
-        .adminbutton:active {
-            background:green;
-        }
-        .contain {
-            width: 100%;
-            padding-right: var(--bs-gutter-x,.75rem);
-            padding-left: var(--bs-gutter-x,.75rem);
-            margin-right: auto;
-            margin-left: auto;
-            margin-top:50px
-        }
-        header {
-            position:sticky;
-            top:0;
-        }
-        .footcontent {
-            justify-content:space-around;
+          
+         /* Slider image number */
+        .slideNumber {
+            background-color: #5574C5;
+            color: white;
+            border-radius: 25px;
+            right: 0;
+            opacity: .5;
+            margin: 5px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
             position: absolute;
-            bottom: 0;
-            width: 100%;
-            white-space: nowrap;
-            background-color:#F2B860;
         }
-        .footbtn {
-            text-decoration: none;
-            color:black;
+        .fa {
+            font-size: 32px;
         }
-        .levelbg {
-            background-color:#BF9500;
-            width:100%;
+          
+        .fa:hover {
+            transform: rotate(360deg);
+            transition: 1s;
+            color: white;
+        }
+          
+        .footerdot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbbbbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.5s ease;
+        }
+          
+        .active,
+        .footerdot:hover {
+            background-color: black;
         }
     </style>
+
+
+</style>
+
+
+</style>
+
+
+<div style="margin-top:50px"> </div>
+
 <div class="text-center">
-    <h1 class="display-4">Login Success ! @Model.DisplayName @Model.Email</h1>
-    <hr></hr>
-    <h2 class="display-4">Welcome Sittata is Waiting For You ++</h2>
-    <a asp-area="" asp-controller="Home" asp-action="EditUser"><button>Edit</button></a>
-    <p>YEAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH</p>
+    @*<h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Coreeeeeeeeeeeeeee</a>.</p>*@
+    <img src="/images/Vector 1.png" alt="..." class="justify-content-center" style="position: absolute; z-index: -1; top:-60px; left:0px; width:100%; height:500px"> 
+    <div class="d-flex justify-content-center" style="margin-bottom:80px; margin-top:66px">
+        <div class="flex-column">
+            <div class="container" width="400" height="400" style="background-color:; padding-top:3rem; margin-right:8rem">
+                <h1 style="font-size:70px">Bud Bud</h1>
+                <h4 style="padding-bottom:1rem;">World</h4>
+                <hr style="width:60%; margin: auto; height:1px; color:black;" >
+                <h2 style="font-size:40px">Software Studio</h2>
+            </div>
+            <div class="text-center">
+            <h1 class="display-4">Login Success ! </h1>
+                <hr></hr>
+                <h2 class="display-4">Welcome Sittata is Waiting For You ++</h2>
+                <a asp-area="" asp-controller="Home" asp-action="EditUser"><button>Edit</button></a>
+                <p>YEAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH</p>
+                <p><a href="Todo/Calendar">Calendar<a/></p>
+            </div>
+        </div>
+         <div class="flex-column">
+            <img src="/images/image6.png" alt="..." class="" width="250" height="250">
+        </div>
+    </div>
+
+    <div class="d-inline-flex " style="margin-top:3rem;margin-bottom:4rem;">
+        <label>ยินดีต้อนรับ ... ท่านสมาชิก @Model.DisplayName @Model.Email</label>
+        <div class="container" style="position:relative; margin-inline:50px">
+           @* <img src="/images/image 3.png" alt="..." class="lotus">*@
+            <div class="lotus-text-box">แก้ไขโปรไฟล์</div>
+        </div>
+        <div class="container" style="position:relative; margin-inline:50px">
+            @*<img src="/images/image 3.png" alt="..." class="lotus">*@
+            <div class="lotus-text-box">ลบบัญชี</div>
+        </div>     
+        <div class="container" style="position:relative; margin-inline:50px">
+            @*<img src="/images/image 3.png" alt="..." class="lotus" width="90" height="90" style="position:absolute; top:-60px; right:100px">*@
+            <div class="lotus-text-box">ออกสู่ระบบ</div>
+        </div>    
+    </div>
+
+    <div class="d-flex justify-content-center" style="margin-bottom:80px; margin-top:66px">
+        <div class="flex-column">
+            <div class="container" width="400" height="400" style="background-color:; padding-top:3rem; margin-right:8rem">
+                <h1 style="font-size:70px">Bud Bud</h1>
+                <h4 style="padding-bottom:1rem;">World</h4>
+                <hr style="width:60%; margin: auto; height:1px; color:black;" >
+                <h2 style="font-size:40px">Software Studio</h2>
+            </div>
+        </div>
+         <div class="flex-column">
+            <img src="/images/image6.png" alt="..." class="" width="250" height="250">
+        </div>
+    </div>
+
+    <div class="d-inline-flex " style="margin-top:3rem;margin-bottom:4rem;">
+        <div class="container" style="position:relative; margin-inline:50px">
+            <img src="/images/image 3.png" alt="..." class="lotus">
+            <div class="lotus-text-box" >เยี่ยมชมเว็บไซต์</div>
+        </div>
+        <div class="container" style="position:relative; margin-inline:50px">
+            <img src="/images/image 3.png" alt="..." class="lotus">
+            <div class="lotus-text-box">รอบรู้โลกธรรมะ</div>
+        </div>     
+        <div class="container" style="position:relative; margin-inline:50px">
+            <img src="/images/image 3.png" alt="..." class="lotus" width="90" height="90" style="position:absolute; top:-60px; right:100px">
+            <div class="lotus-text-box">สนทนาธรรม</div>
+        </div>    
+    </div>
+
+
+    @*------------------------------------------------------------------------------------------- Calender --------------------------------------------------------------------------------------------------------------------------------------*@
+    <br />
+
+    <div class="container" style=" width:100%; border-radius:30px; margin-bottom:4rem; align-items:center ">
+   @* <h1>Calendar</h1>*@
+    <div id="calender"></div>
+ 
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><span id="eventTitle"></span></h4>
+                </div>
+                <div class="modal-body">
+                    <p id="pDetails"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css" rel="stylesheet" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css" rel="stylesheet" media="print"/>
+
+    @*<div id="calendar"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.min.js"></script>
+    <script src="/js/Calendar.js"></script>*@
+
+ </div>
+
+
+
+
+   @*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*@
+
+   
+
+
+ 
+
+    <!-- Image container of the image slider -->
+    <div class="container">
+        <div class="slide">
+            @*<div class="slideNumber">1</div>*@
+            <img height="400" src="https://img.freepik.com/free-vector/thailand-famous-landmark-scenery-design-tourist-elephant-back_11700-497.jpg?w=2000">
+        </div>
+        <div class="slide">
+            @*<div class="slideNumber">2</div>*@
+            <img height="400" src="https://i.pinimg.com/736x/d0/76/99/d076993241bbe501afab9a67469cbfd2.jpg">
+        </div>
+        <div class="slide">
+            @*<div class="slideNumber">3</div>*@
+            <img height="400" src="https://media.istockphoto.com/vectors/tree-temple-image-of-buddha-sculpture-pagoda-seamyanmarthailand-vector-id854985000?b=1&k=20&m=854985000&s=612x612&w=0&h=ZVrkEcx4344dVWWS7cw50ucNbtr83-OEFZKvZIiJX7o=">
+        </div>
+  
+        <!-- Next and Previous icon to change images -->
+          @*<div style="position:relative;margin-inline:200px">
+            <a class="previous" onclick="moveSlides(-1)">
+                <i class="fa fa-chevron-circle-left"></i>
+            </a>
+            <a class="next" onclick="moveSlides(1)">
+                <i class="fa fa-chevron-circle-right"></i>
+            </a>
+           </div>*@
+    </div>
+
+    <br>
+  
+    <div style="text-align:center">
+        <span class="footerdot"
+            onclick="activeSlide(1)">
+        </span>
+        <span class="footerdot"
+            onclick="activeSlide(2)">
+        </span>
+        <span class="footerdot"
+            onclick="activeSlide(3)">
+        </span>
+    </div>
+
+    <div class="container" style="background-color:#C4C4C4; width:100%; height:700px; border-radius:30px; margin-bottom:4rem;"></div>
+
+    <div class="">
+        <h1>นักแสดงธรรมดีเด่น</h1>
+        <div class="d-lg-inline-flex">
+            <h3 class="circleBG">ไมเนอร์</h3>
+            <h3 class="circleBG">บริล</h3>
+        </div>
+        <br />
+        
+        <div class="d-lg-inline-flex">
+            <h3 class="circleBG">แป้ง</h3>
+            <h3 class="circleBG">ปลื้ม</h3>
+            <h3 class="circleBG">บอส</h3>
+        </div>
+
+        
+    </div>
+</div>
+
+
+@*---------------------------------------------------------------------------------------------------- section Scripts -----------------------------------------------------------------------------------------------------------------------------*@
+
+
+@section Scripts { 
+
+    <script>
+	    var slideIndex = 1;
+	    displaySlide(slideIndex);
+
+	    function moveSlides(n) {
+		    displaySlide(slideIndex += n);
+	    }
+
+	    function activeSlide(n) {
+		    displaySlide(slideIndex = n);
+	    }
+
+	    /* Main function */
+	    function displaySlide(n) {
+		    var i;
+		    var totalslides =
+			    document.getElementsByClassName("slide");
+		    var totaldots =
+			    document.getElementsByClassName("footerdot");
+		
+		    if (n > totalslides.length) {
+			    slideIndex = 1;
+		    }
+		
+		    if (n < 1) {
+			    slideIndex = totalslides.length;
+		    }
+		    for (i = 0; i < totalslides.length; i++) {
+			    totalslides[i].style.display = "none";
+		    }
+		    for (i = 0; i < totaldots.length; i++) {
+			    totaldots[i].className =
+			    totaldots[i].className.replace(" active", "");
+		    }
+		    totalslides[slideIndex - 1].style.display = "block";
+		    totaldots[slideIndex - 1].className += " active";
+	    }
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+ 
+    <script>
+        $(document).ready(function () {
+            var events = [];
+            $.ajax({
+                type: "GET",
+                url: "/Home/GetEvents",
+                success: function (data) {
+                    data = JSON.parse(data);
+                    console.log("DATAAAAA : " + JSON.stringify(data));
+                    $.each(data, function (i, v) {
+
+                        events.push({
+                            title: v.Subject,
+                            description: v.Description,
+                            start: moment(v.Start),
+                            end: v.End != null ? moment(v.End) : null,
+                            color: v.ThemeColor,
+                            allDay : v.IsFullDay
+                        });
+                    })
+                    console.log("EEEEEEEEEEEEEEEEEEEVENTS : " + events);
+                    GenerateCalender(events);
+                },
+                error: function (error) {
+                    alert('failed');
+                }
+            })
+ 
+            function GenerateCalender(events) {
+                $('#calender').fullCalendar('destroy');
+                $('#calender').fullCalendar({
+                    contentHeight: 400,
+                    defaultDate: new Date(),
+                    timeFormat: 'h(:mm)a',
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,basicWeek,basicDay,agenda'
+                    },
+                    eventLimit: true,
+                    eventColor: '#378006',
+                    events: events,
+                    eventClick: function (calEvent, jsEvent, view) {                       
+                        $('#myModal #eventTitle').text(calEvent.title);
+                        var $description = $('<div/>');
+                        $description.append($('<p/>').html('<b>Start:</b>' + calEvent.start.format("DD-MMM-YYYY")));
+                        if (calEvent.end != null) {
+                            $description.append($('<p/>').html('<b>End:</b>' + calEvent.end.format("DD-MMM-YYYY")));
+                        }
+                        $description.append($('<p/>').html('<b>Description:</b>' + calEvent.description));
+                        $('#myModal #pDetails').empty().html($description);
+ 
+                        $('#myModal').modal();
+                    }
+                })
+            }
+        })
+    </script>
+  
 
     
-   
-                      
 
-</div>
+}
+
+
+
+
+
+
+
+

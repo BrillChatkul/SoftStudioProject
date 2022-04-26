@@ -52,6 +52,18 @@
               "target": "Package",
               "version": "[2.3.0, )"
             },
+            "Font.Awesome": {
+              "target": "Package",
+              "version": "[5.15.4, )"
+            },
+            "FontAwesome": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "FontAwesome.MVC": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "Microsoft.AspNet.Identity.Owin": {
               "target": "Package",
               "version": "[2.2.3, )"
@@ -80,9 +92,17 @@
               "target": "Package",
               "version": "[6.0.3, )"
             },
+            "Modernizr": {
+              "target": "Package",
+              "version": "[2.8.3, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.3.0, )"
+            },
+            "bootstrap": {
+              "target": "Package",
+              "version": "[5.1.3, )"
             }
           },
           "imports": [

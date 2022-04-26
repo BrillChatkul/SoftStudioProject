@@ -1,0 +1,275 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/css/all.min.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        h1 {
+          text-align: center;
+        }
+
+        .gotopbtn {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background: #27ae60;
+            bottom: 60px;
+            right: 50px;
+
+            text-decoration: none;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            font-size: 22px;
+        }
+
+        .well {
+          min-height: 20px;
+          padding: 19px;
+          margin-bottom: 20px;
+          background-color: #f5f5f5;
+          border: 1px solid #e3e3e3;
+          border-radius: 4px;
+          -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+
+        .img-rounded {
+          border-radius: 6px;
+        }
+
+		pagination {
+		  display: inline-block;
+		  padding-left: 0;
+		  margin: 20px 0;
+		  border-radius: 4px;
+		}
+		.pagination > li {
+		  display: inline;
+		}
+		.pagination > li > a,
+		.pagination > li > span {
+		  position: relative;
+		  float: left;
+		  padding: 6px 12px;
+		  margin-left: -1px;
+		  line-height: 1.42857143;
+		  color: #337ab7;
+		  text-decoration: none;
+		  background-color: #fff;
+		  border: 1px solid #ddd;
+		}
+		.pagination > li:first-child > a,
+		.pagination > li:first-child > span {
+		  margin-left: 0;
+		  border-top-left-radius: 4px;
+		  border-bottom-left-radius: 4px;
+		}
+		.pagination > li:last-child > a,
+		.pagination > li:last-child > span {
+		  border-top-right-radius: 4px;
+		  border-bottom-right-radius: 4px;
+		}
+		.pagination > li > a:hover,
+		.pagination > li > span:hover,
+		.pagination > li > a:focus,
+		.pagination > li > span:focus {
+		  color: #23527c;
+		  background-color: #eee;
+		  border-color: #ddd;
+		}
+		.pagination > .active > a,
+		.pagination > .active > span,
+		.pagination > .active > a:hover,
+		.pagination > .active > span:hover,
+		.pagination > .active > a:focus,
+		.pagination > .active > span:focus {
+		  z-index: 2;
+		  color: #fff;
+		  cursor: default;
+		  background-color: #337ab7;
+		  border-color: #337ab7;
+		}
+		.pagination > .disabled > span,
+		.pagination > .disabled > span:hover,
+		.pagination > .disabled > span:focus,
+		.pagination > .disabled > a,
+		.pagination > .disabled > a:hover,
+		.pagination > .disabled > a:focus {
+		  color: #777;
+		  cursor: not-allowed;
+		  background-color: #fff;
+		  border-color: #ddd;
+		}
+		.pagination-lg > li > a,
+		.pagination-lg > li > span {
+		  padding: 10px 16px;
+		  font-size: 18px;
+		}
+		.pagination-lg > li:first-child > a,
+		.pagination-lg > li:first-child > span {
+		  border-top-left-radius: 6px;
+		  border-bottom-left-radius: 6px;
+		}
+		.pagination-lg > li:last-child > a,
+		.pagination-lg > li:last-child > span {
+		  border-top-right-radius: 6px;
+		  border-bottom-right-radius: 6px;
+		}
+		.pagination-sm > li > a,
+		.pagination-sm > li > span {
+		  padding: 5px 10px;
+		  font-size: 12px;
+		}
+		.pagination-sm > li:first-child > a,
+		.pagination-sm > li:first-child > span {
+		  border-top-left-radius: 3px;
+		  border-bottom-left-radius: 3px;
+		}
+		.pagination-sm > li:last-child > a,
+		.pagination-sm > li:last-child > span {
+		  border-top-right-radius: 3px;
+		  border-bottom-right-radius: 3px;
+		}
+
+    </style>
+
+</head>
+<body>
+
+	<div class="row">
+		<a></a><img class="img-rounded" src="~/css/header2.jpg" title="Kurobuta Dog"><br>
+	</div>
+
+    <h1>
+        <strong>ปางพระพุทธรูป</strong>
+    </h1>
+
+    <div class="well">
+		<p class="myfont_kanit">ปางพระพุทธรูป คือ ลักษณะของรูปสมมุติของพระพุทธเจ้าในอิริยาบถต่าง ๆ ซึ่งสร้างขึ้นตามความเชื่อในพุทธประวัติ โดยช่างสมัยโยนก (คันธารราฐ) ราชวงศ์คุปตะ (พ.ศ. 863-1023) เป็นชาวกรีกพวกแรกที่กำหนดรูปแบบปางพระพุทธรูป ต่อมาช่างชาวอินเดียฝ่ายใต้ ซึ่งเป็นชาวกลิงคราฐข้างฝ่ายใต้ รวมทั้งในยุคสมัยต่าง ๆ ในภายหลังได้คิดปางพระพุทธรูปเพิ่มขึ้นอีกเป็นจำนวนมาก</p>
+	</div>
+
+	<hr style="height:5px;border-width:0;color:gray;background-color:gray">
+
+	<br>
+	<hr>
+
+	<nav aria-label="Page navigation">
+		<ul class="pagination">
+			<li><a asp-controller="Content" asp-action="Content2_3" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+			<li><a asp-controller="Content" asp-action="Content2" class="Link-kanit">1</a></li>
+			<li><a asp-controller="Content" asp-action="Content2_2" class="Link-kanit">2</a></li>
+			<li><a asp-controller="Content" asp-action="Content2_3" class="Link-kanit">3</a></li>
+			<li class="active"><a href="#">4<span class="sr-only">(current)</span></a></li>
+		</ul>
+	</nav>
+
+	<hr>
+	<br>
+
+    <div class="row">					
+					<div class="col-md-3 text-center">
+						<a href="./dbview.php?No=21"><img class="img-rounded" src="~/css/61.gif" title="๖๑.ปางปาลิไลยก์"></a><br>
+						<a href="./dbview.php?No=21" class="font_kanit_menu">• ๖๑.ปางปาลิไลยก์</a><br><br>
+					</div>
+					
+					<div class="col-md-3 text-center">
+						<a href="./dbview.php?No=22"><img class="img-rounded" src="~/css/62.gif" title="๖๒.ปางแสดงโอฬาริกนิมิต"></a><br>
+						<a href="./dbview.php?No=22" class="font_kanit_menu">• ๖๒.ปางแสดงโอฬาริกนิมิต</a><br><br>
+					</div>
+					
+					<div class="col-md-3 text-center">
+						<a href="./dbview.php?No=23"><img class="img-rounded" src="~/css/63.gif" title="๖๓.ปางโปรดอสุรินทราหู"></a><br>
+						<a href="./dbview.php?No=23" class="font_kanit_menu">• ๖๓.ปางโปรดอสุรินทราหู</a><br><br>
+					</div>
+					
+					<div class="col-md-3 text-center">
+						<a href="./dbview.php?No=24"><img class="img-rounded" src="~/css/64.gif" title="๖๔.ปางโปรดอาฬวกยักษ์"></a><br>
+						<a href="./dbview.php?No=24" class="font_kanit_menu">• ๖๔.ปางโปรดอาฬวกยักษ์</a><br><br>
+					</div>
+	</div>
+	<br>
+	<div class="row">					
+					<div class="col-md-3 text-center">
+						<a href="./dbview.php?No=25"><img class="img-rounded" src="~/css/65.gif" title="๖๕.ปางโปรดองคุลิมาลโจร"></a><br>
+						<a href="./dbview.php?No=25" class="font_kanit_menu">• ๖๕.ปางโปรดองคุลิมาลโจร</a><br><br>
+					</div>
+					
+					<div class="col-md-3 text-center">
+						<a href="./dbview.php?No=26"><img class="img-rounded" src="~/css/66.gif" title="๖๖.ปางโปรดพกาพรหม"></a><br>
+						<a href="./dbview.php?No=26" class="font_kanit_menu">• ๖๖.ปางโปรดพกาพรหม</a><br><br>
+					</div>
+					
+					<div class="col-md-3 text-center">
+						<a href="./dbview.php?No=27"><img class="img-rounded" src="~/css/67.gif" title="๖๗.ปางพิจารณาชราธรรม"></a><br>
+						<a href="./dbview.php?No=27" class="font_kanit_menu">• ๖๗.ปางพิจารณาชราธรรม</a><br><br>
+					</div>
+					
+					<div class="col-md-3 text-center">
+						<a href="./dbview.php?No=28"><img class="img-rounded" src="~/css/68.gif" title="๖๘.ปางปลงอายุสังขาร"></a><br>
+						<a href="./dbview.php?No=28" class="font_kanit_menu">• ๖๘.ปางปลงอายุสังขาร</a><br><br>
+					</div>
+	</div>
+	<br>
+	<div class="row">					
+					<div class="col-md-3 text-center">
+						<a href="./dbview.php?No=29"><img class="img-rounded" src="~/css/69.gif" title="๖๙.ปางนาคาวโลก"></a><br>
+						<a href="./dbview.php?No=29" class="font_kanit_menu">• ๖๙.ปางนาคาวโลก</a><br><br>
+					</div>
+					
+					<div class="col-md-3 text-center">
+						<a href="./dbview.php?No=30"><img class="img-rounded" src="~/css/70.gif" title="๗๐.ปางทรงรับอุทกัง"></a><br>
+						<a href="./dbview.php?No=30" class="font_kanit_menu">• ๗๐.ปางทรงรับอุทกัง</a><br><br>
+					</div>
+					
+					<div class="col-md-3 text-center">
+						<a href="./dbview.php?No=31"><img class="img-rounded" src="~/css/71.gif" title="๗๑.ปางทรงพยากรณ์"></a><br>
+						<a href="./dbview.php?No=31" class="font_kanit_menu">• ๗๑.ปางทรงพยากรณ์</a><br><br>
+					</div>
+					
+					<div class="col-md-3 text-center">
+						<a href="./dbview.php?No=32"><img class="img-rounded" src="~/css/72.gif" title="๗๒.ปางโปรดสุภัททปริพาชก"></a><br>
+						<a href="./dbview.php?No=32" class="font_kanit_menu">• ๗๒.ปางโปรดสุภัททปริพาชก</a><br><br>
+					</div>
+	</div>
+	<br>
+	<div class="row">					
+					<div class="col-md-3 text-center">
+						<a href="./dbview.php?No=33"><img class="img-rounded" src="~/css/73.gif" title="๗๓.ปางปรินิพพาน"></a><br>
+						<a href="./dbview.php?No=33" class="font_kanit_menu">• ๗๓.ปางปรินิพพาน</a><br><br>
+					</div>
+	</div>
+
+	<br>
+	<hr>
+
+	<nav aria-label="Page navigation">
+		<ul class="pagination">
+			<li><a asp-controller="Content" asp-action="Content2_3" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+			<li><a asp-controller="Content" asp-action="Content2" class="Link-kanit">1</a></li>
+			<li><a asp-controller="Content" asp-action="Content2_2" class="Link-kanit">2</a></li>
+			<li><a asp-controller="Content" asp-action="Content2_3" class="Link-kanit">3</a></li>
+			<li class="active"><a href="#">4<span class="sr-only">(current)</span></a></li>
+		</ul>
+	</nav>
+
+	<hr>
+	<br>
+
+	<hr style="height:5px;border-width:0;color:gray;background-color:gray">
+
+
+    <a class="gotopbtn" href="#"> <i class="fa fa-arrow-up" aria-hidden="true"></i> </a>
+
+    
+</body>

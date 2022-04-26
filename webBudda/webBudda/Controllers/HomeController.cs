@@ -31,7 +31,16 @@ namespace webBudda.Controllers
             
         }
 
-         public async Task<IActionResult> Index()
+        public ActionResult GetEvents()
+        {
+            EventsLI L1 = new EventsLI();
+            var eventsList = L1.GetEvent();
+            var jsonEvent = JsonConvert.SerializeObject(eventsList);
+            return Json(jsonEvent);
+        }
+
+
+        public async Task<IActionResult> Index()
         {
 
             var token = HttpContext.Session.GetString("_UserToken");
@@ -50,10 +59,17 @@ namespace webBudda.Controllers
                 return RedirectToAction("SignIn");
             }
         }
+
+        public IActionResult LoginAndRegister()
+        {
+            return View();
+        }
+        
         public IActionResult Register()
         {
             return View();
         }
+
         [HttpPost]
         public async Task<JsonResult> Register(UserModel userModel)
         {
@@ -110,6 +126,13 @@ namespace webBudda.Controllers
             return Json(json3);
 
         }
+
+        public IActionResult General()
+        {
+            return View();
+        }
+
+
         public IActionResult SignIn()
         {
             return View();

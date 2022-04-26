@@ -1,4 +1,4 @@
-﻿namespace webBudda.Controllers
+﻿namespace webBudda.Models
 {
     public class EventsModel
     {

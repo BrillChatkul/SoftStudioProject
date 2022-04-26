@@ -3,4 +3,56 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<!--
+Created using JS Bin<!--  w  w  w  . d  e  m    o2  s  .  c    o  m-->
+https://jsbin.com
+Released under the MIT license: https://jsbin.mit-license.org
+-->
+<html>
+<head>
+  <meta name="viewport" content="width=device-width">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.css' />
+  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.10.6/moment-with-locales.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.js'></script>
+</head>
+<body>
+  <div id="calendar"></div>
+<script>
+var eventsArray = [
+        {
+            title  : 'event1',
+            start  : '2016-04-13'
+        },
+        {
+            title  : 'event2',
+            start  : '2016-04-15',
+            end    : '2016-04-17'
+        },
+        {
+            title  : 'event3',
+            start  : '2016-04-09T12:30:00',
+            allDay : false // will make the time show
+        }
+    ];
+var eventsArrayNew = JSON.parse('[{"start":"2016-04-12T15:30:00","end":"2016-04-12T16:30:00","title":"Calendar 1","allDay":"false","id":"a41380d1fbbaa819"}]');
+$(document).ready(function() {
+    $('#calendar').fullCalendar({
+        //theme: true,
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+        },
+        defaultDate: moment().format("YYYY-MM-DD"),
+        editable: true,
+        //events: {
+        //    url: 'https://www.json-generator.com/api/json/get/ccUKVDYErS?indent=2',
+        //    type: 'GET'
+        //}
+        events: eventsArrayNew
+    });
+});
+</script>
+</body>
+</html>

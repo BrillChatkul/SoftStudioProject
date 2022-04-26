@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using webBudda.Models;
-//using Newtonsoft.Json;
-//using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace webBudda.Controllers
 {
@@ -50,16 +49,19 @@ namespace webBudda.Controllers
         //}
 
         //////////////////////////////////////////////////////////////////////////////////////////////
-        //    private List<EventsModel> GetEvents()
-        //    {
-        //        var eventsList = new List<EventsModel>
+        ///
+
+        //[HttpGet]
+        //public List<EventsModel> Events()
+        //{
+        //    var eventsList = new List<EventsModel>
         //        {
         //            new EventsModel
         //            {
         //                EventId = 1,
         //                Subject = "Ram",
         //                Description = "Mindfire Solutions",
-        //                Start = "26/4/2022, 0:00:00",
+        //                Start = "26-Apr-2022 01:44 PM",
         //                End = "NULL",
         //                ThemeColor = "blue",
         //                isFullDay = true
@@ -69,7 +71,7 @@ namespace webBudda.Controllers
         //                EventId = 2,
         //                Subject = "chand",
         //                Description = "Mindfire Solutions",
-        //                Start = "27/4/2022, 0:00:00",
+        //                Start = "27-Apr-2022 01:44 PM",
         //                End = "NULL",
         //                ThemeColor = "red",
         //                isFullDay = true
@@ -79,44 +81,46 @@ namespace webBudda.Controllers
         //                EventId = 3,
         //                Subject = "Abc",
         //                Description = "Abc Solutions",
-        //                Start = "28/4/2022, 0:00:00",
+        //                Start = "28-Apr-2022 01:44 PM",
         //                End = "NULL",
         //                ThemeColor = "green",
         //                isFullDay = true
         //            }
         //        };
 
-        //        return Json(eventsList, new Newtonsoft.Json.JsonSerializerSettings());
+        //    //return Json(return, new Newtonsoft.Json.JsonSerializerSettings());
+        //    return eventsList;
         //}
 
         public ActionResult GetEvents()
         {
-            return Json(new
-            {
-                EventId = 1,
-                Subject = "Abc",
-                Description = "Abc Solutions",
-                Start = "28/4/2022, 0:00:00",
-                End = "NULL",
-                ThemeColor = "green",
-                isFullDay = true
-            });
+            EventsLI L1 = new EventsLI();
+            var eventsList = L1.GetEvent();
+            var jsonEvent = JsonConvert.SerializeObject(eventsList);
+            return Json(jsonEvent);
         }
 
+        //[HttpGet]
         //public ActionResult GetEvents()
         //{
         //    var events = Events();
         //    //return Json(events, JsonRequestBehavior.AllowGet);
         //    return Json(new { data = events, JsonRequestBehavior.AllowGet });
         //}
+        //public ActionResult GetEvents()
+        //{
+        //    var events = Events();
+        //    return Json(events, JsonRequestBehavior.AllowGet);
+        //    return Json(new { events = events });
+        //}
 
         //////////////////////////////////////////////////////////////////////////////////////////////
 
-        [HttpPost]
-        public ActionResult PostCalendarData()
-        {
-            return Json(new { title = "Free Pizza", allday = "false", borderColor = "#5173DA", color = "#99ABEA", textColor = "#000000", description = "<p>This is just a fake description for the Free Pizza.</p><p>Nothing to see!</p>", start = "2015-01-04T22:00:49", end = "2015-01-01", url = "http=//www.mikesmithdev.com/blog/worst-job-titles-in-internet-and-info-tech/" });
-        }
+        //[HttpPost]
+        //public ActionResult PostCalendarData()
+        //{
+        //    return Json(new { title = "Free Pizza", allday = "false", borderColor = "#5173DA", color = "#99ABEA", textColor = "#000000", description = "<p>This is just a fake description for the Free Pizza.</p><p>Nothing to see!</p>", start = "2015-01-04T22:00:49", end = "2015-01-01", url = "http=//www.mikesmithdev.com/blog/worst-job-titles-in-internet-and-info-tech/" });
+        //}
 
         //[HttpGet]
         //public ActionResult GetCalendarData()

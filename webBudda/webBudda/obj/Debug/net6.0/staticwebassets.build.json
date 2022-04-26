@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Hq2ZXu+nE7i9b67ucS1hlTd4Sj1f9t6OZf1so/i65yA=",
+  "Hash": "qabpaYPPn42kDld3Zi7EkDj8dnO4bIyxZMQs6qnH5kk=",
   "Source": "webBudda",
   "BasePath": "_content/webBudda",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\choti\\OneDrive\\Documents\\SoftStudioProject\\webBudda\\webBudda\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\webBudda.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\choti\\OneDrive\\Documents\\SoftStudioProject\\webBudda\\webBudda\\wwwroot\\App_Data\\eventList.json",
+      "SourceId": "webBudda",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\choti\\OneDrive\\Documents\\SoftStudioProject\\webBudda\\webBudda\\wwwroot\\",
+      "BasePath": "_content/webBudda",
+      "RelativePath": "App_Data/eventList.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\App_Data\\eventList.json"
     },
     {
       "Identity": "C:\\Users\\choti\\OneDrive\\Documents\\SoftStudioProject\\webBudda\\webBudda\\wwwroot\\App_Data\\MyDatabase.mdf",

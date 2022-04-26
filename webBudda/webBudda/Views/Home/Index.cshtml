@@ -325,9 +325,12 @@ img {
             var events = [];
             $.ajax({
                 type: "GET",
-                url: "/home/GetEvents",
+                url: "/Home/GetEvents",
                 success: function (data) {
+                    data = JSON.parse(data);
+                    console.log("DATAAAAA : " + JSON.stringify(data));
                     $.each(data, function (i, v) {
+
                         events.push({
                             title: v.Subject,
                             description: v.Description,
@@ -337,7 +340,7 @@ img {
                             allDay : v.IsFullDay
                         });
                     })
- 
+                    console.log("EEEEEEEEEEEEEEEEEEEVENTS : " + events);
                     GenerateCalender(events);
                 },
                 error: function (error) {
@@ -362,9 +365,9 @@ img {
                     eventClick: function (calEvent, jsEvent, view) {                       
                         $('#myModal #eventTitle').text(calEvent.title);
                         var $description = $('<div/>');
-                        $description.append($('<p/>').html('<b>Start:</b>' + calEvent.start.format("DD-MMM-YYYY HH:mm a")));
+                        $description.append($('<p/>').html('<b>Start:</b>' + calEvent.start.format("DD-MMM-YYYY")));
                         if (calEvent.end != null) {
-                            $description.append($('<p/>').html('<b>End:</b>' + calEvent.end.format("DD-MMM-YYYY HH:mm a")));
+                            $description.append($('<p/>').html('<b>End:</b>' + calEvent.end.format("DD-MMM-YYYY")));
                         }
                         $description.append($('<p/>').html('<b>Description:</b>' + calEvent.description));
                         $('#myModal #pDetails').empty().html($description);

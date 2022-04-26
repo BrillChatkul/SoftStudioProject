@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vgarwmCPcOsLWG9pHY6ZaU8e28OOLviv10U+NzQGn7hx2BYF2vMf+6tH686TqlzMeA7UTJ6qGdtBbvyHJQkkxw==",
+  "dgSpecHash": "v5EBdv/khhi7Yiioe/iTJRtENPyagAv347+tZ50PaCCYW9tYC874wG8UA2l0pFJPxNRJP7a1f16cD2ItI0Wg1w==",
   "success": true,
   "projectFilePath": "C:\\Users\\choti\\OneDrive\\Documents\\SoftStudioProject\\webBudda\\webBudda\\webBudda.csproj",
   "expectedPackageFiles": [
@@ -34,6 +34,7 @@
     "C:\\Users\\choti\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\choti\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\choti\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\choti\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\choti\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\choti\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\choti\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",

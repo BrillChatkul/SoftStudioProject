@@ -87,10 +87,12 @@
     }
 
     .spinner {
-        position: fixed;
+        position: sticky;
         left: 400px;
         top: 200px;
         z-index: 10;
+        border-radius:20px;
+        background-color:rgba(196, 196, 196, 0.75);
     }
     .bttn{
         top:10px;
@@ -99,11 +101,15 @@
         width: 150px;
         height: 45px;
     }
+    .container {
+        
+        width:80%;
+    }
 
 </style>
 
 
-
+<div style="margin-top:50px"> </div>
 <div class="text-center">
     <h1><strong>คติธรรมประจำวันนี้</strong></h1>
 </div><hr></hr>
@@ -118,10 +124,10 @@
 
             <div class="col">
                 <div id="question">
-                    <h1></h1>
+                    <h1>กด Spin เพื่อรับคติธรรมประจำวันนี้</h1>
                 </div>
-                <div class="text-center">
-                    <button type="button" class="btn btn-outline-primary  bttn">อนุโมธนา</button>
+                <div class="text-center" style="margin-bottom:10px">
+                    <button type="button" class="btn btn-outline-primary  bttn">อนุโมทนา</button>
                       <button type="button" class="btn btn-outline-primary bttn">กลับหน้าหลัก</button>
                       <button type="button" class="btn btn-outline-primary bttn">ส่งต่อให้คนอื่น</button>           
                 </div>

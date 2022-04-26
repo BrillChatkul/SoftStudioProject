@@ -1,83 +1,8 @@
 ﻿@model webBudda.Models.SignInModel
-@*@model webBudda.Models.UserModel
-*@
-
-@* https://codepen.io/khadkamhn/pen/ZGvPLo *@
-
-
-@*@model webBudda.Models
-@using (Html.BeginForm("register", "UserModel", FormMethod.Post))
- {
-        @Html.TextBoxFor(m => m.Name)
-        @Html.TextBoxFor(m => m.Email)
-		@Html.PasswordFor(m => m.Password)
-        @Html.PasswordFor(m => m.RePassword)
- }
-
-*@
-
-
-
-@*@model webBudda.Models.UserModel
- @using (Html.BeginForm("register", "UserModel", FormMethod.Post))
- {
-        @Html.TextBoxFor(model => model.Name)
-        @Html.TextBoxFor(model => model.Email)
-		@Html.PasswordFor(model => model.Password)
-        @Html.PasswordFor(model => model.RePassword)
- }
-
-@model webBudda.Models.SignInModel
- @using (Html.BeginForm("SignIn", "SignInModel", FormMethod.Post))
- {
-        @Html.TextBoxFor(model => model.Email)
-        @Html.PasswordFor(model => model.Password)
- }
-*@
-
-@*
- @model tuple<SignInModel,UserModel>
-
-@using (Html.Beginform("UserModel", "auth", FormMethod.post))
-{
-        @Html.TextBoxFor(tuple => tuple.Item2.Name, new {@Name="Name"})
-        @Html.TextBoxFor(tuple => tuple.Item2.Email, new {@Name="Email"})
-        @Html.PasswordFor(tuple => tuple.Item2.Password, new {@Name="Password"})
-}
-
-@using (Html.Beginform("SignInModel", "auth", FormMethod.post))
-{
-       @Html.TextBoxFor(tuple => tuple.Item1.Email, new {@Name="Email"})
-       @Html.PasswordFor(tuple => tuple.Item1.Password, new {@Name="Password"})
-}
-
-*@
-
-
-
-
-
-
-
-
-
-
-
 
 @{
     ViewData["Title"] = "SignIn";
 }
-
-
-
-
-
-
-
-
-<h1>SignIn</h1>
-<hr />
-
 
 <style>
 	@@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&display=swap');

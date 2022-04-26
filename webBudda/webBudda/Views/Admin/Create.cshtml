@@ -1,43 +1,119 @@
-﻿
-@{
+﻿@{
 }
 @model webBudda.Models.blog
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
 <div style="margin-top:50px"> </div>
-<h3><b>Forms: Strongly Typed</b></h3>
 
 @{
     var listItems = new List<SelectListItem>
-    {         
-    new SelectListItem { Text = "โลกธรรมะ", Value = "โลกธรรมะ"},
-    new SelectListItem { Text = "ธรรมะท่องเที่ยว", Value = "ธรรมะท่องเที่ยว"},
-    new SelectListItem { Text = "พิธีกรรมและความเชื่อ", Value = "พิธีกรรมและความเชื่อ"},
-    new SelectListItem { Text = "กิจกรรมธรรมะ", Value = "กิจกรรมธรรมะ"},
-    new SelectListItem { Text = "เรื่องอื่นๆ", Value = "เรื่องอื่นๆ"},
-    };
-        
+{
+new SelectListItem { Text = "โลกธรรมะ", Value = "โลกธรรมะ"},
+new SelectListItem { Text = "ธรรมะท่องเที่ยว", Value = "ธรรมะท่องเที่ยว"},
+new SelectListItem { Text = "พิธีกรรมและความเชื่อ", Value = "พิธีกรรมและความเชื่อ"},
+new SelectListItem { Text = "กิจกรรมธรรมะ", Value = "กิจกรรมธรรมะ"},
+new SelectListItem { Text = "สมาธิและการเข้าฌาน", Value = "สมาธิและการเข้าฌาน"},
+new SelectListItem { Text = "เรื่องอื่นๆ", Value = "เรื่องอื่นๆ"},
+};
 }
 
+<style>
+    .ddiv {
+        height: 900px;
+        width: 1000px;
+        background-color: #FBAB7E;
+        background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+        background-repeat: repeat-y;
+        background-size: 100%;
+        font-size: 20px;
+        box-shadow: 8px 10px 10px 1px #000;
+
+    }
+
+    .ddiv2 {
+        background-color: #FBAB7E;
+        background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+        background-repeat: repeat-y;
+        background-size: 100%;
+    }
+
+    .ppfont {
+        font-size: 30px;
+        
+    }
+
+    .pdd {
+        padding: 1%;
+
+    }
+
+    .wide {
+        
+        color: black;
+        width: 600px;
+        opacity: 0.5;
+    }
+
+    .wide1 {
+        color: black;
+        width: 600px;
+        height: 500px;
+        opacity: 0.5;
+    }
+</style>
+
 @using (Html.BeginForm("Create", "Admin", FormMethod.Post))
-{ 
-    <table>
-        <tr>
-            <td>หัวข้อเรื่อง: </td>
-            <td>@Html.TextBoxFor(m => m.title)</td>
-        </tr>
-        <tr>
-            <td>ผู้แต่ง: </td>
-            <td>@Html.TextBoxFor(m => m.authen)</td>
-        </tr>
-        <tr>
-            <td>รายละเอียด: </td>
-            <td>@Html.TextBoxFor(m => m.content)</td>
-        </tr>
-        <tr>
-            <td>ประเภท: </td>
-            <td class="text-center">@Html.DropDownListFor(m => m.typep,listItems,"-- เลือกประเภท --")</td>
-        </tr>
-        <tr>
-            <td colspan="2"><input type="submit" value="Submit Form" /></td>
-        </tr>
-    </table>
+{
+
+    <div class="container ddiv shadow p-3 mb-5 bg-body rounded" style="border-radius: 30px;">
+
+        <div class="row">
+            <div class="row text-center ppfont ddv2" style="border-radius: 30px;">
+                <div><b>ตั้งกระทู้สนทนาธรรม</b></div><hr></hr>
+            </div>
+
+            <div class="row" style="display:flex; justify-content: center; margin:5px;">
+                
+                <table>
+                   
+                        <tr>
+                            <td class="text-center ppfont ">หัวข้อเรื่อง: </td>
+                            <td class="ml-3 ppfont pdd">@Html.TextBoxFor(m => m.title, new { @class= "wide" })</td>
+                        </tr>
+ 
+
+                        <tr>
+                            <td class="text-center ppfont ">ผู้แต่ง: </td><br>
+                            <td class="ml-3 ppfont pdd">@Html.TextBoxFor(m => m.authen, new { @class= "wide" })</td>
+                        </tr>
+
+
+                        <tr>
+                            <td class="text-center ppfont">รายละเอียด: </td>
+                            <td class="ml-3 ppfont pdd">@Html.TextBoxFor(m => m.content, new { @class= "wide1" })</td>
+                        </tr>
+
+
+                        <tr>
+                            <td class="text-center ppfont">ประเภท: </td>
+                            <td class="ppfont pdd">@Html.DropDownListFor(m => m.typep,listItems,"-- เลือกประเภท --", new {
+                            @class= "wide" })</td>
+                        </tr>
+
+                        <tr>
+                            <div class="text-center">
+                                 <td class=" ppfont"><input type="submit" value="Submit Form" /></td>
+                            </div>
+                        </tr>
+              
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+
 }

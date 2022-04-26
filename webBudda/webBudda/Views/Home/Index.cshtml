@@ -29,7 +29,8 @@
         padding: 15px;
         background-color: #C4C4C4;
         border-radius: 30px;
-        font-size: 20px
+        font-size: 20px;
+        margin: 5px;
     }
 
     .lotus-text-box:hover {
@@ -156,36 +157,24 @@
                     <hr>
                     </hr>
                     <label>ยินดีต้อนรับ ... ท่านสมาชิก @Model.DisplayName @Model.Email</label>
-                    <a asp-area="" asp-controller="Home" asp-action="EditUser"><button>Edit</button></a>
                 </div>
             </div>
 
-            <div class="col ">
-                <div class="container" style="margin-inline:50px">
+            <div class="col-centered">
+                <div class="container" style="display:flex;justify-content: center;margin:5px;">
                     @* <img src="/images/image 3.png" alt="..." class="lotus">*@
-                    <div class="lotus-text-box">แก้ไขโปรไฟล์</div>
+                    @if(@Model.Email != null){
+                        <a asp-area="" asp-controller="Home" asp-action="EditUser"><div class="lotus-text-box">แก้ไขโปรไฟล์</div></a>
+                        <a asp-area="" asp-controller="Home" asp-action="LogOut"><div class="lotus-text-box">ออกสู่ระบบ</div></a>
+                    }else{
+                        <a asp-area="" asp-controller="Home" asp-action="SignIn"><div class="lotus-text-box">เข้าสู่ระบบ</div></a>
+                    }
+                    
                 </div>
-                <div class="container" style=" margin-inline:50px">
-                    @*<img src="/images/image 3.png" alt="..." class="lotus">*@
-                    <div class="lotus-text-box">ลบบัญชี</div>
-                </div>
-                <div class="container" style=" margin-inline:50px">
-                    @*<img src="/images/image 3.png" alt="..." class="lotus" width="90" height="90"
-                        style="position:absolute; top:-60px; right:100px">*@
-                    <div class="lotus-text-box">ออกสู่ระบบ</div>
-                </div>
-                <div class="container" style=" margin-inline:50px">
+                
+                <div class="container" style="display:flex;justify-content: center;">
                     @*<img src="/images/image 3.png" alt="..." class="lotus">*@
                     <div class="lotus-text-box">เยี่ยมชมเว็บไซต์</div>
-                </div>
-                <div class="container" style=" margin-inline:50px">
-                    @*<img src="/images/image 3.png" alt="..." class="lotus">*@
-                    <div class="lotus-text-box">รอบรู้โลกธรรมะ</div>
-                </div>
-                <div class="container" style="margin-inline:50px">
-                    @*<img src="/images/image 3.png" alt="..." class="lotus" width="90" height="90"
-                        style="position:absolute; top:-60px; right:100px">*@
-                    <div class="lotus-text-box">สนทนาธรรม</div>
                 </div>
             </div>
 

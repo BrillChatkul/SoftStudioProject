@@ -125,6 +125,7 @@
         .adminbutton:active {
             background:green;
         }
+
         .contain {
             width: 100%;
             margin-right: auto;
@@ -136,10 +137,12 @@
         }
         .footcontent {
             justify-content:space-around;
-            position: absolute;
+            position: fixed;
             width: 100%;
             white-space: nowrap;
             background-color:#F2B860;
+            bottom:0px;
+            z-index:10;
         }
         .footbtn {
             text-decoration: none;
@@ -186,12 +189,12 @@
 
 
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1" style="justify-content: space-around;">
+                    <ul class="navbar-nav flex-grow-1">
 
-                        <li class="nav-item mt-2">
-                            <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index"><i class="fa-regular fa-hands-holding-diamond"></i>Bud Bud World</a>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index"><i class="fa-regular fa-hands-holding-diamond"></i>Bud Bud World</a>
                         </li>
-
+                        
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 พระพุทธศาสนา
@@ -238,26 +241,17 @@
 
 
                         <li class="nav-item ">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Blog" asp-action="Index" asp-route-typep="ธรรมะท่องเที่ยว">ท่องเที่ยว</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Blog" asp-action="Index" asp-route-typep="โลกธรรมะ">เรื่องเล่า</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Todo" asp-action="Index">To Do</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Todo" asp-action="Calendar">Calendar</a>
-                        </li>
-                         <li class="nav-item ">
-                            <a class="nav-link text-light" asp-area="" asp-controller="BubbhaGame" asp-action="Index">Buddha Game</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Blog" asp-action="Index">สนทนาธรรม</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="BubbhaGame" asp-action="Index">Buddha Game</a>
+                        </li>
+                        <li class="nav-item" style="display: flex;align-items: center;">
                             @if(ViewData["Email"] != null && ViewData["Email"] != "Unknown")
                             {
                                 <button class="loginbutton"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="LogOut">ออกจากระบบ</a></button>
                             }else{
-                                <button class="loginbutton"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SignIn">เข้าสู่ระบบ</a></button>
+                                <button class="loginbutton"><a class="nav-link text-dark"  asp-area="" asp-controller="Home" asp-action="SignIn">เข้าสู่ระบบ</a></button>
                             } 
                         </li>
                     </ul>
@@ -272,6 +266,7 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+        <div style="height:50px;"></div>
     </div>
 
 

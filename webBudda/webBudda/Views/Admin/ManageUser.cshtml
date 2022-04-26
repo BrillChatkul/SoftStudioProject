@@ -27,6 +27,20 @@
         background-color:white;
         
     }
+    .buttonClickMG {
+        background:#C4C4C4;
+        border-radius:30px;
+        border:none;
+        font-size:150%
+        transition: 0.3s;
+        margin-left:5px;
+    }
+    .buttonClickMG:hover {
+        background:#909090;
+    }
+    .buttonClickMG:active {
+        background:#FFFFFF;
+    }
 </style>
 <div style="margin-top:50px"> </div>
 <div>
@@ -41,12 +55,12 @@
                         <div style="display:flex;align-items:center;justify-content:right">
                               <button style="border:none;background:transparent;">
                                 @if(item.Ban==true){
-                                    <button style="background:transparent;font-size:150%" onclick="Ban('@item.Id','@item.Email','@item.Ban');">Unban</button>
+                                    <button class="buttonClickMG"  onclick="Ban('@item.Id','@item.Email','@item.Ban');"><p>Unban</p></button>
                                 }else{
-                                    <button style="background:transparent;font-size:150%" onclick="Ban('@item.Id','@item.Email','@item.Ban');">Ban</button>
+                                    <button class="buttonClickMG"  onclick="Ban('@item.Id','@item.Email','@item.Ban');"><p>Ban</p></button>
                                 }
                                 </button>
-                            <button style="background:transparent;font-size:150%" onclick="GetBlog('@item.Id','@item.Email');">Delete</button>
+                            <button class="buttonClickMG" onclick="GetBlog('@item.Id','@item.Email');"><p>Delete user</p></button>
                         </div>
                     @**@
                     </div>

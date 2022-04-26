@@ -52,6 +52,8 @@ namespace webBudda.Controllers
                 {
                     return RedirectToAction("Index", "Admin");
                 }
+                ViewBag.user = user.DisplayName;
+                ViewBag.Email = user.Email;
                 return View(user);
             }
             else

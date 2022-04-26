@@ -32,6 +32,20 @@
         background-color:white;
         
     }
+    .buttonClickMG {
+        background:#C4C4C4;
+        border-radius:30px;
+        border:none;
+        font-size:150%
+        transition: 0.3s;
+        margin-left:5px;
+    }
+    .buttonClickMG:hover {
+        background:#909090;
+    }
+    .buttonClickMG:active {
+        background:#FFFFFF;
+    }
 </style>
 <div style="margin-top:50px"> </div>
 <div>
@@ -58,7 +72,7 @@
                                 </button></a>
                             <a asp-controller="Admin"  asp-action="EditBlog" asp-route-id="@item.Id"> 
                             <button style="border:none;background:transparent;font-size:150%"><i class='fas fa-edit'></i></button></a>
-                            <button style="background:transparent;font-size:150%" onclick="GetBlog('@item.Id','@item.title')">Delete</button>
+                            <button class="buttonClickMG" onclick="GetBlog('@item.Id','@item.title')">Delete</button>
                         </div>
                         <p style="text-align:end">ผู้ตั้งกระทู้ : @item.authen</p>  
                     </div>

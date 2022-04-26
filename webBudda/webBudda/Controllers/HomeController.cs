@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using webBudda.Models;
+//using Newtonsoft.Json;
+//using Newtonsoft.Json.Linq;
 
 namespace webBudda.Controllers
 {
@@ -40,57 +42,56 @@ namespace webBudda.Controllers
         //                    color: v.ThemeColor,
         //                    allDay : v.IsFullDay
 
-
-        private List<EventsModel> Events()
-        {
-            var eventsList = new List<EventsModel>
-            {
-                new EventsModel
-                {
-                    EventId = 1,
-                    Subject = "Ram",
-                    Description = "Mindfire Solutions",
-                    Start = "26/4/2022, 0:00:00",
-                    End = "NULL",
-                    ThemeColor = "blue",
-                    isFullDay = true
-                },
-                new EventsModel
-                {
-                    EventId = 2,
-                    Subject = "chand",
-                    Description = "Mindfire Solutions",
-                    Start = "27/4/2022, 0:00:00",
-                    End = "NULL",
-                    ThemeColor = "red",
-                    isFullDay = true
-                },
-                new EventsModel
-                {
-                    EventId = 3,
-                    Subject = "Abc",
-                    Description = "Abc Solutions",
-                    Start = "28/4/2022, 0:00:00",
-                    End = "NULL",
-                    ThemeColor = "green",
-                    isFullDay = true
-                }
-            };
-
-            return eventsList;
-        }
-
-
         //public ActionResult GetEvents()
         //{
-        //    var events = Events();
-        //    //return Json(events, JsonRequestBehavior.AllowGet);
-        //    return Json(new { data = events, JsonRequestBehavior.AllowGet });
+        //    return Json(
+        //        new { title = "KRA JOOK MAK",description = "pai none",start = "2022-04-26",end = "null",color = "blue",allDay = "true" }
+        //        );
+        //}
+
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        //    private List<EventsModel> GetEvents()
+        //    {
+        //        var eventsList = new List<EventsModel>
+        //        {
+        //            new EventsModel
+        //            {
+        //                EventId = 1,
+        //                Subject = "Ram",
+        //                Description = "Mindfire Solutions",
+        //                Start = "26/4/2022, 0:00:00",
+        //                End = "NULL",
+        //                ThemeColor = "blue",
+        //                isFullDay = true
+        //            },
+        //            new EventsModel
+        //            {
+        //                EventId = 2,
+        //                Subject = "chand",
+        //                Description = "Mindfire Solutions",
+        //                Start = "27/4/2022, 0:00:00",
+        //                End = "NULL",
+        //                ThemeColor = "red",
+        //                isFullDay = true
+        //            },
+        //            new EventsModel
+        //            {
+        //                EventId = 3,
+        //                Subject = "Abc",
+        //                Description = "Abc Solutions",
+        //                Start = "28/4/2022, 0:00:00",
+        //                End = "NULL",
+        //                ThemeColor = "green",
+        //                isFullDay = true
+        //            }
+        //        };
+
+        //        return Json(eventsList, new Newtonsoft.Json.JsonSerializerSettings());
         //}
 
         public ActionResult GetEvents()
         {
-            return Json( new
+            return Json(new
             {
                 EventId = 1,
                 Subject = "Abc",
@@ -101,6 +102,15 @@ namespace webBudda.Controllers
                 isFullDay = true
             });
         }
+
+        //public ActionResult GetEvents()
+        //{
+        //    var events = Events();
+        //    //return Json(events, JsonRequestBehavior.AllowGet);
+        //    return Json(new { data = events, JsonRequestBehavior.AllowGet });
+        //}
+
+        //////////////////////////////////////////////////////////////////////////////////////////////
 
         [HttpPost]
         public ActionResult PostCalendarData()

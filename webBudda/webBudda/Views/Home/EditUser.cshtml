@@ -5,7 +5,7 @@
 
 <style>
     .ddiv {
-        height: 900px;
+        height: 1100px;
         width: 1000px;
        background-color: #74EBD5;
 background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
@@ -49,6 +49,100 @@ background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
         overflow: scroll;
         text-align: left;
 }
+.btt-text-box {
+    border: 3px solid black;
+  cursor: pointer;
+        width: 270px;
+        padding: 15px;
+        background-color: transparent;
+     
+        border-radius: 30px;
+        font-size: 20px;
+        margin: 5px;
+    }
+
+
+.btt-text-box-1 {
+    border: 3px solid black;
+    cursor: pointer;
+        width: 270px;
+        padding: 15px;
+        background-color: transparent;
+        border-radius: 30px;
+        font-size: 20px;
+        margin: 5px;
+    }
+
+/*.btt-text-box-1:hover {
+        background-color: red;
+        color: white;
+    }*/
+
+
+/* Green */
+.success {
+  border-color: #04AA6D;
+  color: green;
+}
+
+.success:hover {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Blue */
+.info {
+  border-color: #2196F3;
+  color: dodgerblue
+}
+
+.info:hover {
+  background: #2196F3;
+  color: white;
+}
+
+/* Orange */
+.warning {
+  border-color: #ff9800;
+  color: orange;
+}
+
+.warning:hover {
+  background: #ff9800;
+  color: white;
+}
+
+/* Red */
+.danger {
+  border-color: #f44336;
+  color: red
+}
+
+.danger:hover {
+  background: #f44336;
+  color: white;
+}
+
+/* Gray */
+.default {
+  border-color: #e7e7e7;
+  color: black;
+}
+
+.default:hover {
+  background: #e7e7e7;
+}
+
+
+
+
+
+
+
+
+
+
+
 .login-wrap{
 
 	width:100%;
@@ -205,55 +299,60 @@ background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
 	color:#000;
 	border-color:#1161ee;
 }
-    
+
+.bttja{
+   
+}
+
+
 </style>
 
 
 <div class="container ddiv ppfont pdd">
 <div class="col-centered ppfont">
 
-    <div class="row">
-        <div>แก้ไขข้อมูลผู้ใช้งาน</div><hr></hr>
+    <div class="row ">
+        <div class="text-center ppfont"><h1><strong>แก้ไขข้อมูลผู้ใช้งาน</strong></h1></div><hr></hr>
     </div>
 
-    <div class="row   ">
+    <div class="row">
         <div class="col-centered">
                 <div class="text-danger"></div>
-                <div class="form-group">
+                <div class="pdd">
                     <label class="control-label">Email</label>
-                    <label class=" input" type="email" disabled/>@ViewBag.Email</label>
+                    <label class="modalbtt" type="email" disabled/>@ViewBag.Email</label>
                     <span class="text-danger"></span>
                 </div>
                 <hr/>
-                <div class="form-group">
+                <div class="pdd">
                     <label class="control-label">Name</label>
-                    <input id="DisplayName" class="input" type="text" value="@ViewBag.User"/>
+                    <input id="DisplayName" class="modalbtt" type="text" value="@ViewBag.User"/>
                     <span class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <button onclick="ChangeName()" class="btn btn-warning">ChangeName</button>
+                <div class="text-center">
+                    <button onclick="ChangeName()" class="btt-text-box warning">Change Name</button>
                 </div>
                 <p id="Check"></p>
                 <hr/>
-                <div class="form-group">
+                <div class="pdd">
                     <label class="control-label">Old password</label>
-                    <input id="Oldpassword" class=" input" type="password" />
+                    <input id="Oldpassword" class="modalbtt" type="password" />
                     <span class="text-danger"></span>
                 </div>
 
-                <div class="form-group">
+                <div class=" pdd">
                     <label class="control-label">New password</label>
-                    <input id="Newpassword" class=" input" type="password" />
+                    <input id="Newpassword" class="modalbtt" type="password" />
                     <span class="text-danger"></span>
                 </div>
 
-                <div class="form-group">
-                    <button  onclick="ChangePassword()" class="btn btn-warning">ChangePassword</button>
+                <div class="text-center">
+                    <button  onclick="ChangePassword()" class="btt-text-box warning">Change Password</button>
                 </div>
                 <p id="CheckPassword"></p>
                 <hr/>
-                <div class="form-group">
-                    <button onclick="DeleteAccount();" class="btn btn-danger">DeleteAccount</button>
+                <div class="text-center">
+                    <button onclick="DeleteAccount();" class="btt-text-box-1 danger">Delete Account</button>
                 </div>
         </div>
     </div>
@@ -261,8 +360,6 @@ background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
 
 
 </div>
-
-
 
 
 

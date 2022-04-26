@@ -219,10 +219,7 @@
 	color:#000;
 	border-color:#1161ee;
 }
-    
 </style>
-
-
 
 @using (Html.BeginForm("EditBlog", "Admin",new{Id = @Model.Id} ,FormMethod.Post))
 { 
@@ -254,8 +251,7 @@
                             <td class="ml-3 ppfont pdd">@Html.TextAreaFor(m => m.content, new { @class= "wide1 input" })</td>
                         </tr>
 
-
-                        <tr>
+						<tr>
                             <td class="text-center ppfont">ประเภท: </td>
                             <td class="ppfont pdd">@Html.DropDownListFor(m => m.typep,listItems,"-- เลือกประเภท --", new {
                             @class= "wide input" })</td>

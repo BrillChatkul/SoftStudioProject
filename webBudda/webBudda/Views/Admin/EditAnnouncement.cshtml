@@ -1,0 +1,93 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<style>
+    .ddiv {
+        height: 900px;
+        width: 1000px;
+        background-color: #FBAB7E;
+        background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+        background-repeat: repeat-y;
+        background-size: 100%;
+        font-size: 20px;
+        box-shadow: 8px 10px 10px 1px #000;
+
+    }
+
+    .ddiv2 {
+        background-color: #FBAB7E;
+        background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+        background-repeat: repeat-y;
+        background-size: 100%;
+    }
+
+    .ppfont {
+        font-size: 30px;
+        text-center;
+    }
+
+    .pdd {
+        padding: 1%;
+
+    }
+
+    .wide {
+
+        color: black;
+        width: 600px;
+        opacity: 0.5;
+    }
+
+    .wide1 {
+        color: black;
+        width: 600px;
+        height: 500px;
+        opacity: 0.5;
+    }
+</style>
+
+<div class="container" style="background-color:#C4C4C4; width:100%; height:500px; border-radius:30px; margin-bottom:4rem;">
+        <h1>ตั้งประกาศ</h1>
+        <textarea id="ann" rows="10" cols="30">@ViewBag.d</textarea>
+        <br/>
+        <button onclick="ChangeAnn()">เปลี่ยนประกาศ</button>
+        <p id="Check"></p>
+</div>
+
+@section Scripts {
+<script type="text/javascript">
+    function ChangeAnn()
+    {
+        var x = document.getElementById("ann").value;
+        if(x!="")
+        {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("EditAnnouncement", "Admin")/?dt=' + x,
+                beforeSend: function(){
+                     $("#Check").text("กำลังเปลี่ยนประกาศ");
+                },
+                success: function (data) {
+                    data = JSON.parse(data);
+                    console.log(data);
+                    if(data.success == true){
+                        $("#Check").text("เปลี่ยนประกาศเรียบร้อย");
+                    }
+                    else{
+                        window.location.href = url;
+                        $("#Check").text("เปลี่ยนประกาศไม่สำเร็จ");
+                    }
+                },
+                error: function(error){
+                    alert(error);
+                    $("#Check").text("เปลี่ยนประกาศไม่สำเร็จ");
+                }
+            })
+
+        }
+    }
+    
+</script>
+}

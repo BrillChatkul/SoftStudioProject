@@ -33,6 +33,18 @@ namespace webBudda.Controllers
 
         public async Task<ActionResult> Index()
         {
+            var token = HttpContext.Session.GetString("_UserToken");
+            if (token != null)
+            {
+                User user = await auth.GetUserAsync(token);
+                ViewBag.user = user.DisplayName;
+                ViewBag.Email = user.Email;
+            }
+            else
+            {
+                ViewBag.user = "";
+                ViewBag.Email = "Unknown";
+            }
             return View();
         }
 

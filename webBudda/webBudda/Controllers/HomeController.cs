@@ -42,7 +42,10 @@ namespace webBudda.Controllers
 
         public async Task<IActionResult> Index()
         {
-
+            client = new FireSharp.FirebaseClient(config);
+            FirebaseResponse response = client.Get("Announcement/");
+            var data = JsonConvert.DeserializeObject(response.Body);
+            ViewBag.d = data;
             var token = HttpContext.Session.GetString("_UserToken");
             if (token != null)
             {

@@ -1,0 +1,307 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/css/all.min.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        h1 {
+          text-align: center;
+        }
+
+        .gotopbtn {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background: #27ae60;
+            bottom: 60px;
+            right: 50px;
+
+            text-decoration: none;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            font-size: 22px;
+        }
+
+        .well {
+          min-height: 20px;
+          padding: 19px;
+          margin-bottom: 20px;
+          background-color: #f5f5f5;
+          border: 1px solid #e3e3e3;
+          border-radius: 4px;
+          -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+
+        .img-rounded {
+          border-radius: 6px;
+        }
+
+		pagination {
+		  display: inline-block;
+		  padding-left: 0;
+		  margin: 20px 0;
+		  border-radius: 4px;
+		}
+		.pagination > li {
+		  display: inline;
+		}
+		.pagination > li > a,
+		.pagination > li > span {
+		  position: relative;
+		  float: left;
+		  padding: 6px 12px;
+		  margin-left: -1px;
+		  line-height: 1.42857143;
+		  color: #337ab7;
+		  text-decoration: none;
+		  background-color: #fff;
+		  border: 1px solid #ddd;
+		}
+		.pagination > li:first-child > a,
+		.pagination > li:first-child > span {
+		  margin-left: 0;
+		  border-top-left-radius: 4px;
+		  border-bottom-left-radius: 4px;
+		}
+		.pagination > li:last-child > a,
+		.pagination > li:last-child > span {
+		  border-top-right-radius: 4px;
+		  border-bottom-right-radius: 4px;
+		}
+		.pagination > li > a:hover,
+		.pagination > li > span:hover,
+		.pagination > li > a:focus,
+		.pagination > li > span:focus {
+		  color: #23527c;
+		  background-color: #eee;
+		  border-color: #ddd;
+		}
+		.pagination > .active > a,
+		.pagination > .active > span,
+		.pagination > .active > a:hover,
+		.pagination > .active > span:hover,
+		.pagination > .active > a:focus,
+		.pagination > .active > span:focus {
+		  z-index: 2;
+		  color: #fff;
+		  cursor: default;
+		  background-color: #337ab7;
+		  border-color: #337ab7;
+		}
+		.pagination > .disabled > span,
+		.pagination > .disabled > span:hover,
+		.pagination > .disabled > span:focus,
+		.pagination > .disabled > a,
+		.pagination > .disabled > a:hover,
+		.pagination > .disabled > a:focus {
+		  color: #777;
+		  cursor: not-allowed;
+		  background-color: #fff;
+		  border-color: #ddd;
+		}
+		.pagination-lg > li > a,
+		.pagination-lg > li > span {
+		  padding: 10px 16px;
+		  font-size: 18px;
+		}
+		.pagination-lg > li:first-child > a,
+		.pagination-lg > li:first-child > span {
+		  border-top-left-radius: 6px;
+		  border-bottom-left-radius: 6px;
+		}
+		.pagination-lg > li:last-child > a,
+		.pagination-lg > li:last-child > span {
+		  border-top-right-radius: 6px;
+		  border-bottom-right-radius: 6px;
+		}
+		.pagination-sm > li > a,
+		.pagination-sm > li > span {
+		  padding: 5px 10px;
+		  font-size: 12px;
+		}
+		.pagination-sm > li:first-child > a,
+		.pagination-sm > li:first-child > span {
+		  border-top-left-radius: 3px;
+		  border-bottom-left-radius: 3px;
+		}
+		.pagination-sm > li:last-child > a,
+		.pagination-sm > li:last-child > span {
+		  border-top-right-radius: 3px;
+		  border-bottom-right-radius: 3px;
+		}
+
+
+
+    </style>
+
+</head>
+<body>
+
+	<div class="row">
+		<a></a><img class="img-rounded" src="~/css/header6.jpg" title="Kurobuta Dog"><br>
+	</div>
+
+    <h1>
+        <strong>ปางพระพุทธรูป</strong>
+    </h1>
+
+    <table class="table table-responsive table-hover" style="width:100%">
+	    <tbody>
+      <tr>
+        <td><span class="Link-kanit">หมวด</span></td>
+        <td><span class="Link-kanit">ชื่อหมวด</span></td>
+        <td><span class="Link-kanit">จำนวน</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit"> 1 </span></td>
+        <td><span class="Link-kanit"><a href="dp01.php" class="Link-kanit">หมวดคู่  - The Pairs</a></span></td>
+        <td><span class="Link-kanit">20</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit"> 2 </span></td>
+        <td><span class="Link-kanit"><a href="dp02.php" class="Link-kanit">หมวดไม่ประมาท - Heedfulness</a></span></td>
+        <td><span class="Link-kanit">12</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit"> 3 </span></td>
+        <td><span class="Link-kanit"><a href="dp03.php" class="Link-kanit">หมวดจิต - The Mind</a></span></td>
+        <td><span class="Link-kanit">11</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit"> 4 </span></td>
+        <td><span class="Link-kanit"><a href="dp04.php" class="Link-kanit">หมวดดอกไม้ - The Flowers</a></span></td>
+        <td><span class="Link-kanit"> 16</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit"> 5 </span></td>
+        <td><span class="Link-kanit"><a href="dp05.php" class="Link-kanit">หมวดคนพาล  - The Fool</a></span></td>
+        <td><span class="Link-kanit"> 16</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit"> 6 </span></td>
+        <td><span class="Link-kanit"><a href="dp06.php" class="Link-kanit">หมวดบัณฑิต - The Wise</a></span></td>
+        <td><span class="Link-kanit"> 16</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit"> 7 </span></td>
+        <td><span class="Link-kanit"><a href="dp07.php" class="Link-kanit">หมวดพระอรหันต์  - The Worthy</a></span></td>
+        <td><span class="Link-kanit"> 10</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit"> 8 </span></td>
+        <td><span class="Link-kanit"><a href="dp08.php" class="Link-kanit">หมวดพัน - The Thousands</a></span></td>
+        <td><span class="Link-kanit"> 15</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit">9 </span></td>
+        <td><span class="Link-kanit"><a href="dp09.php" class="Link-kanit">หมวดบาป - Evil</a></span></td>
+        <td><span class="Link-kanit">13</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit">10 </span></td>
+        <td><span class="Link-kanit"><a href="dp10.php" class="Link-kanit">หมวดลงทัณฑ์ - Punishment</a></span></td>
+        <td><span class="Link-kanit">17</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit">11 </span></td>
+        <td><span class="Link-kanit"><a href="dp11.php" class="Link-kanit">หมวดชรา - Old Age</a></span></td>
+        <td><span class="Link-kanit">11</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit">12 </span></td>
+        <td><span class="Link-kanit"><a href="dp12.php" class="Link-kanit">หมวดตน - The Self</a></span></td>
+        <td><span class="Link-kanit">10</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit">13 </span></td>
+        <td><span class="Link-kanit"><a href="dp13.php" class="Link-kanit">หมวดโลก - The World</a></span></td>
+        <td><span class="Link-kanit">12</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit">14 </span></td>
+        <td><span class="Link-kanit"><a href="dp14.php" class="Link-kanit">หมวดพระพุทธเจ้า  - The Enlightened One</a></span></td>
+        <td><span class="Link-kanit">18</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit">15 </span></td>
+        <td><span class="Link-kanit"><a href="dp15.php" class="Link-kanit">หมวดความสุข - Happiness</a></span></td>
+        <td><span class="Link-kanit">12</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit">16 </span></td>
+        <td><span class="Link-kanit"><a href="dp16.php" class="Link-kanit">หมวดความรัก - Affections</a></span></td>
+        <td><span class="Link-kanit">12</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit"> 17 </span></td>
+        <td><span class="Link-kanit"><a href="dp17.php" class="Link-kanit">หมวดความโกรธ - Anger</a></span></td>
+        <td><span class="Link-kanit"> 14</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit"> 18 </span></td>
+        <td><span class="Link-kanit"><a href="dp18.php" class="Link-kanit">หมวดมลทิน - Impurity</a></span></td>
+        <td><span class="Link-kanit"> 20</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit"> 19 </span></td>
+        <td><span class="Link-kanit"><a href="dp19.php" class="Link-kanit">หมวดเที่ยงธรรม - The Just</a></span></td>
+        <td><span class="Link-kanit"> 17</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit"> 20 </span></td>
+        <td><span class="Link-kanit"><a href="dp20.php" class="Link-kanit">หมวดทาง - The Path</a></span></td>
+        <td><span class="Link-kanit"> 17</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit">21 </span></td>
+        <td><span class="Link-kanit"><a href="dp21.php" class="Link-kanit">หมวดเบ็ดเตล็ด - Miscellaneous</a></span></td>
+        <td><span class="Link-kanit">15</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit"> 22 </span></td>
+        <td><span class="Link-kanit"><a href="dp22.php" class="Link-kanit">หมวดนรก - Hell</a></span></td>
+        <td><span class="Link-kanit"> 14</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit"> 23 </span></td>
+        <td><span class="Link-kanit"><a href="dp23.php" class="Link-kanit">หมวดช้าง - The Elephant</a></span></td>
+        <td><span class="Link-kanit"> 14</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit"> 24 </span></td>
+        <td><span class="Link-kanit"><a href="dp24.php" class="Link-kanit">หมวดตัณหา - Craving</a></span></td>
+        <td><span class="Link-kanit"> 26</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit"> 25 </span></td>
+        <td><span class="Link-kanit"><a href="dp25.php" class="Link-kanit">หมวดภิกษุ - The Monk</a></span></td>
+        <td><span class="Link-kanit"> 15</span></td>
+      </tr>
+      <tr>
+        <td><span class="Link-kanit"> 26 </span></td>
+        <td><span class="Link-kanit"><a href="dp26.php" class="Link-kanit">หมวดพราหมณ์  - The Brahmana</a></span></td>
+        <td><span class="Link-kanit"> 41</span></td>
+      </tr>
+      </tbody>
+    </table>
+
+	<hr>
+	<br>
+
+
+    <a class="gotopbtn" href="#"> <i class="fa fa-arrow-up" aria-hidden="true"></i> </a>
+
+    
+</body>

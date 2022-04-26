@@ -1,0 +1,200 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/css/all.min.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        h1 {
+          text-align: center;
+        }
+
+        .gotopbtn {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background: #27ae60;
+            bottom: 60px;
+            right: 50px;
+
+            text-decoration: none;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            font-size: 22px;
+        }
+
+        .well {
+          min-height: 20px;
+          padding: 19px;
+          margin-bottom: 20px;
+          background-color: #f5f5f5;
+          border: 1px solid #e3e3e3;
+          border-radius: 4px;
+          -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+
+        .img-rounded {
+          border-radius: 6px;
+        }
+
+		pagination {
+		  display: inline-block;
+		  padding-left: 0;
+		  margin: 20px 0;
+		  border-radius: 4px;
+		}
+		.pagination > li {
+		  display: inline;
+		}
+		.pagination > li > a,
+		.pagination > li > span {
+		  position: relative;
+		  float: left;
+		  padding: 6px 12px;
+		  margin-left: -1px;
+		  line-height: 1.42857143;
+		  color: #337ab7;
+		  text-decoration: none;
+		  background-color: #fff;
+		  border: 1px solid #ddd;
+		}
+		.pagination > li:first-child > a,
+		.pagination > li:first-child > span {
+		  margin-left: 0;
+		  border-top-left-radius: 4px;
+		  border-bottom-left-radius: 4px;
+		}
+		.pagination > li:last-child > a,
+		.pagination > li:last-child > span {
+		  border-top-right-radius: 4px;
+		  border-bottom-right-radius: 4px;
+		}
+		.pagination > li > a:hover,
+		.pagination > li > span:hover,
+		.pagination > li > a:focus,
+		.pagination > li > span:focus {
+		  color: #23527c;
+		  background-color: #eee;
+		  border-color: #ddd;
+		}
+		.pagination > .active > a,
+		.pagination > .active > span,
+		.pagination > .active > a:hover,
+		.pagination > .active > span:hover,
+		.pagination > .active > a:focus,
+		.pagination > .active > span:focus {
+		  z-index: 2;
+		  color: #fff;
+		  cursor: default;
+		  background-color: #337ab7;
+		  border-color: #337ab7;
+		}
+		.pagination > .disabled > span,
+		.pagination > .disabled > span:hover,
+		.pagination > .disabled > span:focus,
+		.pagination > .disabled > a,
+		.pagination > .disabled > a:hover,
+		.pagination > .disabled > a:focus {
+		  color: #777;
+		  cursor: not-allowed;
+		  background-color: #fff;
+		  border-color: #ddd;
+		}
+		.pagination-lg > li > a,
+		.pagination-lg > li > span {
+		  padding: 10px 16px;
+		  font-size: 18px;
+		}
+		.pagination-lg > li:first-child > a,
+		.pagination-lg > li:first-child > span {
+		  border-top-left-radius: 6px;
+		  border-bottom-left-radius: 6px;
+		}
+		.pagination-lg > li:last-child > a,
+		.pagination-lg > li:last-child > span {
+		  border-top-right-radius: 6px;
+		  border-bottom-right-radius: 6px;
+		}
+		.pagination-sm > li > a,
+		.pagination-sm > li > span {
+		  padding: 5px 10px;
+		  font-size: 12px;
+		}
+		.pagination-sm > li:first-child > a,
+		.pagination-sm > li:first-child > span {
+		  border-top-left-radius: 3px;
+		  border-bottom-left-radius: 3px;
+		}
+		.pagination-sm > li:last-child > a,
+		.pagination-sm > li:last-child > span {
+		  border-top-right-radius: 3px;
+		  border-bottom-right-radius: 3px;
+		}
+
+
+
+    </style>
+
+</head>
+<body>
+
+	<h3 class="myfont-Srb" align="center">ประเพณีสงกรานต์</h3>
+	<p class="myfont-Srb30" align="center">ตรงกับวันที่ 13-15 เมษายน ของทุกปี</p>
+
+	<p align="center"><img src="~/css/header12.jpg" class="img-responsive img-rounded" width="100%"></p>
+		
+		<p>
+			“สงกรานต์” เป็นภาษาสันสกฤต แปลว่า ก้าวขึ้น ย่างขึ้น หรือการเคลื่อนที่ย้ายที่ หมายถึง เวลาที่ดวงอาทิตย์เคลื่อน  จากราศีหนึ่งไปสู่อีกราศีหนึ่งทุก ๆ เดือน เรียกว่า สงกรานต์เดือน ยกเว้นเมื่อย้ายจากราศีมีนสู่ราศีเมษ ซึ่งเป็นสงกรานต์ปี จะ  เรียกชื่อพิเศษว่า “มหาสงกรานต์” จึงเป็นวันขึ้นปีใหม่โดยวิธีนับทางสุริยคติ (วิธีนับวันและเดือนโดยถือกำหนดตำแหน่งดวง  อาทิตย์เป็นหลัก) 
+			<br><br>
+			ดังนั้นการกำหนดนับวันสงกรานต์จึงตกอยู่ในระหว่างวันที่ 13.14 และ 15 เมษายน ซึ่งทั้ง 3 วันจะมีชื่อ  เรียกเฉพาะ ดังนี้ คือ<br>
+			วันที่ 13 เมษายน เรียกว่า มหาสงกรานต์ หมายถึงการที่ดวงอาทิตย์ก้าวขึ้นสู่ราศีเมษอีกครั้งหนึ่ง หลังจากที่ผ่านการ  เข้าสู่ราศีอื่นๆ แล้ว ครบ 12 เดือน<br>
+			วันที่ 14 เมษายน เรียกว่า วันเนา หมายถึง การที่ดวงอาทิตย์เคลื่อนเข้าอยู่ราศีเมษประจำที่เรียบร้อยแล้ว <br>
+			วันที่ 15 เมษายน เรียกว่า วันเถลิงศก หรือวันขึ้นศกคือวันที่เริ่มเปลี่ยนจุลศักราชใหม่การที่ กำหนดให้ อยู่ในวันนี้นั้น  เพื่อให้แน่ใจได้ว่าดวงอาทิตย์ โคจรขาดจากราศีมีนขึ้นสู่ราศีเมษแน่นอนแล้วอย่างน้อย 1 องศา
+		</p>
+		<br>
+		<p>
+			<b>ความสำคัญของวันสงกรานต์</b>
+			<br><br>
+			1. เป็นวันหยุดพักผ่อนประจำปีตามประเพณีไทย และถือเป็นวันหยุดประกอบการงานหรือธุรกิจทั่วไป<br>
+			2. เป็นวันทำบุญตักบาตรจัดจตุปัจจัยไทยธรรมถวายพระบังสกุลกระดูกพรรพบุรุษ กรวดน้ำอุทิศส่วนกุศลให้แก่ญาติผู้  ล่วงลับ<br>
+			3. เป็นวันแสดงความกตัญญูกตเวทีต่อบรรพบุรุษ ในวันนี้จะมีการไปรดน้ำดำหัวขอพรจาก พ่อแม่ ผู้เฒ่าผู้แก่ที่เคารพ  นับถือ วันสงกรานต์ถือเป็น วันสูงอายุแห่งชาติ<br>
+			4. เป็นวันรวมญาติมิตรที่จากไปอยู่แดนไกลเพื่อประกอบภาระหน้าที่งานอาชีพของตน เมื่อถึงวันสงกรานต์ทุกคนจะ  กลับมาร่วมทำบุญสร้างกุศล จึงถือเอาวันที่ 15 เมษายน ซึ่งอยู่ในช่วงสงกรานต์เป็นวันรวมญาติหรือวันครอบครัว<br>
+			5. เป็นวันอนุรักษ์วัฒนธรรมไทย และส่งเสริมการละเล่นตามประเพณีไทย เช่น มีการทำบุญตักบาตร เล่นสาดน้ำ    ชักเย่อ มอญซ่อนผ้า เล่นสะบ้า ฯลฯ<br>
+			6. เป็นวันประกอบพิธีทางศาสนา เช่น มีการทำบุญตักบาตรจัดจตุปัจจัยไทยธรรมถวายพระ บังสุกุลกระดูกบรรพบุรุษ    กรวดน้ำอุทิศส่วนกุศลให้แก่ญาติผู้ล่วงลับ การสรงน้ำพระพุทธรูป สรงน้ำพระสงฆ์ ขนทรายเข้าวัด (ก่อพระเจดีย์ทราย) รับศีล  ปฏิบัติธรรมฯลฯ
+		</p>
+		<br>
+		<p>
+			ประเพณีสงกรานต์ของคนไทยที่ยึดถือปฏิบัติสืบทอดกันมาเป็นเวลานาน สงกรานต์เป็นคำที่ชาวบ้านทั่วไปนิยมใช้ แต่คำเต็มๆคือ ตรุษสงกรานต์ ซึ่งจะได้กล่าวในรายละเอียด ดังนี้<br>
+			ตรุษ แปลว่า ตัด หรือ ขาด หมายถึง ตัดปี ขาดปี หรือสิ้นปี ดังนั้น ตรุษ จึงหมายถึงพิธีแสดงความยินดีที่ปีเก่าผ่านไปการมีชีวิตรอดมาตลอดปีได้ ก็มีการแสดงความยินดี คนไทยแต่ก่อนนับเดือน 4 วันแรม 14 ค่ำ แรม 15 ค่ำ และวันขึ้น 1 ค่ำ ของเดือน 5 จะมีการนิมนต์พระมา สวด และมีการทำบุญ ถวายอาหารและขอพรจากพระ เพื่อเป็นสวัสดิมงคล สันนิฐานว่าคนไทยรับการนับถือพระพุทะศาสนา เลยทำแบบอย่างพิธีทำบุญวันตรุษตามแบบอย่างของลังกามาด้วย วันปีใหม่จะเป็นวันที่ 13,14 และวันที่ 15 เมษายน ของทุกปี
+		</p>
+		<br>
+			<p align="center"><img src="~/css/header12_2.jpg" width="100%"></p>
+		<br>
+		<p>
+			<b>ประเพณีรดน้ำดำหัว</b>
+			<br><br>
+			ประเพณีรดน้ำไหว้ผู้ใหญ่ เป็นประเพณีของไทยอันสืบเนื่องมาจากประเพณีงานสงกรานต์หรือ วันขึ้นปีใหม่ของไทย ที่แสดงออกถึงความเคารพนบนอบต่อผู้ใหญ่หรือผู้ที่เคารพนับถือ และผู้มีพระคุณ เพื่อแสดงความกตัญญูพร้อมกับการขอขมา และขอรับพรเพื่อเป็นสิริมงคล แก่ตัวเองเนื่องในวันสำคัญ เช่น วันขึ้นปีใหม่หรือวันสงกรานต์ของไทยในเดือนเมษายน
+			<br><br>
+			"การดำหัว" ก็คือการรดน้ำนั่นเอง แต่เป็นคำเมืองทางเหนือการดำหัวเรียกกันเฉพาะการรดน้ำผู้ใหญ่ที่เคารพนับถือ ผู้สูงอายุ หรือผู้ที่มีตำแหน่งหน้าที่การงานสูง เช่น พ่อเมือง เจ้าเมือง เป็นต้น เป็นการขอขมาในสิ่งที่ได้ล่วงเกินไป หรือการขอพรปีใหม่จากผู้ใหญ่ สิ่งที่ต้องนำไปในการรดน้ำดำหัวก็คือ น้ำใส่ขันเงินใบใหญ่ ในน้ำใส่ผักส้มป่อย โปรยเกสรดอกไม้และเจือน้ำหอม น้ำปรุงเล็กน้อย พร้อมด้วยพานข้าวตอกดอกไม้เป็นเครื่องสักการะอีกพานหนึ่ง การรดน้ำดำหัวมักจะไปกันเป็นหมู่ โดยจะถือเครื่องที่จะดำหัวไปด้วย
+		</p>
+
+
+	<hr>
+	<br>
+
+
+    <a class="gotopbtn" href="#"> <i class="fa fa-arrow-up" aria-hidden="true"></i> </a>
+
+    
+</body>

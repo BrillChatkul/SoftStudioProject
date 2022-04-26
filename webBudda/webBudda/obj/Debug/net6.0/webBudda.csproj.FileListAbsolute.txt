@@ -545,3 +545,4 @@ C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\webBudda\webBudda\bin\Debug
 C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\webBudda\webBudda\bin\Debug\net6.0\WebActivatorEx.dll
 C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\webBudda\webBudda\bin\Debug\net6.0\Antlr3.Runtime.dll
 C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\webBudda\webBudda\bin\Debug\net6.0\WebGrease.dll
+C:\Users\Apizz789\Documents\GitHub\SoftStudioProject\webBudda\webBudda\bin\Debug\net6.0\libman.json

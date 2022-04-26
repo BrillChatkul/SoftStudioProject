@@ -12,9 +12,14 @@
     @RenderSection("styles", false)
     <style>
        /* @@import url('https://fonts.googleapis.com/css?family=Exo:400,700');*/
-        @@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&display=swap');
+       @@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&display=swap');
+
+    * {
+        font-family: 'IBM Plex Sans Thai';
+    }
         .body {
             /*background-image:url('https://sv1.picz.in.th/images/2022/04/16/8uEpnS.jpg');*/
+             background: dodgerblue linear-gradient(45deg, aqua, dodgerblue, deeppink) fixed;
             background-repeat: repeat-y;
             background-size: 100%;
              font-size:20px;
@@ -37,9 +42,9 @@
         .topnav {
             position:absolute;
             min-width:100%;
-            height:50px;
+            height:40px;
             background:#F2B860;
-            font-size:20px;
+            font-size:15px;
             font-family: 'IBM Plex Sans Thai';
             font-style: normal;
             font-weight: 400;
@@ -53,7 +58,8 @@
             font-display: swap
 
         }
-        .mynav {
+        /*content Tag*/
+        .mynav { 
             background:#B79C74;
             top:30px;
         }
@@ -138,13 +144,10 @@
             font-weight: 400;
             font-display: swap;
         }
+
+ 
     </style>
 </head>
-
-
-
-
-
 
 
 @*NAVBAR HERE*@
@@ -166,32 +169,28 @@
                         <li class="nav-item mt-2">
                             <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index"><i class="fa-regular fa-hands-holding-diamond"></i>Bud Bud World</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item ">
                             <a class="nav-link text-light" asp-area="" asp-controller="Blog" asp-action="Index" asp-route-typep="ธรรมะท่องเที่ยว">ท่องเที่ยว</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item ">
                             <a class="nav-link text-light" asp-area="" asp-controller="Blog" asp-action="Index" asp-route-typep="โลกธรรมะ">เรื่องเล่า</a>
                         </li>
-
-                        <li class="nav-item">
+                        <li class="nav-item ">
                             <a class="nav-link text-light" asp-area="" asp-controller="Todo" asp-action="Index">To Do</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item ">
                             <a class="nav-link text-light" asp-area="" asp-controller="Todo" asp-action="Calendar">Calendar</a>
                         </li>
-                         <li class="nav-item">
+                         <li class="nav-item ">
                             <a class="nav-link text-light" asp-area="" asp-controller="BubbhaGame" asp-action="Index">Buddha Game</a>
                         </li>
-
-
                         <li class="nav-item">
                             @if(ViewData["Email"] != null && ViewData["Email"] != "Unknown")
                             {
                                 <button class="loginbutton"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="LogOut">ออกจากระบบ</a></button>
                             }else{
                                 <button class="loginbutton"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SignIn">เข้าสู่ระบบ</a></button>
-                            }
-                            
+                            } 
                         </li>
                     </ul>
                 </div>
@@ -199,22 +198,12 @@
         </nav>
     </header>
 
-
-
-
-
-
-
-
+@*CODEDING HERE*@
     <div class="contain">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
-
-
-
 
 
 @*FOOTER HERE*@

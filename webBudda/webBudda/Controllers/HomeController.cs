@@ -56,7 +56,8 @@ namespace webBudda.Controllers
             }
             else
             {
-                return RedirectToAction("SignIn");
+                User user = new User();
+                return View(user);
             }
         }
 

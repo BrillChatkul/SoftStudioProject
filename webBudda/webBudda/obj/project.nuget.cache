@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iePfzcxd7QdQQmle9+NnGy6mUuhl7AtGEqsoQSO/fCStiRABqRoZNrufG0VdNCkeG0CvnR01OIQYMqhASUASrQ==",
+  "dgSpecHash": "cIVpASD12mcyAmHE7T7l/Bl50/h/oVbxGnD2d7Jxk6wofuQXjHlsC4bS1r3PmPvAow4zDjJT8DRrts5NTV0EHQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Apizz789\\Documents\\GitHub\\SoftStudioProject\\webBudda\\webBudda\\webBudda.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\Apizz789\\.nuget\\packages\\firebase.auth\\1.0.0\\firebase.auth.1.0.0.nupkg.sha512",
     "C:\\Users\\Apizz789\\.nuget\\packages\\firebaseadmin\\2.3.0\\firebaseadmin.2.3.0.nupkg.sha512",
     "C:\\Users\\Apizz789\\.nuget\\packages\\firesharp\\2.0.4\\firesharp.2.0.4.nupkg.sha512",
+    "C:\\Users\\Apizz789\\.nuget\\packages\\font.awesome\\5.15.4\\font.awesome.5.15.4.nupkg.sha512",
     "C:\\Users\\Apizz789\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
     "C:\\Users\\Apizz789\\.nuget\\packages\\fontawesome.mvc\\1.0.0\\fontawesome.mvc.1.0.0.nupkg.sha512",
     "C:\\Users\\Apizz789\\.nuget\\packages\\google.api.gax\\3.2.0\\google.api.gax.3.2.0.nupkg.sha512",

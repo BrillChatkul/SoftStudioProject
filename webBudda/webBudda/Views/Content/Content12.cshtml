@@ -1,6 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
 @{
 }
 <!DOCTYPE html>
@@ -10,11 +8,27 @@
     <link rel="stylesheet" type="text/css" href="/css/all.min.css">
 
     <style>
+
+		.boxbox{
+			margin-left: 100px;
+			margin-right: 100px;
+		}
+		.picpic{
+			width: 700;
+			height: 500;
+
+		
+
         html {
             scroll-behavior: smooth;
         }
 
+		.pp{
+			font-size:40px;
+		}
+
         h1 {
+		  font-size: 30px;
           text-align: center;
         }
 
@@ -45,10 +59,10 @@
         }
 
         .img-rounded {
-          border-radius: 6px;
+          border-radius: 30px;
         }
 
-		pagination {
+		.pagination {
 		  display: inline-block;
 		  padding-left: 0;
 		  margin: 20px 0;
@@ -145,14 +159,15 @@
 
 
     </style>
-
+	 @*style="color:red;font-size:40px;"*@
 </head>
 <body>
+	<div style="margin-top:50px"> </div>
+	<div class="boxbox">
+<h3  align="center">ประเพณีสงกรานต์</h3>
+	<p align="center">ตรงกับวันที่ 13-15 เมษายน ของทุกปี</p>
 
-	<h3 class="myfont-Srb" align="center">ประเพณีสงกรานต์</h3>
-	<p class="myfont-Srb30" align="center">ตรงกับวันที่ 13-15 เมษายน ของทุกปี</p>
-
-	<p align="center"><img src="~/css/header12.jpg" class="img-responsive img-rounded" width="100%"></p>
+	<p align="center"><img src="~/css/header12.jpg" class="img-responsive img-rounded picpic  "></p>
 		
 		<p>
 			“สงกรานต์” เป็นภาษาสันสกฤต แปลว่า ก้าวขึ้น ย่างขึ้น หรือการเคลื่อนที่ย้ายที่ หมายถึง เวลาที่ดวงอาทิตย์เคลื่อน  จากราศีหนึ่งไปสู่อีกราศีหนึ่งทุก ๆ เดือน เรียกว่า สงกรานต์เดือน ยกเว้นเมื่อย้ายจากราศีมีนสู่ราศีเมษ ซึ่งเป็นสงกรานต์ปี จะ  เรียกชื่อพิเศษว่า “มหาสงกรานต์” จึงเป็นวันขึ้นปีใหม่โดยวิธีนับทางสุริยคติ (วิธีนับวันและเดือนโดยถือกำหนดตำแหน่งดวง  อาทิตย์เป็นหลัก) 
@@ -179,7 +194,7 @@
 			ตรุษ แปลว่า ตัด หรือ ขาด หมายถึง ตัดปี ขาดปี หรือสิ้นปี ดังนั้น ตรุษ จึงหมายถึงพิธีแสดงความยินดีที่ปีเก่าผ่านไปการมีชีวิตรอดมาตลอดปีได้ ก็มีการแสดงความยินดี คนไทยแต่ก่อนนับเดือน 4 วันแรม 14 ค่ำ แรม 15 ค่ำ และวันขึ้น 1 ค่ำ ของเดือน 5 จะมีการนิมนต์พระมา สวด และมีการทำบุญ ถวายอาหารและขอพรจากพระ เพื่อเป็นสวัสดิมงคล สันนิฐานว่าคนไทยรับการนับถือพระพุทะศาสนา เลยทำแบบอย่างพิธีทำบุญวันตรุษตามแบบอย่างของลังกามาด้วย วันปีใหม่จะเป็นวันที่ 13,14 และวันที่ 15 เมษายน ของทุกปี
 		</p>
 		<br>
-			<p align="center"><img src="~/css/header12_2.jpg" width="100%"></p>
+			<p align="center" ><img  src="~/css/header12_2.jpg"  class="img-responsive img-rounded picpic  "></p>
 		<br>
 		<p>
 			<b>ประเพณีรดน้ำดำหัว</b>
@@ -196,5 +211,7 @@
 
     <a class="gotopbtn" href="#"> <i class="fa fa-arrow-up" aria-hidden="true"></i> </a>
 
+	</div>
+	
     
 </body>

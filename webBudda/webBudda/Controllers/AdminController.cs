@@ -67,16 +67,24 @@ namespace webBudda.Controllers
         [HttpPost]
         public ActionResult Create(blog blog)
         {
-            try
+            if(blog.content != null && blog.authen != null && blog.typep != null && blog.title != null)
             {
-                addBlogToFirebase(blog);
-                ModelState.AddModelError(string.Empty, "Added successfully");
+                try
+                {
+                    addBlogToFirebase(blog);
+                    ModelState.AddModelError(string.Empty, "Added successfully");
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError(string.Empty, ex.Message);
+                }
+                return RedirectToAction("ContentAdmin", "Admin");
             }
-            catch (Exception ex)
+            else
             {
-                ModelState.AddModelError(string.Empty, ex.Message);
+                return RedirectToAction("Create","Admin");
             }
-            return RedirectToAction("ContentAdmin","Admin");
+            
         }
         private void addBlogToFirebase(blog blog)
         {
@@ -271,6 +279,7 @@ namespace webBudda.Controllers
             var token = HttpContext.Session.GetString("_UserToken");
             if (token != null)
             {
+                comment.Name = "Admin";
                 try
                 {   //string id,string name,string email,string comment
                     addCommentToFirebase(comment);

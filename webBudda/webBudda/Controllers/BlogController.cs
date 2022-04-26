@@ -169,24 +169,32 @@ namespace webBudda.Controllers
         [HttpPost]
         public async Task<IActionResult> sentComment(Comment comment)
         {
-            var token = HttpContext.Session.GetString("_UserToken");
-            if(token != null)
+            if(comment.Content != null && comment.Content != "")
             {
-                try
-                {   //string id,string name,string email,string comment
-                    addCommentToFirebase(comment);
-                    ModelState.AddModelError(string.Empty, "Added successfully");
-                }
-                catch (Exception ex)
+                var token = HttpContext.Session.GetString("_UserToken");
+                if (token != null)
                 {
-                    ModelState.AddModelError(string.Empty, ex.Message);
+                    try
+                    {   //string id,string name,string email,string comment
+                        addCommentToFirebase(comment);
+                        ModelState.AddModelError(string.Empty, "Added successfully");
+                    }
+                    catch (Exception ex)
+                    {
+                        ModelState.AddModelError(string.Empty, ex.Message);
+                    }
+                    return RedirectToAction("Viewblog", "Blog", new { id = comment.blogID });
                 }
-                return RedirectToAction("Viewblog", "Blog", new { id = comment.blogID });
+                else
+                {
+                    return RedirectToAction("SignIn", "Home");
+                }
             }
             else
             {
-                return RedirectToAction("SignIn", "Home");
+                return RedirectToAction("Viewblog", "Blog", new { id = comment.blogID });
             }
+            
             
             
         }

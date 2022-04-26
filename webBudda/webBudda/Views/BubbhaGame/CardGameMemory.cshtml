@@ -16,372 +16,610 @@
         font-family: 'IBM Plex Sans Thai';
         font-style: normal;
         font-weight: 400;
+         position: relative;
+        text-align: center;
+     
 
     }
 
-    .h1 .p .button{
+    .h1 .p .button {
         font-family: 'IBM Plex Sans Thai';
         font-style: normal;
         font-weight: 400;
 
     }
-    hr{
+
+    hr {
         color: white;
     }
-    .heading {  
-  text-align: center;  
-  background: rgb(0, 15, 46);  
-  padding: 1rem;  
-  color: bisque;  
- }  
- .count-container {  
-  display: flex;  
-  justify-content: space-between;  
-  align-items: center;  
-  width: 60%;  
-  margin: auto auto;  
-  padding: 2rem 0;  
- }  
- .attempts {  
-  font-size: 2rem;  
-  color: antiquewhite;  
- }   
- .reset {  
-  font-size: 2rem;  
-  color: antiquewhite;  
-  cursor: pointer;  
-  border: 1px solid grey;  
-  padding: .5rem;  
- }  
- .reset:hover {  
-  transform: scale(1.2);  
- }  
- .time {  
-  font-size: 2rem;  
-  color: antiquewhite;  
- }  
- .grid {  
-  max-width: 750px;  
-  margin: 0 auto;  
-  display: flex;  
-  flex-wrap: wrap;  
-  justify-content: space-evenly;  
- }  
- .card {  
-  position: relative;  
-  transition: all 0.4s linear;  
-  transform-style: preserve-3d;  
-  margin: 5px;  
- }  
- .card,  
- .back,  
- .front {  
-  height: 100px;  
-  width: 100px;  
- }  
- .back,  
- .front {  
-  position: absolute;  
-  backface-visibility: hidden;  
- }  
- .front {  
-  background: #fab942 url('../media/question.gif') no-repeat center center /  
-   contain;  
- }  
- .back {  
-  transform: rotateY(180deg);  
-  background-color: white;  
-  background-size: contain;  
-  background-repeat: no-repeat;  
-  background-position: center center;  
- }  
- .selected {  
-  border: 4px solid blue;  
-  transform: rotateY(180deg);  
- }  
- .match .front {  
-  border: 0px;  
-  background: rgb(4, 44, 2) url("../media/celebrate.gif") no-repeat center center /  
-  contain !important;  
-  cursor: not-allowed;  
-  transform: none !important;  
- }  
-    text {
-        font-family: 'IBM Plex Sans Thai';
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        font-size: 11px;
-        pointer-events: none;
-    }
 
-    #chart {
-        position: absolute;
-        width: 500px;
-        height: 500px;
-        top: 0;
-        left: 0;
-    }
 
-    #question {
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-        height: 525px;
 
-    }
 
-    #question h1 {
-        font-size: 30px;
-        font-weight: bold;
-        font-family: 'IBM Plex Sans Thai';
-        font-style: normal;
-        position: absolute;
-        padding: 0;
-        margin: 0;
-        left: 40%;
-        top: 46%;
-        -webkit-transform: translate(0, -50%);
-        transform: translate(0, -50%);
-    }
+/* HEADER */
+header {
+  color: white;
+  letter-spacing: 10px;
+  font-size: 22px;
+  padding: 10px 5px;
+}
 
-    #question p{
-        font-size: 20px;
-        font-weight: bold;
-        font-family: 'IBM Plex Sans Thai';
-        font-style: normal;
-        position: absolute;
-        padding: 0;
-        margin: 0;
-        left: 40%;
-        top: 46%;
-        -webkit-transform: translate(0, -50%);
-        transform: translate(0, -50%);
+@@media only screen and (min-width: 768px) {
+  header {
+    font-size: 28px;
+  }
+}
 
-    }
+@@media only screen and (min-width: 1024px) {
+  header {
+    font-size: 32px;
+    padding: 10px;
+  }
+  
+  header h1 {
+    font-weight: 400;
+  }
+}
 
-    .spinner {
-        width:1500px;
-        margin-left: auto;
-        margin-right: auto;
-        position: sticky;
-        z-index: 10;
-        border-radius:20px;
-        background-color:rgba(196, 196, 196, 0.75);
-    }
-    .bttn{
-        top:10px;
-        left:0px;
-        border-radius: 30px;
-        width: 150px;
-        height: 45px;
-    }
-    .container {
-        
-        width:80%;
-    }
+/* main SECTION */
+.main {
+  background: white;
+  width: 250px;
+/*   height: 345px; */
+  padding-bottom: 10px;
+/*   box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.4); */
+  margin: auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
 
-</style>
+@@media only screen and (min-width: 768px) {
+  .main {
+    width: 310px;
+/*     height: 285px; */
+  }
+}
+
+@@media only screen and (min-width: 1024px) {
+  .main {
+    width: 410px;
+/*     height: 375px; */
+  }
+}
+
+.box {
+  background: #6186aa;
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin: 10px 0 0 10px;
+}
+
+@@media only screen and (min-width: 1024px) {
+  .box {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.box.play:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.box img {
+  width: 100%;
+  display: block;
+  border: solid 1px transparent;
+}
+
+.box .outlined {
+  border: solid 1px #34495e;
+  background: #1abc9c;
+  opacity: 0.7;
+}
+
+/* STATUS bar */
+#state {
+  background: #6186aa;
+/*   background-image: linear-gradient(to top left, #9b59b6, #1abc9c); */
+  background-size: 250%;
+  width: 230px;
+  line-height: 25px;
+  float: left;
+  margin: 10px 0 0 10px;
+  padding: 0 10px;
+  color: white;
+  font-size: 16px;
+}
+
+@@media only screen and (min-width: 768px) {
+  #state {
+    width: 290px;
+  }
+}
+
+@@media only screen and (min-width: 1024px) {
+  #state {
+    width: 390px;
+    line-height: 35px;
+  }
+}
+
+#time {
+  float: left;
+}
+
+#time::after {
+  content: " sec";
+}
+
+#score {
+  float: right;
+}
+
+#score::after {
+  content: " points";
+}
+
+
+
+.hidden {
+  display: none !important;
+}
+
+.show {
+  display: block;
+}
+
+/* PRE modal window */
+#pre {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+#themes {
+  margin: auto;
+  padding: 20px;
+  width: 300px;
+  background: white;
+  color: #6186aa;
+}
+
+#themes p {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: solid 1px;
+  background: white;
+  color: #6186aa;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#themes p:hover {
+  background: #6186aa;
+  background-size: 250%;
+  color: white;
+}
+
+#pre h2, #post h2 {
+  font-size: 24px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+/* POST modal window */
+#post {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+}
+
+#post > div {
+  width: 300px;
+  padding: 20px 0 40px;
+  background: white;
+  color: #6186aa;
+}
+
+#post p:first-child, 
+#post #final {
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: auto;
+  padding: 10px 20px;
+}
+
+#post #again {
+  color: #6186aa;
+  text-decoration: none;
+  margin: auto;
+  padding: 10px 20px;
+  width: 160px;
+  border: solid 1px;
+}
+
+#post #again:hover {
+  background: #6186aa;
+/*   background-image: linear-gradient(to top left, #9b59b6, #1abc9c); */
+  background-size: 250%;
+  color: white;
+  cursor: pointer;
+}
+
+
+ </style>
 
 
 <div style="margin-top:50px"> </div>
 <div class="text-center">
     <h1><strong>ธรรมมะความจำเกมส์ [วัด]</strong></h1>
-</div><hr></hr>
+</div>
+<hr>
+</hr>
 
-<!DOCTYPE html>  
- <html lang="en">  
-  <head>  
-   <meta charset="UTF-8" />  
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
-   <title>Memory Game</title>  
-   <script src="https://kit.fontawesome.com/d77ac583c4.js" crossorigin="anonymous"></script>  
-   <link rel="stylesheet" href="assets/stylesheet/style.css">  
-  </head>  
-  <body>  
-   <header>  
-    <h1 class="heading">How good is your Memory?</h1>  
-   </header>  
-   <div class="count-container">  
-    <p class="attempts">Attempts: <span class="count"></span></p>  
-    <span class="reset">Reset <i class="fas fa-sync"></i></span>  
-    <p class="time">Time: <span class="min-count">00</span>: <span class="sec-count">00</span></p>  
-   </div>  
-    <div id="game"></div>  
-   <script src="script.js"></script>  
-  </body>  
- </html> 
+
+
+<div class="container">
+
+<header>
+  <h1>MEMORY</h1>
+</header>
+
+
+<section class="main">
+  <div class="box play"></div>
+  <div class="box play"></div>
+  <div class="box play"></div>
+  <div class="box play"></div>
+  <div class="box play"></div>
+  <div class="box play"></div>
+  <div class="box play"></div>
+  <div class="box play"></div>
+  <div class="box play"></div>
+  <div class="box play"></div>
+  <div class="box play"></div>
+  <div class="box play"></div>
+  <div class="box play"></div>
+  <div class="box play"></div>
+  <div class="box play"></div>
+  <div class="box play"></div>
+  <div class="box play"></div>
+  <div class="box play"></div>
+  <div class="box play"></div>
+  <div class="box play"></div>
+  
+  <div id="state">
+    <span id="time">0</span>
+    <span id="score">0</span>
+  </div>
+</section>
+
+
+<section id="pre" class="">
+  <div id="themes">
+    <h2>Choose your theme !</h2>
+    <p id="pokemon" class="themes" title="Pokemon">Pokemon</p>
+    <p id="starwars" class="themes" title="Star Wars">Star Wars</p>
+    <p id="lotr" class="themes" title="Lord of the Ring">Lord of the Ring</p>
+    <p id="disney" class="themes" title="Disney">Disney</p>
+    <p id="pixar" class="themes" title="Pixar">Pixar</p>
+    <p id="harrypotter" class="themes" title="Harry Potter">Harry Potter</p>
+  </div>
+</section>
+
+
+<section id="post" class="hidden">
+  <div>
+    <h2>BRAVO !</h2>
+    <p id="final"></p>
+    <br>
+    <p>
+      <a id="again">Play Again !</a>
+    </p>
+  </div>
+</section>
+
+</div>
+
+
+@section Scripts{
+<script>
  
+// other themes to add ?
+// bigger memory?
+
+var library = {
+  pokemon: [
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980025/memory/Pokemon/Bulbasaur.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980083/memory/Pokemon/Charmander.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980101/memory/Pokemon/Squirtle.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980116/memory/Pokemon/Pikachu.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980129/memory/Pokemon/Mewtwo.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980142/memory/Pokemon/Mew.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980154/memory/Pokemon/Articuno.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980164/memory/Pokemon/Zapdos.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980175/memory/Pokemon/Moltres.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980186/memory/Pokemon/Eevee.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980025/memory/Pokemon/Bulbasaur.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980083/memory/Pokemon/Charmander.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980101/memory/Pokemon/Squirtle.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980116/memory/Pokemon/Pikachu.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980129/memory/Pokemon/Mewtwo.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980142/memory/Pokemon/Mew.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980154/memory/Pokemon/Articuno.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980164/memory/Pokemon/Zapdos.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980175/memory/Pokemon/Moltres.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980186/memory/Pokemon/Eevee.png'
+  ],
+  starwars: [
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980981/memory/starwars/anakin%20skywalker.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981009/memory/starwars/luke%20skywalker.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981022/memory/starwars/Obi%20wann.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981054/memory/starwars/Han%20solo.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981074/memory/starwars/chewbacca.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981095/memory/starwars/yoda.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981117/memory/starwars/dark%20sidious.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981141/memory/starwars/dark%20vador.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981165/memory/starwars/padme.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981190/memory/starwars/leia.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547980981/memory/starwars/anakin%20skywalker.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981009/memory/starwars/luke%20skywalker.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981022/memory/starwars/Obi%20wann.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981054/memory/starwars/Han%20solo.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981074/memory/starwars/chewbacca.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981095/memory/starwars/yoda.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981117/memory/starwars/dark%20sidious.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981141/memory/starwars/dark%20vador.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981165/memory/starwars/padme.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981190/memory/starwars/leia.jpg'
+  ],
+  lotr: [
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981408/memory/lotr/gandalf.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981438/memory/lotr/sauron.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981469/memory/lotr/Aragorn.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981501/memory/lotr/legolas.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981535/memory/lotr/Gimli.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981603/memory/lotr/golum.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981645/memory/lotr/sam.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981686/memory/lotr/saroumane.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981738/memory/lotr/bilbo.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981802/memory/lotr/frodo.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981408/memory/lotr/gandalf.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981438/memory/lotr/sauron.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981469/memory/lotr/Aragorn.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981501/memory/lotr/legolas.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981535/memory/lotr/Gimli.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981603/memory/lotr/golum.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981645/memory/lotr/sam.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981686/memory/lotr/saroumane.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981738/memory/lotr/bilbo.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547981802/memory/lotr/frodo.jpg'
+  ],
+  disney: [
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982044/memory/disney/mickey.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982088/memory/disney/mowgli.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982610/memory/disney/tarzan.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982620/memory/disney/simba.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982628/memory/disney/aladin.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982636/memory/disney/blanche%20neige.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982644/memory/disney/alice.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982653/memory/disney/peter%20pan.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982663/memory/disney/pinocchio.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982738/memory/disney/raiponce.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982044/memory/disney/mickey.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982088/memory/disney/mowgli.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982610/memory/disney/tarzan.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982620/memory/disney/simba.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982628/memory/disney/aladin.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982636/memory/disney/blanche%20neige.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982644/memory/disney/alice.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982653/memory/disney/peter%20pan.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982663/memory/disney/pinocchio.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982738/memory/disney/raiponce.jpg'
+  ],
+  pixar: [
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982971/memory/pixar/up.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982987/memory/pixar/buzz.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547983000/memory/pixar/woody.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547983016/memory/pixar/Remy.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547983032/memory/pixar/Mike.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547983077/memory/pixar/Nemo.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547983114/memory/pixar/wall-e.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547983169/memory/pixar/Mr-Incredible.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547983381/memory/pixar/sully.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547983403/memory/pixar/flash%20mcqueen.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982971/memory/pixar/up.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547982987/memory/pixar/buzz.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547983000/memory/pixar/woody.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547983016/memory/pixar/Remy.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547983032/memory/pixar/Mike.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547983077/memory/pixar/Nemo.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547983114/memory/pixar/wall-e.png',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547983169/memory/pixar/Mr-Incredible.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547983381/memory/pixar/sully.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547983403/memory/pixar/flash%20mcqueen.jpg'
+  ],
+  harrypotter: [
+    'https://res.cloudinary.com/beumsk/image/upload/v1547998926/memory/harrypotter/harry.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547998958/memory/harrypotter/ron.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547998992/memory/harrypotter/hermione.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547999106/memory/harrypotter/dumbledore.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547999032/memory/harrypotter/malfoy.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547999143/memory/harrypotter/voldemort.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547999401/memory/harrypotter/rogue.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547999196/memory/harrypotter/hagrid.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547999271/memory/harrypotter/sirius.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547999577/memory/harrypotter/neville.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547998926/memory/harrypotter/harry.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547998958/memory/harrypotter/ron.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547998992/memory/harrypotter/hermione.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547999106/memory/harrypotter/dumbledore.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547999032/memory/harrypotter/malfoy.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547999143/memory/harrypotter/voldemort.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547999401/memory/harrypotter/rogue.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547999196/memory/harrypotter/hagrid.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547999271/memory/harrypotter/sirius.jpg',
+    'https://res.cloudinary.com/beumsk/image/upload/v1547999577/memory/harrypotter/neville.jpg'
+  ]
+}
+
+var images = [];
+var tempElt1 = "";
+var tempElt2 = "";
+var click = -1;
+var win = 0;
+var score = 0;
+var time = 0;
+
+var preElt = document.querySelector("#pre");
+var themesElt = document.querySelector("#themes");
+var boxElts = document.getElementsByClassName("box");
+var mainElt = document.querySelector(".main");
+var timeElt = document.querySelector("#time");
+var scoreElt = document.querySelector("#score");
+var postElt = document.querySelector("#post");
+var finalElt = document.querySelector("#final");
+var againElt = document.querySelector("#again");
 
 
+// initiate the game with chosen theme
+themesElt.addEventListener("click", function(e) {
+  if (e.target.classList.contains("themes")) {
+    activateTheme(e.target.id);
+    preElt.classList.add("hidden");
+  }
+});
 
- @section Scripts{
-     <script>
-     // Card data  
- const cardsArray = [  
-  {  
-   name: "temples1",  
-   img: "./wwwroot/css/โบสถ์กลางทะเล.png",  
-  },  
-  {  
-   name: "temples2",  
-   img: "./wwwroot/css/วัดโพธิ์.png",  
-  },  
-  {  
-   name: "temples3",  
-   img: "./wwwroot/css/วัดบ้านไร่.png",  
-  },  
-  {  
-   name: "temples4",  
-   img: "./wwwroot/css/วัดพระเเก้ว.png",  
-  },  
-  {  
-   name: "temples5",  
-   img: "./wwwroot/css/วัดพระธาตุเขาน้อย.png",  
-  },  
-  {  
-   name: "temples6",  
-   img: "./wwwroot/css/วัดพระธาตุดอยสุเทพ.png",  
-  },  
-  {  
-   name: "temples7",  
-   img: "./wwwroot/css/วัดพระธาตุผาซ่อนแก้ว.png",  
-  },  
-  {  
-   name: "temples8",  
-   img: "./wwwroot/css/วัดพระธาตุสุพรรณหงส์.png",  
-  },  
-  {  
-   name: "temples9",  
-   img: "./wwwroot/css/วัดพระมหาธาตุวรมหาวิหาร.png",  
-  },  
-  {  
-   name: "temples10",  
-   img: "./wwwroot/css/วัดร่องขุ่น.png",  
-  },  
-  {  
-   name: "temples11",  
-   img: "./wwwroot/css/วัดศรีชุม.png",  
-  },  
-  {  
-   name: "temples12",  
-   img: "./assets/media/pokemon12.วัดสิรินธรวรารามภูพร้าว.png",  
-  },  
- ];  
- // GAME   
- const game = document.getElementById("game");  
- const grid = document.createElement("section");  
- grid.classList.add("grid");  
- // game.addEventListener("click", secCount);  
- game.appendChild(grid);  
- // DOUBLE ARREY  
- let gameGrid = cardsArray.concat(cardsArray);  
- // FOR RAMDOMISING THE CARDS EVERY TIME WE REFERESH THE PAGE  
- gameGrid.sort(() => 0.5 - Math.random());  
- // CREATE CARDS  
- gameGrid.forEach((item) => {  
-  const card = document.createElement("div");  
-  card.classList.add(`card`,`${item.name}`);  
-  card.dataset.name = item.name;  
-  const front = document.createElement("div");  
-  front.classList.add("front");  
-  const back = document.createElement("div");  
-  back.classList.add("back");  
-  back.style.backgroundImage = `url(${item.img})`;  
-  grid.appendChild(card);  
-  card.appendChild(front);  
-  card.appendChild(back);  
- });  
- // ATTEMPTS COUNT  
- let attemptCount = 0;  
- let attempts = document.querySelector(".count");  
- attempts.innerText = attemptCount;  
- // TIME COUNT  
- var sec = 0;  
- var timeInSec;  
- let min = 0;  
- function secCount() {  
-  sec = sec + 1;  
-  document.querySelector(".sec-count").innerText = Math.floor(sec % 60);  
-  timeInSec = setTimeout(secCount, 1000);  
-  min = Math.floor(sec / 60);  
-  document.querySelector(".min-count").innerText = min;  
- }  
- var timeStarted = false;  
- // secCount();  
- // RESET ALL  
- let reset = document.querySelector(".reset");  
- reset.addEventListener("click", () => {  
-  let confirmReset = confirm("Whole game will start again. continue to reset?");  
-  if (confirmReset === true) {  
-   window.location.reload();  
-  }   
- });  
- // VARIABLES FOR THE GAME  
- let firstGuess = "";  
- let secondGuess = "";  
- let previousTarget = null;  
- let count = 0;  
- let delay = 1200;  
- // FUNCTIONS FOR THE GAME  
- const match = () => {  
-  var selected = document.querySelectorAll(".selected");  
-  selected.forEach((card) => {  
-   card.classList.add("match");  
-  });  
- };  
- const resetGuesses = () => {  
-  firstGuess = "";  
-  secondGuess = "";  
-  count = 0;  
-  var selected = document.querySelectorAll(".selected");  
-  selected.forEach((card) => {  
-   card.classList.remove("selected");  
-  });  
- };  
- // GAME LOGICS  
- grid.addEventListener("click", function (event) {  
-  !timeStarted && secCount();  
-  timeStarted = true;  
-  let clicked = event.target;   
-  attemptCount++;  
-  attempts.innerText = attemptCount;  
-  if (  
-   clicked.nodeName === "SECTION" ||  
-   clicked === previousTarget ||  
-   clicked.parentNode.classList.contains("selected")  
-  ) {  
-   return;  
-  }  
-  if (count < 2) {  
-   count++;  
-   if (count === 1) {  
-    // Assign first guess  
-    firstGuess = clicked.parentNode.dataset.name;  
-    clicked.parentNode.classList.add("selected");  
-   } else {  
-    // Assign second guess  
-    secondGuess = clicked.parentNode.dataset.name;  
-    clicked.parentNode.classList.add("selected");  
-   }  
-   // If both guesses are not empty...  
-   if (firstGuess !== "" && secondGuess !== "") {  
-    // and the first guess matches the second match...  
-    if (firstGuess === secondGuess) {  
-     // run the match function  
-     // match();  
-     // resetGuesses();  
-     setTimeout(match, delay);  
-     setTimeout(resetGuesses, delay);  
-     var matched = document.querySelectorAll(`.${firstGuess}`);  
-     matched.forEach(node => node.addEventListener('click',function (e) {    
-      e.stopPropagation();  
-     }))  
-    } else {  
-     setTimeout(resetGuesses, delay);  
-    }  
-   }  
-  }  
-  // Set previous target to clicked  
-  previousTarget = clicked;  
- });  
-     </script>
- }
+
+function activateTheme(theme) {
+  // insert theme in images array
+  for (let i = 0; i < 20; i++) {images.push(library[theme][i]);}  
+  // insert images in memory game
+  for (let i = 0; i < 20; i++) {
+    var rand = Math.floor(Math.random() * (images.length - 1));
+    boxElts[i].innerHTML = "<img src='" + images[rand] + "' alt='image' class='hidden'>";
+    images.splice(rand, 1);
+  }
+}
+
+
+// Handle the play
+mainElt.addEventListener("click", gameLogic);
+
+function gameLogic(e) {
+  // make sure the box is playable
+  if (e.target.classList.contains("play")) {
+    e.target.firstChild.classList.remove("hidden");
+    // first of two click
+    if (click < 1) {
+      tempElt1 = e.target;
+      // timer
+      if (click === -1) {
+        timer = setInterval(function() {
+          time++;
+          timeElt.innerHTML = time;
+        }, 1000);
+      }
+      click = 1;
+    }
+
+    // second click
+    else if (e.target !== tempElt1) {
+      tempElt2 = e.target;
+
+      // different images
+      if (tempElt1.firstChild.src !== tempElt2.firstChild.src) {
+        mainElt.removeEventListener("click", gameLogic);
+        setTimeout( function() {
+          tempElt1.firstChild.classList.add("hidden");
+          tempElt2.firstChild.classList.add("hidden");
+          mainElt.addEventListener("click", gameLogic);
+        }, 400);
+        if (score > 0) {
+          score -= 2;
+        }
+        scoreElt.innerHTML = score;
+      }
+
+      // same images
+      else {
+        score += 10;
+        win += 2;
+        tempElt1.firstChild.classList.add("outlined");
+        tempElt2.firstChild.classList.add("outlined");
+        tempElt1.classList.remove("play");
+        tempElt2.classList.remove("play");
+        scoreElt.innerHTML = score;
+
+        // game won
+        if (win === 20) {
+          clearInterval(timer);
+          finalElt.innerHTML = "You won " + score + " points <br> in " + time + " seconds";
+          postElt.classList.remove("hidden");
+        }
+      }
+      click = 0;
+    }
+  }
+}
+
+againElt.addEventListener("click", resetGame);
+
+function resetGame() {
+  // reset game
+  tempElt1 = "";
+  tempElt2 = "";
+  click = -1;
+  win = 0;
+  score = 0;
+  time = 0;
+  postElt.classList.add("hidden");
+  preElt.classList.remove("hidden");
+  for (let i = 0; i < 20; i++) {
+    boxElts[i].classList.add("play");
+    boxElts[i].firstChild.classList.add("hidden");
+  }
+  timeElt.textContent = time;
+  scoreElt.textContent = score;
+}
+
+// handle focus of the page
+// function checkPageFocus() {
+//   if (document.hasFocus()) {
+//     preElt.classList.remove("hidden");
+//   }
+//   else {
+//     preElt.classList.add("hidden");
+//   }
+// }
+// var checkPageInterval = setInterval(checkPageFocus, 300);
+
+</script>
+}

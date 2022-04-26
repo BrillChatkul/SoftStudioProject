@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "SpinnerGame";
+    ViewData["Title"] = "CardGameMemory";
 }
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="/" />
@@ -28,7 +28,84 @@
     hr{
         color: white;
     }
-
+    .heading {  
+  text-align: center;  
+  background: rgb(0, 15, 46);  
+  padding: 1rem;  
+  color: bisque;  
+ }  
+ .count-container {  
+  display: flex;  
+  justify-content: space-between;  
+  align-items: center;  
+  width: 60%;  
+  margin: auto auto;  
+  padding: 2rem 0;  
+ }  
+ .attempts {  
+  font-size: 2rem;  
+  color: antiquewhite;  
+ }   
+ .reset {  
+  font-size: 2rem;  
+  color: antiquewhite;  
+  cursor: pointer;  
+  border: 1px solid grey;  
+  padding: .5rem;  
+ }  
+ .reset:hover {  
+  transform: scale(1.2);  
+ }  
+ .time {  
+  font-size: 2rem;  
+  color: antiquewhite;  
+ }  
+ .grid {  
+  max-width: 750px;  
+  margin: 0 auto;  
+  display: flex;  
+  flex-wrap: wrap;  
+  justify-content: space-evenly;  
+ }  
+ .card {  
+  position: relative;  
+  transition: all 0.4s linear;  
+  transform-style: preserve-3d;  
+  margin: 5px;  
+ }  
+ .card,  
+ .back,  
+ .front {  
+  height: 100px;  
+  width: 100px;  
+ }  
+ .back,  
+ .front {  
+  position: absolute;  
+  backface-visibility: hidden;  
+ }  
+ .front {  
+  background: #fab942 url('../media/question.gif') no-repeat center center /  
+   contain;  
+ }  
+ .back {  
+  transform: rotateY(180deg);  
+  background-color: white;  
+  background-size: contain;  
+  background-repeat: no-repeat;  
+  background-position: center center;  
+ }  
+ .selected {  
+  border: 4px solid blue;  
+  transform: rotateY(180deg);  
+ }  
+ .match .front {  
+  border: 0px;  
+  background: rgb(4, 44, 2) url("../media/celebrate.gif") no-repeat center center /  
+  contain !important;  
+  cursor: not-allowed;  
+  transform: none !important;  
+ }  
     text {
         font-family: 'IBM Plex Sans Thai';
         font-style: normal;
@@ -107,218 +184,204 @@
 
 <div style="margin-top:50px"> </div>
 <div class="text-center">
-    <h1><strong>คติธรรมประจำวันนี้</strong></h1>
+    <h1><strong>ธรรมมะความจำเกมส์ [วัด]</strong></h1>
 </div><hr></hr>
-@*
-<div class="container">
-    <div class="col">
-        <div class="row spinner">
-            <div class="col">
-                <div id="chart">
-                </div>
-            </div>
 
-            <div class="col">
-                <div id="question">
-                    <h1>กด Spin เพื่อรับคติธรรมประจำวันนี้</h1>
-                </div>
-                <div class="text-center" style="margin-bottom:10px">
-                    <button type="button" class="btn btn-outline-primary  bttn">อนุโมทนา</button>
-                      <button type="button" class="btn btn-outline-primary bttn">กลับหน้าหลัก</button>
-                      <button type="button" class="btn btn-outline-primary bttn">ส่งต่อให้คนอื่น</button>           
-                </div>
-
-            </div>
-        </div>
-
-        <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script> 
-    </div>
-
-</div>
-*@
-<div class="spinner">
-    <div class="row">
-        <div class="col">
-            <div id="chart" style="margin-left: 10px;">
-
-            </div>
-        </div>
-        <div class="col">
-            <div id="question">
-                <h1>กด Spin เพื่อรับคติธรรมประจำวันนี้</h1>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="text-center" style="margin-bottom:10px">
-            <button type="button" class="btn btn-outline-primary bttn">อนุโมทนา</button>
-            <button type="button" class="btn btn-outline-primary bttn"><a href="/BubbhaGame/" style="text-decoration:none;" />กลับหน้าหลัก</button>
-            <button type="button" class="btn btn-outline-primary bttn">ส่งต่อให้คนอื่น</button>           
-        </div>
-    </div>
-    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-</div>
-
-@section Scripts{
-<script>
-    var padding = { top: 20, right: 0, bottom: 0, left: 0 },
-        w = 500 - padding.left - padding.right,
-        h = 500 - padding.top - padding.bottom,
-        r = Math.min(w, h) / 2,
-        rotation = 0,
-        oldrotation = 0,
-        picked = 100000,
-        oldpick = [],
-        color = d3.scale.category20b();//category20c()
-    //randomNumbers = getRandomNumbers();
-    var data = [
-        { "label": "หมายเลข 1", "value": 1, "question": "เวร ย่อมระงับด้วยการไม่จองเวร" }, // padding
-        { "label": "หมายเลข 2", "value": 2, "question": "คบคนเช่นไร ย่อมเป็นคนเช่นนั้น" }, //font-family
-        { "label": "หมายเลข 3", "value": 3, "question": "บุญย่อมปกป้องรักษา และคุ้มครองคนดี และผู้ประพฤติดีเสมอ" }, //color
-        { "label": "หมายเลข 4", "value": 4, "question": "วันที่ดีที่สุด คือวันที่ได้ทำความดี และสะสมบุญ" }, //font-weight
-        { "label": "หมายเลข 5", "value": 5, "question": "เรื่องที่ผ่านไปแล้ว ก็เป็นเหมือนวันวาน อย่าเก็บเอามาเป็นหนามทิ่มแทงตัวเองอีกเลย" }, //font-size
-        { "label": "หมายเลข 6", "value": 6, "question": "การเลือกคบคนดี มีแต่นำความสุขมาให้" }, //background-color
-        { "label": "หมายเลข 7", "value": 7, "question": "บุญวาสนาเป็นสิ่งที่สร้างเองได้ หากไม่มีก็ทำให้มี ที่มีอยู่แล้วก็ทำให้มียิ่งขึ้นได้" }, //nesting
-        { "label": "หมายเลข 8", "value": 8, "question": "ผู้เห็นโลกเป็นของวุ่นวาย นั่นแหละคือผู้มีบุญ" }, //bottom
-        { "label": "หมายเลข 9", "value": 9, "question": "เรื่องใหญ่ที่สุดในวันนี้ พอถึงพรุ่งนี้ก็เป็นเรื่องเล็ก" }, //sans-serif
-        { "label": "หมายเลข 10", "value": 10, "question": "ใช้จิตใจที่ชอบตำหนิผู้อื่น มาตำหนิตัวเอง ใช้จิตใจที่ชอบให้อภัยตัวเอง มาให้อภัยผู้อื่น" },
-
-        { "label": "หมายเลข 11", "value": 11, "question": "ถ้าเราไม่ทิ้งบุญ บุญก็จะไม่ทิ้งเรา" }, // padding
-        { "label": "หมายเลข 12", "value": 12, "question": "ปัญหาเป็นสิ่งที่เราต้องแก้ กรรมเป็นสิ่งที่เราต้องชดใช้ ทุกข์เป็นสิ่งที่เราต้องดับ" }, //font-family
-        { "label": "หมายเลข 13", "value": 13, "question": "ศีลมากมาย ไม่ต้องรักษาให้หมดทุกข้อ รักษาใจให้ดี และกาย วาจา ก็จะดีไปด้วย" }, //color
-        { "label": "หมายเลข 14", "value": 14, "question": "แสงสว่างบนท้องฟ้าเกิดจาก “ดวงอาทิตย์” แสงสว่างจากชีวิต เกิดจาก “การปล่อยวาง”" }, //font-weight
-        { "label": "หมายเลข 15", "value": 15, "question": "ความจริงใจ” ไม่มีอยู่ในคำพูด และเป็นสิ่งที่ “พิสูจน์” ยากในปัจจุบัน" }, //font-size
-        { "label": "หมายเลข 16", "value": 16, "question": "หากถูกคนรอบข้างเข้าใจผิด ให้อธิบายครั้งเดียวพอ หากเขาไม่คิดจะเชื่อคุณ อธิบายไปกี่ครั้งเขาก็ไม่เชื่ออยู่ดี" }, //background-color
-        { "label": "หมายเลข 17", "value": 17, "question": " สิ่งที่เป็นอกุศลที่สุดในชีวิต คือ การหลอกตัวเอง" }, //nesting
-        { "label": "หมายเลข 18", "value": 18, "question": "ผู้เห็นโลกเป็นของวุ่นวาย นั่นแหละคือผู้มีบุญ" }, //bottom
-        { "label": "หมายเลข 19", "value": 19, "question": "“ความสุข” เกิดจากจิตใจที่สะอาดและบริสุทธิ์" }, //sans-serif
-        { "label": "หมายเลข 20", "value": 20, "question": "ธรรมดาของชีวิต มีแล้วก็กลับไม่มีได้ โลกสลับกันไปมา เหมือนมืดแล้วสว่าง อย่าเสียใจหรือดีใจกับสิ่งใดให้มากนัก" }
+<!DOCTYPE html>  
+ <html lang="en">  
+  <head>  
+   <meta charset="UTF-8" />  
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+   <title>Memory Game</title>  
+   <script src="https://kit.fontawesome.com/d77ac583c4.js" crossorigin="anonymous"></script>  
+   <link rel="stylesheet" href="assets/stylesheet/style.css">  
+  </head>  
+  <body>  
+   <header>  
+    <h1 class="heading">How good is your Memory?</h1>  
+   </header>  
+   <div class="count-container">  
+    <p class="attempts">Attempts: <span class="count"></span></p>  
+    <span class="reset">Reset <i class="fas fa-sync"></i></span>  
+    <p class="time">Time: <span class="min-count">00</span>: <span class="sec-count">00</span></p>  
+   </div>  
+    <div id="game"></div>  
+   <script src="script.js"></script>  
+  </body>  
+ </html> 
+ 
 
 
-    ];
 
-    var svg = d3.select('#chart')
-        .append("svg")
-        .data([data])
-        .attr("width", w + padding.left + padding.right)
-        .attr("height", h + padding.top + padding.bottom);
-    var container = svg.append("g")
-        .attr("class", "chartholder")
-        .attr("transform", "translate(" + (w / 2 + padding.left) + "," + (h / 2 + padding.top) + ")");
-    var vis = container
-        .append("g");
-
-    var pie = d3.layout.pie().sort(null).value(function (d) { return 1; });
-    // declare an arc generator function
-    var arc = d3.svg.arc().outerRadius(r);
-    // select paths, use arc generator to draw
-    var arcs = vis.selectAll("g.slice")
-        .data(pie)
-        .enter()
-        .append("g")
-        .attr("class", "slice");
-
-    arcs.append("path")
-        .attr("fill", function (d, i) { return color(i); })
-        .attr("d", function (d) { return arc(d); });
-    // add the text
-    arcs.append("text").attr("transform", function (d) {
-        d.innerRadius = 0;
-        d.outerRadius = r;
-        d.angle = (d.startAngle + d.endAngle) / 2;
-        return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")translate(" + (d.outerRadius - 10) + ")";
-    })
-        .attr("text-anchor", "end")
-        .text(function (d, i) {
-            return data[i].label;
-        });
-    container.on("click", spin);
-    function spin(d) {
-
-        container.on("click", null);
-        //all slices have been seen, all done
-        console.log("OldPick: " + oldpick.length, "Data length: " + data.length);
-        if (oldpick.length == data.length) {
-            console.log("done");
-            container.on("click", null);
-            window.location.reload();
-            return;
-        }
-        var ps = 360 / data.length,
-            pieslice = Math.round(1440 / data.length),
-            rng = Math.floor((Math.random() * 1440) + 360);
-
-        rotation = (Math.round(rng / ps) * ps);
-
-        picked = Math.round(data.length - (rotation % 360) / ps);
-        picked = picked >= data.length ? (picked % data.length) : picked;
-        if (oldpick.indexOf(picked) !== -1) {
-            d3.select(this).call(spin);
-            return;
-        } else {
-            oldpick.push(picked);
-        }
-        rotation += 90 - Math.round(ps / 2);
-        vis.transition()
-            .duration(3000)
-            .attrTween("transform", rotTween)
-            .each("end", function () {
-                //mark question as seen
-                d3.select(".slice:nth-child(" + (picked + 1) + ") path")
-                    .attr("fill", "#4a4848");
-                //populate question
-                d3.select("#question h1")
-                    .text(data[picked].question);
-                oldrotation = rotation;
-
-                /* Get the result value from object "data" */
-                console.log(data[picked].value)
-
-                /* Comment the below line for restrict spin to sngle time */
-                container.on("click", spin);
-            });
-    }
-    //make arrow
-    svg.append("g")
-        .attr("transform", "translate(" + (w + padding.left + padding.right) + "," + ((h / 2) + padding.top) + ")")
-        .append("path")
-        .attr("d", "M-" + (r * .15) + ",0L0," + (r * .05) + "L0,-" + (r * .05) + "Z")
-        .style({ "fill": "black" });
-    //draw spin circle
-    container.append("circle")
-        .attr("cx", 0)
-        .attr("cy", 0)
-        .attr("r", 60)
-        .style({ "fill": "white", "cursor": "pointer" });
-    //spin text
-    container.append("text")
-        .attr("x", 0)
-        .attr("y", 15)
-        .attr("text-anchor", "middle")
-        .text("SPIN")
-        .style({ "font-weight": "bold", "font-size": "30px" });
-
-
-    function rotTween(to) {
-        var i = d3.interpolate(oldrotation % 360, rotation);
-        return function (t) {
-            return "rotate(" + i(t) + ")";
-        };
-    }
-    function getRandomNumbers() {
-        var array = new Uint16Array(1000);
-        var scale = d3.scale.linear().range([360, 1440]).domain([0, 100000]);
-        if (window.hasOwnProperty("crypto") && typeof window.crypto.getRandomValues === "function") {
-            window.crypto.getRandomValues(array);
-            console.log("works");
-        } else {
-            //no support for crypto, get crappy random numbers
-            for (var i = 0; i < 1000; i++) {
-                array[i] = Math.floor(Math.random() * 100000) + 1;
-            }
-        }
-        return array;
-    }
-
-</script>
-}
+ @section Scripts{
+     <script>
+     // Card data  
+ const cardsArray = [  
+  {  
+   name: "temples1",  
+   img: "./wwwroot/css/โบสถ์กลางทะเล.png",  
+  },  
+  {  
+   name: "temples2",  
+   img: "./wwwroot/css/วัดโพธิ์.png",  
+  },  
+  {  
+   name: "temples3",  
+   img: "./wwwroot/css/วัดบ้านไร่.png",  
+  },  
+  {  
+   name: "temples4",  
+   img: "./wwwroot/css/วัดพระเเก้ว.png",  
+  },  
+  {  
+   name: "temples5",  
+   img: "./wwwroot/css/วัดพระธาตุเขาน้อย.png",  
+  },  
+  {  
+   name: "temples6",  
+   img: "./wwwroot/css/วัดพระธาตุดอยสุเทพ.png",  
+  },  
+  {  
+   name: "temples7",  
+   img: "./wwwroot/css/วัดพระธาตุผาซ่อนแก้ว.png",  
+  },  
+  {  
+   name: "temples8",  
+   img: "./wwwroot/css/วัดพระธาตุสุพรรณหงส์.png",  
+  },  
+  {  
+   name: "temples9",  
+   img: "./wwwroot/css/วัดพระมหาธาตุวรมหาวิหาร.png",  
+  },  
+  {  
+   name: "temples10",  
+   img: "./wwwroot/css/วัดร่องขุ่น.png",  
+  },  
+  {  
+   name: "temples11",  
+   img: "./wwwroot/css/วัดศรีชุม.png",  
+  },  
+  {  
+   name: "temples12",  
+   img: "./assets/media/pokemon12.วัดสิรินธรวรารามภูพร้าว.png",  
+  },  
+ ];  
+ // GAME   
+ const game = document.getElementById("game");  
+ const grid = document.createElement("section");  
+ grid.classList.add("grid");  
+ // game.addEventListener("click", secCount);  
+ game.appendChild(grid);  
+ // DOUBLE ARREY  
+ let gameGrid = cardsArray.concat(cardsArray);  
+ // FOR RAMDOMISING THE CARDS EVERY TIME WE REFERESH THE PAGE  
+ gameGrid.sort(() => 0.5 - Math.random());  
+ // CREATE CARDS  
+ gameGrid.forEach((item) => {  
+  const card = document.createElement("div");  
+  card.classList.add(`card`,`${item.name}`);  
+  card.dataset.name = item.name;  
+  const front = document.createElement("div");  
+  front.classList.add("front");  
+  const back = document.createElement("div");  
+  back.classList.add("back");  
+  back.style.backgroundImage = `url(${item.img})`;  
+  grid.appendChild(card);  
+  card.appendChild(front);  
+  card.appendChild(back);  
+ });  
+ // ATTEMPTS COUNT  
+ let attemptCount = 0;  
+ let attempts = document.querySelector(".count");  
+ attempts.innerText = attemptCount;  
+ // TIME COUNT  
+ var sec = 0;  
+ var timeInSec;  
+ let min = 0;  
+ function secCount() {  
+  sec = sec + 1;  
+  document.querySelector(".sec-count").innerText = Math.floor(sec % 60);  
+  timeInSec = setTimeout(secCount, 1000);  
+  min = Math.floor(sec / 60);  
+  document.querySelector(".min-count").innerText = min;  
+ }  
+ var timeStarted = false;  
+ // secCount();  
+ // RESET ALL  
+ let reset = document.querySelector(".reset");  
+ reset.addEventListener("click", () => {  
+  let confirmReset = confirm("Whole game will start again. continue to reset?");  
+  if (confirmReset === true) {  
+   window.location.reload();  
+  }   
+ });  
+ // VARIABLES FOR THE GAME  
+ let firstGuess = "";  
+ let secondGuess = "";  
+ let previousTarget = null;  
+ let count = 0;  
+ let delay = 1200;  
+ // FUNCTIONS FOR THE GAME  
+ const match = () => {  
+  var selected = document.querySelectorAll(".selected");  
+  selected.forEach((card) => {  
+   card.classList.add("match");  
+  });  
+ };  
+ const resetGuesses = () => {  
+  firstGuess = "";  
+  secondGuess = "";  
+  count = 0;  
+  var selected = document.querySelectorAll(".selected");  
+  selected.forEach((card) => {  
+   card.classList.remove("selected");  
+  });  
+ };  
+ // GAME LOGICS  
+ grid.addEventListener("click", function (event) {  
+  !timeStarted && secCount();  
+  timeStarted = true;  
+  let clicked = event.target;   
+  attemptCount++;  
+  attempts.innerText = attemptCount;  
+  if (  
+   clicked.nodeName === "SECTION" ||  
+   clicked === previousTarget ||  
+   clicked.parentNode.classList.contains("selected")  
+  ) {  
+   return;  
+  }  
+  if (count < 2) {  
+   count++;  
+   if (count === 1) {  
+    // Assign first guess  
+    firstGuess = clicked.parentNode.dataset.name;  
+    clicked.parentNode.classList.add("selected");  
+   } else {  
+    // Assign second guess  
+    secondGuess = clicked.parentNode.dataset.name;  
+    clicked.parentNode.classList.add("selected");  
+   }  
+   // If both guesses are not empty...  
+   if (firstGuess !== "" && secondGuess !== "") {  
+    // and the first guess matches the second match...  
+    if (firstGuess === secondGuess) {  
+     // run the match function  
+     // match();  
+     // resetGuesses();  
+     setTimeout(match, delay);  
+     setTimeout(resetGuesses, delay);  
+     var matched = document.querySelectorAll(`.${firstGuess}`);  
+     matched.forEach(node => node.addEventListener('click',function (e) {    
+      e.stopPropagation();  
+     }))  
+    } else {  
+     setTimeout(resetGuesses, delay);  
+    }  
+   }  
+  }  
+  // Set previous target to clicked  
+  previousTarget = clicked;  
+ });  
+     </script>
+ }

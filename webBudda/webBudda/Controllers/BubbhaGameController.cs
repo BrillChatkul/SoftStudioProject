@@ -47,7 +47,7 @@ namespace webBudda.Controllers
             return View();
         }
 
-        public async Task<IActionResult> CardMemoryGame()
+        public async Task<IActionResult> CardGameMemory()
         {
             var token = HttpContext.Session.GetString("_UserToken");
             if (token != null)

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
     <link rel="stylesheet" href="~/Content/font-awesome.css"/>
+    <link rel="stylesheet" href="~/font-awesome/css/all.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/webBudda.styles.css" asp-append-version="true" />
 
@@ -196,30 +197,39 @@
                         </li>
                         
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 พระพุทธศาสนา
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item font-weight-bold" asp-controller="Content" asp-action="">พระพุทธเจ้า</a>
+                                <a class="dropdown-item font-weight-bold" style="color: black";>พระพุทธเจ้า</a>
                                 <a class="dropdown-item" asp-controller="Content" asp-action="Content1">&nbsp;&nbsp;พระพุทธประวัติ</a>
                                 <a class="dropdown-item" asp-controller="Content" asp-action="Content2">&nbsp;&nbsp;ปางพระพุทธรูป</a>
                                 <a class="dropdown-item" asp-controller="Content" asp-action="Content3">&nbsp;&nbsp;ภาพพระพุทธประวัติ</a>
                                 <a class="dropdown-item" asp-controller="Content" asp-action="Content4">&nbsp;&nbsp;ทศชาติชาดก</a>
                                 <a class="dropdown-item" asp-controller="Content" asp-action="Content5">&nbsp;&nbsp;ชาดก ๕๐๐ ชาติ</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item font-weight-bold" asp-controller="Content" asp-action="">พระธรรม</a>
+                                <a class="dropdown-item font-weight-bold" style="color: black";>พระธรรม</a>
                                 <a class="dropdown-item" asp-controller="Content" asp-action="Content6">&nbsp;&nbsp;พุทธวจนในธรรมบท</a>
+                                <!--
                                 <a class="dropdown-item" asp-controller="Content" asp-action="Content7">&nbsp;&nbsp;พจนานุกรมพุทธศาสน์</a>
                                 <a class="dropdown-item" asp-controller="Content" asp-action="Content8">&nbsp;&nbsp;หัวข้อธรรม</a>
                                 <a class="dropdown-item" asp-controller="Content" asp-action="Content9">&nbsp;&nbsp;หนังสือธรรมะ</a>
                                 <a class="dropdown-item" asp-controller="Content" asp-action="Content10">&nbsp;&nbsp;คลังแสงแห่งธรรม</a>
                                 <a class="dropdown-item" asp-controller="Content" asp-action="Content11">&nbsp;&nbsp;มืลืนทปัญหา</a>
+                                -->
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-controller="Content" asp-action="Content7">ศาสนาคืออะไร</a>
+                                <a class="dropdown-item" asp-controller="Content" asp-action="Content8">ลักษณะเด่นของพุทธศาสนา</a>
+                                <a class="dropdown-item" asp-controller="Content" asp-action="Content9">พระพุทธศาสนาในประเทศไทย</a>
+                                <a class="dropdown-item" asp-controller="Content" asp-action="Content10">การเผยแผ่ศาสนาสู่สังคมโลก</a>
+
+                                
                             </div>
                         </li>
 
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 ประเพณี
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -227,7 +237,7 @@
                                 <a class="dropdown-item" asp-controller="Content" asp-action="Content13">&nbsp;ประเพณีสารทไทย</a>
                                 <a class="dropdown-item" asp-controller="Content" asp-action="Content14">&nbsp;ประเพณีลอยกระทง</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item font-weight-bold" asp-controller="Content" asp-action="">งานบุญประจำปี</a>
+                                <a class="dropdown-item font-weight-bold" style="color: black";>งานบุญประจำปี</a>
                                 <a class="dropdown-item" asp-controller="Content" asp-action="Content15">&nbsp;งานขึ้นเขาห่มพระ พาท่องช่องกระจก เถลิงศกรับพรปีใหม่ จ.ประจวบคีรีขันธ์</a>
                                 <a class="dropdown-item" asp-controller="Content" asp-action="Content16">&nbsp;งานประเพณีตากธัมม์ ตานข้าวใหม่ หิงไฟพระเจ้า วัดสูงเม่น จ.แพร่</a>
                                 <a class="dropdown-item" asp-controller="Content" asp-action="Content17">&nbsp;งานนมัสการองค์พระธาตุพนม จ.นครพนม</a>

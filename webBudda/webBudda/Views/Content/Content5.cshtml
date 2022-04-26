@@ -11,9 +11,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
+		.center {
+		  display: block;
+		  margin-left: auto;
+		  margin-right: auto;
+		  width: 50%;
+		}
+
+        .boxbox{
+			margin-left: 100px;
+			margin-right: 100px;
+		}
+		.picpic center{
+			width: 700px;
+			height: 500px;
+        }
+
         html {
             scroll-behavior: smooth;
         }
+
+		.pp{
+			font-size:40px;
+		}
 
         h1 {
           text-align: center;
@@ -46,7 +66,7 @@
         }
 
         .img-rounded {
-          border-radius: 6px;
+          border-radius: 30px;
         }
 
 		pagination {
@@ -153,7 +173,7 @@
 		  height: auto;
 		}
 		.img-rounded {
-		  border-radius: 6px;
+		  border-radius: 30px;
 		}
 		.img-thumbnail {
 		  display: inline-block;
@@ -203,9 +223,10 @@
 
 </head>
 <body>
-
+	<div style="margin-top:50px"> </div>
+	<div class="boxbox">
 	<div class="row">
-		<a></a><img class="img-rounded" src="~/css/header5.jpg" title="Kurobuta Dog" width="100%"><br>
+		<a></a><img class="img-rounded center" src="~/css/header5.jpg" title="Kurobuta Dog" style="width:50%"><br>
 	</div>
 
 	<br>
@@ -213,161 +234,120 @@
     <h1>
         <strong>นิทานชาดก (ชาดก ๕๐๐ ชาติ)</strong>
     </h1>
-
-
-
-    <div class="well">
-		<p class="myfont_kanit">ปางพระพุทธรูป คือ ลักษณะของรูปสมมุติของพระพุทธเจ้าในอิริยาบถต่าง ๆ ซึ่งสร้างขึ้นตามความเชื่อในพุทธประวัติ โดยช่างสมัยโยนก (คันธารราฐ) ราชวงศ์คุปตะ (พ.ศ. 863-1023) เป็นชาวกรีกพวกแรกที่กำหนดรูปแบบปางพระพุทธรูป ต่อมาช่างชาวอินเดียฝ่ายใต้ ซึ่งเป็นชาวกลิงคราฐข้างฝ่ายใต้ รวมทั้งในยุคสมัยต่าง ๆ ในภายหลังได้คิดปางพระพุทธรูปเพิ่มขึ้นอีกเป็นจำนวนมาก</p>
-	</div>
-
-	<hr style="height:5px;border-width:0;color:gray;background-color:gray">
-
-	<br>
-	<hr>
-
-	<nav aria-label="Page navigation">
-		<ul class="pagination">
-			<li class="active"><a href="#">1<span class="sr-only">(current)</span></a></li>
-			<li><a asp-controller="Content" asp-action="Content2_2" class="Link-kanit">2</a></li>
-			<li><a asp-controller="Content" asp-action="Content2_3" class="Link-kanit">3</a></li>
-			<li><a asp-controller="Content" asp-action="Content2_4" class="Link-kanit">4</a></li>
-			<li><a asp-controller="Content" asp-action="Content2_2" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-		</ul>
-	</nav>
-
-	<hr>
 	<br>
 
     <div class="row">					
 	    <div class="thumbnail col-md-3 text-center text-dark">
-			<a href="./dbview.php?No=157"><img class="img-responsive" src="~/css/5_1.jpeg" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
-			<a href="./dbview.php?No=157" class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
+			<a><img class="img-responsive img-rounded" src="~/css/5_1.jpeg" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
+			<a class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
 		</div>
 					
 	    <div class="thumbnail col-md-3 text-center text-dark">
-			<a href="./dbview.php?No=157"><img class="img-responsive" src="~/css/5_2.jpg" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
-			<a href="./dbview.php?No=157" class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
+			<a><img class="img-responsive img-rounded" src="~/css/5_2.jpg" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
+			<a class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
 		</div>
 
 		<div class="thumbnail col-md-3 text-center text-dark">
-			<a href="./dbview.php?No=157"><img class="img-responsive" src="~/css/5_3.jpg" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
-			<a href="./dbview.php?No=157" class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
+			<a><img class="img-responsive img-rounded" src="~/css/5_3.jpg" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
+			<a class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
 		</div>
 
 		<div class="thumbnail col-md-3 text-center text-dark">
-			<a href="./dbview.php?No=157"><img class="img-responsive" src="~/css/5_4.jpg" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
-			<a href="./dbview.php?No=157" class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
+			<a><img class="img-responsive img-rounded" src="~/css/5_4.jpg" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
+			<a class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
 		</div>
     </div>
 	<br>
     <div class="row">					
 	    <div class="thumbnail col-md-3 text-center text-dark">
-			<a href="./dbview.php?No=157"><img class="img-responsive" src="~/css/5_5.jpg" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
-			<a href="./dbview.php?No=157" class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
+			<a><img class="img-responsive img-rounded" src="~/css/5_5.jpg" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
+			<a class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
 		</div>
 					
 	    <div class="thumbnail col-md-3 text-center text-dark">
-			<a href="./dbview.php?No=157"><img class="img-responsive" src="~/css/5_6.jpg" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
-			<a href="./dbview.php?No=157" class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
+			<a><img class="img-responsive img-rounded" src="~/css/5_6.jpg" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
+			<a class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
 		</div>
 
 		<div class="thumbnail col-md-3 text-center text-dark">
-			<a href="./dbview.php?No=157"><img class="img-responsive" src="~/css/5_7.jpg" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
-			<a href="./dbview.php?No=157" class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
+			<a><img class="img-responsive img-rounded" src="~/css/5_7.jpg" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
+			<a class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
 		</div>
 
 		<div class="thumbnail col-md-3 text-center text-dark">
-			<a href="./dbview.php?No=157"><img class="img-responsive" src="~/css/5_8.jpg" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
-			<a href="./dbview.php?No=157" class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
+			<a><img class="img-responsive img-rounded" src="~/css/5_8.jpg" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
+			<a class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
 		</div>
     </div>
 	<br>
     <div class="row">					
-					<div class="col-md-3 text-center">
-						<a href="./dbview.php?No=9"><img class="img-rounded" src="~/css/9.gif" title="๙.ปางเสวยมธุปายาส"></a><br>
-						<a href="./dbview.php?No=9" class="font_kanit_menu">• ๙.ปางเสวยมธุปายาส</a><br><br>
-					</div>
+	    <div class="thumbnail col-md-3 text-center text-dark">
+			<a><img class="img-responsive img-rounded" src="~/css/5_9.jpg" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
+			<a class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
+		</div>
 					
-					<div class="col-md-3 text-center">
-						<a href="./dbview.php?No=10"><img class="img-rounded" src="~/css/10.gif" title="๑๐.ปางเสี่ยงบารมีลอยถาด"></a><br>
-						<a href="./dbview.php?No=10" class="font_kanit_menu">• ๑๐.ปางเสี่ยงบารมีลอยถาด</a><br><br>
-					</div>
-					
-					<div class="col-md-3 text-center">
-						<a href="./dbview.php?No=11"><img class="img-rounded" src="~/css/11.gif" title="๑๑.ปางรับหญ้าคา"></a><br>
-						<a href="./dbview.php?No=11" class="font_kanit_menu">• ๑๑.ปางรับหญ้าคา</a><br><br>
-					</div>
-					
-					<div class="col-md-3 text-center">
-						<a href="./dbview.php?No=12"><img class="img-rounded" src="~/css/12.gif" title="๑๒.ปางสมาธิเพชร"></a><br>
-						<a href="./dbview.php?No=12" class="font_kanit_menu">• ๑๒.ปางสมาธิเพชร</a><br><br>
-					</div>
-	</div>
+	    <div class="thumbnail col-md-3 text-center text-dark">
+			<a><img class="img-responsive img-rounded" src="~/css/5_10.gif" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
+			<a class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
+		</div>
+
+		<div class="thumbnail col-md-3 text-center text-dark">
+			<a><img class="img-responsive img-rounded" src="~/css/5_11.gif" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
+			<a class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
+		</div>
+
+		<div class="thumbnail col-md-3 text-center text-dark">
+			<a><img class="img-responsive img-rounded" src="~/css/5_12.gif" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
+			<a class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
+		</div>
+    </div>
 	<br>
 	<div class="row">					
-					<div class="col-md-3 text-center">
-						<a href="./dbview.php?No=13"><img class="img-rounded" src="~/css/13.gif" title="๑๓.ปางมารวิชัย"></a><br>
-						<a href="./dbview.php?No=13" class="font_kanit_menu">• ๑๓.ปางมารวิชัย</a><br><br>
-					</div>
+	    <div class="thumbnail col-md-3 text-center text-dark">
+			<a><img class="img-responsive img-rounded" src="~/css/5_13.gif" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
+			<a class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
+		</div>
 					
-					<div class="col-md-3 text-center">
-						<a href="./dbview.php?No=14"><img class="img-rounded" src="~/css/14.gif" title="๑๔.ปางสมาธิหรือปางตรัสรู้"></a><br>
-						<a href="./dbview.php?No=14" class="font_kanit_menu">• ๑๔.ปางสมาธิหรือปางตรัสรู้</a><br><br>
-					</div>
-					
-					<div class="col-md-3 text-center">
-						<a href="./dbview.php?No=15"><img class="img-rounded" src="~/css/15.gif" title="๑๕.ปางถวายเนตร"></a><br>
-						<a href="./dbview.php?No=15" class="font_kanit_menu">• ๑๕.ปางถวายเนตร</a><br><br>
-					</div>
-					
-					<div class="col-md-3 text-center">
-						<a href="./dbview.php?No=16"><img class="img-rounded" src="~/css/16.gif" title="๑๖.ปางจงกรมแก้ว"></a><br>
-						<a href="./dbview.php?No=16" class="font_kanit_menu">• ๑๖.ปางจงกรมแก้ว</a><br><br>
-					</div>
-	</div>
+	    <div class="thumbnail col-md-3 text-center text-dark">
+			<a><img class="img-responsive img-rounded" src="~/css/5_14.gif" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
+			<a class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
+		</div>
+
+		<div class="thumbnail col-md-3 text-center text-dark">
+			<a><img class="img-responsive img-rounded" src="~/css/5_15.gif" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
+			<a class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
+		</div>
+
+		<div class="thumbnail col-md-3 text-center text-dark">
+			<a><img class="img-responsive img-rounded" src="~/css/5_16.gif" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
+			<a class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
+		</div>
+    </div>
 	<br>
 	<div class="row">					
-					<div class="col-md-3 text-center">
-						<a href="./dbview.php?No=17"><img class="img-rounded" src="~/css/17.gif" title="๑๗.ปางเรือนแก้ว"></a><br>
-						<a href="./dbview.php?No=17" class="font_kanit_menu">• ๑๗.ปางเรือนแก้ว</a><br><br>
-					</div>
+	    <div class="thumbnail col-md-3 text-center text-dark">
+			<a><img class="img-responsive img-rounded" src="~/css/5_17.gif" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
+			<a class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
+		</div>
 					
-					<div class="col-md-3 text-center">
-						<a href="./dbview.php?No=18"><img class="img-rounded" src="~/css/18.gif" title="๑๘.ปางห้ามมาร"></a><br>
-						<a href="./dbview.php?No=18" class="font_kanit_menu">• ๑๘.ปางห้ามมาร</a><br><br>
-					</div>
-					
-					<div class="col-md-3 text-center">
-						<a href="./dbview.php?No=19"><img class="img-rounded" src="~/css/19.gif" title="๑๙.ปางนาคปรก"></a><br>
-						<a href="./dbview.php?No=19" class="font_kanit_menu">• ๑๙.ปางนาคปรก</a><br><br>
-					</div>
-					
-					<div class="col-md-3 text-center">
-						<a href="./dbview.php?No=20"><img class="img-rounded" src="~/css/20.gif" title="๒๐.ปางฉันผลสมอ"></a><br>
-						<a href="./dbview.php?No=20" class="font_kanit_menu">• ๒๐.ปางฉันผลสมอ</a><br><br>
-					</div>
-	</div>
-	
+	    <div class="thumbnail col-md-3 text-center text-dark">
+			<a><img class="img-responsive img-rounded" src="~/css/5_18.gif" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
+			<a class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
+		</div>
+
+		<div class="thumbnail col-md-3 text-center text-dark">
+			<a><img class="img-responsive img-rounded" src="~/css/5_19.gif" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
+			<a class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
+		</div>
+
+		<div class="thumbnail col-md-3 text-center text-dark">
+			<a><img class="img-responsive img-rounded" src="~/css/5_20.gif" title="สามเณรโข่งผู้ไม่ย่อท้อ" เขียนโดย="" สืบ="" ธรรมไทย=""></a>
+			<a class="font_kanit_menu text-dark">• สามเณรโข่งผู้ไม่ย่อท้อ  เขียนโดย  สืบ  ธรรมไทย</a>
+		</div>
+    </div>
 	<br>
-	<hr>
-
-	<nav aria-label="Page navigation">
-		<ul class="pagination">
-			<li class="active"><a href="#">1<span class="sr-only">(current)</span></a></li>
-			<li><a asp-controller="Content" asp-action="Content2_2" class="Link-kanit">2</a></li>
-			<li><a asp-controller="Content" asp-action="Content2_3" class="Link-kanit">3</a></li>
-			<li><a asp-controller="Content" asp-action="Content2_4" class="Link-kanit">4</a></li>
-			<li><a asp-controller="Content" asp-action="Content2_2" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-		</ul>
-	</nav>
-
-	<hr>
-	<br>
-
-	<hr style="height:5px;border-width:0;color:gray;background-color:gray">
-
 
     <a class="gotopbtn" href="#"> <i class="fa fa-arrow-up" aria-hidden="true"></i> </a>
-
+	</div>
     
 </body>

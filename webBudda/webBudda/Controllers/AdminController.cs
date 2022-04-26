@@ -589,5 +589,23 @@ namespace webBudda.Controllers
             }
             return RedirectToAction("Index", "Home");
         }
+        
+        public ActionResult EditAnnouncement()
+        {
+            client = new FireSharp.FirebaseClient(config);
+            FirebaseResponse response = client.Get("Announcement/");
+            var data = JsonConvert.DeserializeObject(response.Body);
+            ViewBag.d = data;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult EditAnnouncement(string dt)
+        {
+            client = new FireSharp.FirebaseClient(config);
+            SetResponse response = client.Set("Announcement", dt);
+            var data1 = new { success = true };
+            var json1 = JsonConvert.SerializeObject(data1);
+            return Json(json1);
+        }
     }
 }

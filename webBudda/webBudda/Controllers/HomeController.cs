@@ -30,7 +30,16 @@ namespace webBudda.Controllers
             
         }
 
-         public async Task<IActionResult> Index()
+        public ActionResult GetEvents()
+        {
+            EventsLI L1 = new EventsLI();
+            var eventsList = L1.GetEvent();
+            var jsonEvent = JsonConvert.SerializeObject(eventsList);
+            return Json(jsonEvent);
+        }
+
+
+        public async Task<IActionResult> Index()
         {
 
             var token = HttpContext.Session.GetString("_UserToken");

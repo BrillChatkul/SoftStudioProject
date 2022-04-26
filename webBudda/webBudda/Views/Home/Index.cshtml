@@ -142,276 +142,275 @@
     <img src="/images/Vector 1.png" alt="..." class="justify-content-center"
         style="position: absolute; z-index: -1; top:-60px; left:0px; width:100%; height:500px">
 
-    <div class="d-flex justify-content-center" style="margin-bottom:80px; margin-top:66px">
-
-        <div class="flex-column text-center">
-            <div class="container " width="400" height="400"
-                style="background-color:; padding-top:3rem; margin-right:8rem">
-                <h1 style="font-size:70px">Bud Bud</h1>
-                <h4 style="padding-bottom:1rem;">World</h4>
-                <hr style="width:60%; margin: auto; height:1px; color:black;">
-                <h2 style="font-size:40px">Software Studio</h2>
-
-                <hr>
-                </hr>
-                <label>ยินดีต้อนรับ ... ท่านสมาชิก @Model.DisplayName @Model.Email</label>
-                <a asp-area="" asp-controller="Home" asp-action="EditUser"><button>Edit</button></a>
-            </div>
-
-        </div>
-
-        <div class="d-inline text-center" style="margin-top:3rem; margin-bottom:4rem;">
-
-            <div class="container " style="position:relative; margin-inline:50px">
-                <div class="row">
-                    <div class="container">
-                        @* <img src="/images/image 3.png" alt="..." class="lotus">*@
-                        <div class="lotus-text-box">แก้ไขโปรไฟล์</div>
-                    </div>
-                    <div class="container" style="position:relative; margin-inline:50px">
-                        @*<img src="/images/image 3.png" alt="..." class="lotus">*@
-                        <div class="lotus-text-box">ลบบัญชี</div>
-                    </div>
-                    <div class="container" style="position:relative; margin-inline:50px">
-                        @*<img src="/images/image 3.png" alt="..." class="lotus" width="90" height="90"
-                            style="position:absolute; top:-60px; right:100px">*@
-                        <div class="lotus-text-box">ออกสู่ระบบ</div>
-                    </div>
-                    <div class="container" style="position:relative; margin-inline:50px">
-                        @*<img src="/images/image 3.png" alt="..." class="lotus">*@
-                        <div class="lotus-text-box">เยี่ยมชมเว็บไซต์</div>
-                    </div>
-                    <div class="container" style="position:relative; margin-inline:50px">
-                        @*<img src="/images/image 3.png" alt="..." class="lotus">*@
-                        <div class="lotus-text-box">รอบรู้โลกธรรมะ</div>
-                    </div>
-                    <div class="container" style="position:relative; margin-inline:50px">
-                        @*<img src="/images/image 3.png" alt="..." class="lotus" width="90" height="90"
-                            style="position:absolute; top:-60px; right:100px">*@
-                        <div class="lotus-text-box">สนทนาธรรม</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
-
-
-
-
-    @*------------------------------------------------------------------------------------------- Calender
-        --------------------------------------------------------------------------------------------------------------------------------------*@
-    <br />
-
-    <div class="container" style=" width:100%; border-radius:30px; margin-bottom:4rem; align-items:center ">
-        @* <h1>Calendar</h1>*@
-        <div id="calender"></div>
-
-        <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title"><span id="eventTitle"></span></h4>
-                    </div>
-                    <div class="modal-body">
-                        <p id="pDetails"></p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css" rel="stylesheet" />
-        <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css" rel="stylesheet"
-            media="print" />
-
-
-    </div>
-
-
-
-
-    @*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*@
-
-
-
-
-
-
-    <!-- Image container of the image slider -->
     <div class="container">
-        <div class="slide">
-            @*<div class="slideNumber">1</div>*@
-            <img height="400"
-                src="https://img.freepik.com/free-vector/thailand-famous-landmark-scenery-design-tourist-elephant-back_11700-497.jpg?w=2000">
+        <div class="row">
+            <div class="col">
+                <div class="container " width="400" height="400"
+                    style="background-color:; padding-top:3rem; margin-right:8rem">
+                    <h1 style="font-size:70px">Bud Bud</h1>
+                    <h4 style="padding-bottom:1rem;">World</h4>
+                    <hr style="width:60%; margin: auto; height:1px; color:black;">
+                    <h2 style="font-size:40px">Software Studio</h2>
+                    <hr>
+                    </hr>
+                    <label>ยินดีต้อนรับ ... ท่านสมาชิก @Model.DisplayName @Model.Email</label>
+                    <a asp-area="" asp-controller="Home" asp-action="EditUser"><button>Edit</button></a>
+                </div>
+            </div>
+
+            <div class="col ">
+                <div class="container" style="margin-inline:50px">
+                    @* <img src="/images/image 3.png" alt="..." class="lotus">*@
+                    <div class="lotus-text-box">แก้ไขโปรไฟล์</div>
+                </div>
+                <div class="container" style=" margin-inline:50px">
+                    @*<img src="/images/image 3.png" alt="..." class="lotus">*@
+                    <div class="lotus-text-box">ลบบัญชี</div>
+                </div>
+                <div class="container" style=" margin-inline:50px">
+                    @*<img src="/images/image 3.png" alt="..." class="lotus" width="90" height="90"
+                        style="position:absolute; top:-60px; right:100px">*@
+                    <div class="lotus-text-box">ออกสู่ระบบ</div>
+                </div>
+                <div class="container" style=" margin-inline:50px">
+                    @*<img src="/images/image 3.png" alt="..." class="lotus">*@
+                    <div class="lotus-text-box">เยี่ยมชมเว็บไซต์</div>
+                </div>
+                <div class="container" style=" margin-inline:50px">
+                    @*<img src="/images/image 3.png" alt="..." class="lotus">*@
+                    <div class="lotus-text-box">รอบรู้โลกธรรมะ</div>
+                </div>
+                <div class="container" style="margin-inline:50px">
+                    @*<img src="/images/image 3.png" alt="..." class="lotus" width="90" height="90"
+                        style="position:absolute; top:-60px; right:100px">*@
+                    <div class="lotus-text-box">สนทนาธรรม</div>
+                </div>
+            </div>
+
+            </row>
+
+
         </div>
-        <div class="slide">
-            @*<div class="slideNumber">2</div>*@
-            <img height="400" src="https://i.pinimg.com/736x/d0/76/99/d076993241bbe501afab9a67469cbfd2.jpg">
-        </div>
-        <div class="slide">
-            @*<div class="slideNumber">3</div>*@
-            <img height="400"
-                src="https://media.istockphoto.com/vectors/tree-temple-image-of-buddha-sculpture-pagoda-seamyanmarthailand-vector-id854985000?b=1&k=20&m=854985000&s=612x612&w=0&h=ZVrkEcx4344dVWWS7cw50ucNbtr83-OEFZKvZIiJX7o=">
-        </div>
 
-        <!-- Next and Previous icon to change images -->
-        @*<div style="position:relative;margin-inline:200px">
-            <a class="previous" onclick="moveSlides(-1)">
-            <i class="fa fa-chevron-circle-left"></i>
-            </a>
-            <a class="next" onclick="moveSlides(1)">
-            <i class="fa fa-chevron-circle-right"></i>
-            </a>
-            </div>*@
-    </div>
 
-    <br>
 
-    <div style="text-align:center">
-        <span class="footerdot" onclick="activeSlide(1)">
-        </span>
-        <span class="footerdot" onclick="activeSlide(2)">
-        </span>
-        <span class="footerdot" onclick="activeSlide(3)">
-        </span>
-    </div>
 
-    <div class="container"
-        style="background-color:#C4C4C4; width:100%; height:700px; border-radius:30px; margin-bottom:4rem;"></div>
 
-    <div class="">
-        <h1>นักแสดงธรรมดีเด่น</h1>
-        <div class="d-lg-inline-flex">
-            <h3 class="circleBG">ไมเนอร์</h3>
-            <h3 class="circleBG">บริล</h3>
-        </div>
+        @*------------------------------------------------------------------------------------------- Calender
+            --------------------------------------------------------------------------------------------------------------------------------------*@
         <br />
 
-        <div class="d-lg-inline-flex">
-            <h3 class="circleBG">แป้ง</h3>
-            <h3 class="circleBG">ปลื้ม</h3>
-            <h3 class="circleBG">บอส</h3>
+        <div class="container" style=" width:100%; border-radius:30px; margin-bottom:4rem; align-items:center ">
+            @* <h1>Calendar</h1>*@
+            <div id="calender"></div>
+
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title"><span id="eventTitle"></span></h4>
+                        </div>
+                        <div class="modal-body">
+                            <p id="pDetails"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css" rel="stylesheet" />
+            <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css" rel="stylesheet"
+                media="print" />
+
+
         </div>
 
 
+
+
+        @*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*@
+
+
+
+
+
+
+        <!-- Image container of the image slider -->
+        <div class="container">
+            <div class="slide">
+                @*<div class="slideNumber">1</div>*@
+                <img height="400"
+                    src="https://img.freepik.com/free-vector/thailand-famous-landmark-scenery-design-tourist-elephant-back_11700-497.jpg?w=2000">
+            </div>
+            <div class="slide">
+                @*<div class="slideNumber">2</div>*@
+                <img height="400" src="https://i.pinimg.com/736x/d0/76/99/d076993241bbe501afab9a67469cbfd2.jpg">
+            </div>
+            <div class="slide">
+                @*<div class="slideNumber">3</div>*@
+                <img height="400"
+                    src="https://media.istockphoto.com/vectors/tree-temple-image-of-buddha-sculpture-pagoda-seamyanmarthailand-vector-id854985000?b=1&k=20&m=854985000&s=612x612&w=0&h=ZVrkEcx4344dVWWS7cw50ucNbtr83-OEFZKvZIiJX7o=">
+            </div>
+
+            <!-- Next and Previous icon to change images -->
+            @*<div style="position:relative;margin-inline:200px">
+                <a class="previous" onclick="moveSlides(-1)">
+                <i class="fa fa-chevron-circle-left"></i>
+                </a>
+                <a class="next" onclick="moveSlides(1)">
+                <i class="fa fa-chevron-circle-right"></i>
+                </a>
+                </div>*@
+        </div>
+
+        <br>
+
+        <div style="text-align:center">
+            <span class="footerdot" onclick="activeSlide(1)">
+            </span>
+            <span class="footerdot" onclick="activeSlide(2)">
+            </span>
+            <span class="footerdot" onclick="activeSlide(3)">
+            </span>
+        </div>
+
+        <div class="container"
+            style="background-color:#C4C4C4; width:100%; height:700px; border-radius:30px; margin-bottom:4rem;"></div>
+
+        <div class="">
+            <h1>นักแสดงธรรมดีเด่น</h1>
+            <div class="d-lg-inline-flex">
+                <h3 class="circleBG">ไมเนอร์</h3>
+                <h3 class="circleBG">บริล</h3>
+            </div>
+            <br />
+
+            <div class="d-lg-inline-flex">
+                <h3 class="circleBG">แป้ง</h3>
+                <h3 class="circleBG">ปลื้ม</h3>
+                <h3 class="circleBG">บอส</h3>
+            </div>
+
+
+        </div>
     </div>
-</div>
 
 
-@*---------------------------------------------------------------------------------------------------- section Scripts
-    -----------------------------------------------------------------------------------------------------------------------------*@
+    @*---------------------------------------------------------------------------------------------------- section
+        Scripts
+        -----------------------------------------------------------------------------------------------------------------------------*@
 
 
-@section Scripts {
+    @section Scripts {
 
-<script>
-    var slideIndex = 1;
-    displaySlide(slideIndex);
+    <script>
+        var slideIndex = 1;
+        displaySlide(slideIndex);
 
-    function moveSlides(n) {
-        displaySlide(slideIndex += n);
-    }
-
-    function activeSlide(n) {
-        displaySlide(slideIndex = n);
-    }
-
-    /* Main function */
-    function displaySlide(n) {
-        var i;
-        var totalslides =
-            document.getElementsByClassName("slide");
-        var totaldots =
-            document.getElementsByClassName("footerdot");
-
-        if (n > totalslides.length) {
-            slideIndex = 1;
+        function moveSlides(n) {
+            displaySlide(slideIndex += n);
         }
 
-        if (n < 1) {
-            slideIndex = totalslides.length;
+        function activeSlide(n) {
+            displaySlide(slideIndex = n);
         }
-        for (i = 0; i < totalslides.length; i++) {
-            totalslides[i].style.display = "none";
-        }
-        for (i = 0; i < totaldots.length; i++) {
-            totaldots[i].className =
-                totaldots[i].className.replace(" active", "");
-        }
-        totalslides[slideIndex - 1].style.display = "block";
-        totaldots[slideIndex - 1].className += " active";
-    }
 
-</script>
+        /* Main function */
+        function displaySlide(n) {
+            var i;
+            var totalslides =
+                document.getElementsByClassName("slide");
+            var totaldots =
+                document.getElementsByClassName("footerdot");
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
-
-<script>
-    $(document).ready(function () {
-        var events = [];
-        $.ajax({
-            type: "GET",
-            url: "/Home/GetEvents",
-            success: function (data) {
-                data = JSON.parse(data);
-                console.log("DATAAAAA : " + JSON.stringify(data));
-                $.each(data, function (i, v) {
-
-                    events.push({
-                        title: v.Subject,
-                        description: v.Description,
-                        start: moment(v.Start),
-                        end: v.End != null ? moment(v.End) : null,
-                        color: v.ThemeColor,
-                        allDay: v.IsFullDay
-                    });
-                })
-                console.log("EEEEEEEEEEEEEEEEEEEVENTS : " + events);
-                GenerateCalender(events);
-            },
-            error: function (error) {
-                alert('failed');
+            if (n > totalslides.length) {
+                slideIndex = 1;
             }
-        })
 
-        function GenerateCalender(events) {
-            $('#calender').fullCalendar('destroy');
-            $('#calender').fullCalendar({
-                contentHeight: 400,
-                defaultDate: new Date(),
-                timeFormat: 'h(:mm)a',
-                header: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'month,basicWeek,basicDay,agenda'
+            if (n < 1) {
+                slideIndex = totalslides.length;
+            }
+            for (i = 0; i < totalslides.length; i++) {
+                totalslides[i].style.display = "none";
+            }
+            for (i = 0; i < totaldots.length; i++) {
+                totaldots[i].className =
+                    totaldots[i].className.replace(" active", "");
+            }
+            totalslides[slideIndex - 1].style.display = "block";
+            totaldots[slideIndex - 1].className += " active";
+        }
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var events = [];
+            $.ajax({
+                type: "GET",
+                url: "/Home/GetEvents",
+                success: function (data) {
+                    data = JSON.parse(data);
+                    console.log("DATAAAAA : " + JSON.stringify(data));
+                    $.each(data, function (i, v) {
+
+                        events.push({
+                            title: v.Subject,
+                            description: v.Description,
+                            start: moment(v.Start),
+                            end: v.End != null ? moment(v.End) : null,
+                            color: v.ThemeColor,
+                            allDay: v.IsFullDay
+                        });
+                    })
+                    console.log("EEEEEEEEEEEEEEEEEEEVENTS : " + events);
+                    GenerateCalender(events);
                 },
-                eventLimit: true,
-                eventColor: '#378006',
-                events: events,
-                eventClick: function (calEvent, jsEvent, view) {
-                    $('#myModal #eventTitle').text(calEvent.title);
-                    var $description = $('<div/>');
-                    $description.append($('<p/>').html('<b>Start:</b>' + calEvent.start.format("DD-MMM-YYYY")));
-                    if (calEvent.end != null) {
-                        $description.append($('<p/>').html('<b>End:</b>' + calEvent.end.format("DD-MMM-YYYY")));
-                    }
-                    $description.append($('<p/>').html('<b>Description:</b>' + calEvent.description));
-                    $('#myModal #pDetails').empty().html($description);
-
-                    $('#myModal').modal();
+                error: function (error) {
+                    alert('failed');
                 }
             })
-        }
-    })
-</script>
+
+            function GenerateCalender(events) {
+                $('#calender').fullCalendar('destroy');
+                $('#calender').fullCalendar({
+                    contentHeight: 400,
+                    defaultDate: new Date(),
+                    timeFormat: 'h(:mm)a',
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,basicWeek,basicDay,agenda'
+                    },
+                    eventLimit: true,
+                    eventColor: '#378006',
+                    events: events,
+                    eventClick: function (calEvent, jsEvent, view) {
+                        $('#myModal #eventTitle').text(calEvent.title);
+                        var $description = $('<div/>');
+                        $description.append($('<p/>').html('<b>Start:</b>' + calEvent.start.format("DD-MMM-YYYY")));
+                        if (calEvent.end != null) {
+                            $description.append($('<p/>').html('<b>End:</b>' + calEvent.end.format("DD-MMM-YYYY")));
+                        }
+                        $description.append($('<p/>').html('<b>Description:</b>' + calEvent.description));
+                        $('#myModal #pDetails').empty().html($description);
+
+                        $('#myModal').modal();
+                    }
+                })
+            }
+        })
+    </script>
 
 
 
 
-}
+    }

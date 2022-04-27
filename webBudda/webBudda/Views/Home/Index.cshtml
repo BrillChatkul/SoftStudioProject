@@ -126,11 +126,20 @@
         background-color: black;
     }
     
-</style>
+    /* Create two equal columns that floats next to each other /
+    .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+      height: 300px; / Should be removed. Only for demonstration /
+    }
 
-
-</style>
-
+    / Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
 
 </style>
 
@@ -147,41 +156,28 @@
 
 
     <div class="container">
+
+        <div class="col">
+
+             <div class="row">
+            <div class="column">
+                <img src="~/css/image6.png" style="width:250px; height:250px; margin-top:3rem"/>
+            </div>
+        </div>
         <div class="row">
-            <div class="col">
-                <div class="container " width="400" height="400"
-                    style="background-color:; padding-top:3rem; margin-right:8rem">
+            <div class="column">
+                <div class="container " width="400" height="400" style="background-color:transparent; padding-top:3rem; margin-right:8rem; margin-bottom:3rem">
                     <h1 style="font-size:70px">Bud Bud</h1>
-                    <h4 style="padding-bottom:1rem;">World</h4>
-                    <hr style="width:60%; margin: auto; height:1px; color:black;">
+                    <h3 style="padding-bottom:1rem;">World</h3>
+                    <hr style="width:20%; margin: auto; height:1px; color:black;">
                     <h2 style="font-size:40px">Software Studio</h2>
-                    <hr>
-                    </hr>
-                    <label>ยินดีต้อนรับ ... ท่านสมาชิก @Model.DisplayName</label>
+
+                    <label>ยินดีต้อนรับ ... ท่านสมาชิก @Model.DisplayName @Model.Email</label>
                 </div>
             </div>
-
-            <div class="col-centered">
-                <div class="container" style="display:flex;justify-content: center;margin:5px;">
-                    @* <img src="/images/image 3.png" alt="..." class="lotus">*@
-                    <a asp-area="" asp-controller="Content" asp-action="Content1"><div class="lotus-text-box">เยี่ยมชมเว็บไซต์</div></a>
-                    @if(@Model.Email != null){
-                        <a asp-area="" asp-controller="Home" asp-action="EditUser"><div class="lotus-text-box">แก้ไขโปรไฟล์</div></a>
-                        <a asp-area="" asp-controller="Home" asp-action="LogOut"><div class="lotus-text-box">ออกสู่ระบบ</div></a>
-                    }else{
-                        <a asp-area="" asp-controller="Home" asp-action="SignIn"><div class="lotus-text-box">เข้าสู่ระบบ</div></a>
-                    }
-                     
-                </div>
-                
-                @*<div class="container" style="display:flex;justify-content: center;">
-                    @*<img src="/images/image 3.png" alt="..." class="lotus">
-                    <div class="lotus-text-box">เยี่ยมชมเว็บไซต์</div>
-                </div>*@
-            </div>
-
-            </row>
-
+        </div>
+        </div>
+       
 
         </div>
         @*--------------Announcment----------------------*@
@@ -282,7 +278,17 @@
         
         <div class="">
             <br></br>
-            <h1>นักแสดงธรรมดีเด่น</h1>
+
+            <div style="height:50px"></div>
+        <div class="container" 
+            style="background-color: #8EC5FC; width:100%; height:auto; border-radius:30px; margin-bottom:4rem;">
+            <div style="display:flex;justify-content:center">
+            <div class="spinner-grow spinner-grow-sm text-dark"></div> 
+            <h3><b>นักแสดงธรรมดีเด่น</b></h3>
+            <div class="spinner-grow spinner-grow-sm text-dark"></div>
+            </div>
+        </div>
+
 
 
             <div class="container">

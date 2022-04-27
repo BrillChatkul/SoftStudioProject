@@ -239,7 +239,7 @@ a{color:inherit;text-decoration:none}
 					<input id="Password2" type="password" class="input" data-type="password">
 				</div>
 
-				<div class="group text-center">
+				<div class="group text-center" style="color:white;">
 					<label id="CheckRe" class="label"></label>
 				</div>
 
@@ -273,20 +273,20 @@ a{color:inherit;text-decoration:none}
       <div class="modal-body text-center">
 		  <b></br><u><h1>Contact Admin</h1></u></b>
 		  <h1>adminBudBud@bbw.com</h1> 
-		  <h3>or</h3>
+		  @*<h3>or</h3>
 		  <div > 
 			  <div class="group">
 					<h1><label asp-for="Email" class="control-label mt-2">Email</label></h1><br></br>
 					<input asp-for="Email" type="email" class="modalbtt input border border-primary " onfocus="this.value=''" value="Enter You Email.." id="myInput">
 					<span asp-validation-for="Email" class="text-danger"></span>
 				</div>
-		  </div>
+		  </div>*@
 		 
 
       </div>
       <div class="modal-footer">
         <button type="button" onclick="document.getElementById('myInput').value = ''" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send Email</button>
+        @*<button type="button" class="btn btn-primary">Send Email</button>*@
       </div>
     </div>
   </div>

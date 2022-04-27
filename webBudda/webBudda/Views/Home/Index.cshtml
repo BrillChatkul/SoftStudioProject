@@ -164,9 +164,9 @@
             <div class="col-centered">
                 <div class="container" style="display:flex;justify-content: center;margin:5px;">
                     @* <img src="/images/image 3.png" alt="..." class="lotus">*@
-                    <a asp-area="" asp-controller="Home" asp-action="EditUser"><div class="lotus-text-box">เยี่ยมชมเว็บไซต์</div></a>
+                    <a asp-area="" asp-controller="Content" asp-action="Content1"><div class="lotus-text-box">เยี่ยมชมเว็บไซต์</div></a>
                     @if(@Model.Email != null){
-                        <a asp-area="" asp-controller="Content" asp-action="Content1"><div class="lotus-text-box">แก้ไขโปรไฟล์</div></a>
+                        <a asp-area="" asp-controller="Home" asp-action="EditUser"><div class="lotus-text-box">แก้ไขโปรไฟล์</div></a>
                         <a asp-area="" asp-controller="Home" asp-action="LogOut"><div class="lotus-text-box">ออกสู่ระบบ</div></a>
                     }else{
                         <a asp-area="" asp-controller="Home" asp-action="SignIn"><div class="lotus-text-box">เข้าสู่ระบบ</div></a>

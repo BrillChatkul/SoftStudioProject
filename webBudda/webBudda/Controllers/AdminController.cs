@@ -599,8 +599,20 @@ namespace webBudda.Controllers
             return RedirectToAction("Index", "Home");
         }
         
-        public ActionResult EditAnnouncement()
+        public async Task<ActionResult> EditAnnouncement()
         {
+            var token = HttpContext.Session.GetString("_UserToken");
+            if (token != null)
+            {
+                User user = await auth.GetUserAsync(token);
+                ViewBag.user = user.DisplayName;
+                ViewBag.Email = user.Email;
+            }
+            else
+            {
+                ViewBag.user = "";
+                ViewBag.Email = "Unknown";
+            }
             client = new FireSharp.FirebaseClient(config);
             FirebaseResponse response = client.Get("Announcement/");
             var data = JsonConvert.DeserializeObject(response.Body);

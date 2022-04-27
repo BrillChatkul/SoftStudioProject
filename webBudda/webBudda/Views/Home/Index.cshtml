@@ -157,14 +157,14 @@
                     <h2 style="font-size:40px">Software Studio</h2>
                     <hr>
                     </hr>
-                    <label>ยินดีต้อนรับ ... ท่านสมาชิก @Model.DisplayName @Model.Email</label>
+                    <label>ยินดีต้อนรับ ... ท่านสมาชิก @Model.DisplayName</label>
                 </div>
             </div>
 
             <div class="col-centered">
                 <div class="container" style="display:flex;justify-content: center;margin:5px;">
                     @* <img src="/images/image 3.png" alt="..." class="lotus">*@
-                    <div class="lotus-text-box">เยี่ยมชมเว็บไซต์</div>
+                    <a asp-area="" asp-controller="Content" asp-action="Content1"><div class="lotus-text-box">เยี่ยมชมเว็บไซต์</div></a>
                     @if(@Model.Email != null){
                         <a asp-area="" asp-controller="Home" asp-action="EditUser"><div class="lotus-text-box">แก้ไขโปรไฟล์</div></a>
                         <a asp-area="" asp-controller="Home" asp-action="LogOut"><div class="lotus-text-box">ออกสู่ระบบ</div></a>
@@ -184,7 +184,17 @@
 
 
         </div>
-
+        @*--------------Announcment----------------------*@
+        <div style="height:50px"></div>
+        <div class="container" 
+            style="background-color: rgb(133, 212, 190); width:100%; height:auto; border-radius:30px; margin-bottom:4rem;">
+            <div style="display:flex;justify-content:center">
+            <div class="spinner-grow spinner-grow-sm text-dark"></div> 
+            <h3>ประชาสัมพันธ์</h3>
+            <div class="spinner-grow spinner-grow-sm text-dark"></div>
+            </div>
+             <p>@ViewBag.d</p>
+        </div>
 
 
 
@@ -269,10 +279,7 @@
             <span class="footerdot" onclick="activeSlide(3)">
             </span>
         </div>
-        @*ตั้งประกาศ @ViewBag.d ใช้ตัวแปรนี้นะอีสัสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสสส*@
-        <div class="container" 
-            style="background-color:#C4C4C4; width:100%; height:700px; border-radius:30px; margin-bottom:4rem;">@ViewBag.d</div>
-
+        
         <div class="">
             <br></br>
             <h1>นักแสดงธรรมดีเด่น</h1>

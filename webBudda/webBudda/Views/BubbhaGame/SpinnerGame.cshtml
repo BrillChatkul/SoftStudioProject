@@ -52,7 +52,6 @@
 
     #question {
 
-        width: 1700px;
         height: 525px;
 
     }
@@ -87,9 +86,10 @@
     }
 
     .spinner {
+        width:1500px;
+        margin-left: auto;
+        margin-right: auto;
         position: sticky;
-        left: 400px;
-        top: 200px;
         z-index: 10;
         border-radius:20px;
         background-color:rgba(196, 196, 196, 0.75);
@@ -113,7 +113,7 @@
 <div class="text-center">
     <h1><strong>คติธรรมประจำวันนี้</strong></h1>
 </div><hr></hr>
-
+@*
 <div class="container">
     <div class="col">
         <div class="row spinner">
@@ -139,9 +139,29 @@
     </div>
 
 </div>
+*@
+<div class="spinner">
+    <div class="row">
+        <div class="col">
+            <div id="chart" style="margin-left: 10px;">
+
+            </div>
+        </div>
+        <div class="col">
+            <div id="question">
+                <h1>กด Spin เพื่อรับคติธรรมประจำวันนี้</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-center" style="margin-bottom:10px">
+            
+            <button type="button" class="btn btn-outline-primary bttn"><a href="/BubbhaGame/" style="text-decoration:none;">กลับหน้าหลัก</a></button>
+                   
+        </div>
+    </div>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </div>
-
-
 
 @section Scripts{
 <script>

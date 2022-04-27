@@ -334,21 +334,6 @@ namespace webBudda.Controllers
         }
 
 
-        //public IActionResult Content(string typep)
-        //{
-        //    blogRepo blogRepo = new blogRepo();
-        //    List<blog> blogList = blogRepo.GetBlogList();
-        //    List<blog> blogFilter = new List<blog>();
-        //    foreach (blog blog in blogList)
-        //    {
-        //        if (blog.typep == typep)
-        //        {
-        //            blogFilter.Add(blog);
-        //        }
-        //    }
-        //    return View(blogFilter.ToList());
-        //}
-
-
+ 
     }
 }
